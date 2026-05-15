@@ -24,7 +24,7 @@ export default function Error({
           <Heading level={1} variant="h2">
             Something went wrong
           </Heading>
-          <Muted>An unexpected error occurred. You can try again.</Muted>
+          <Muted>An unexpected error occurred. You can try again</Muted>
           <Button onClick={reset}>Try again</Button>
         </Stack>
       </Container>
