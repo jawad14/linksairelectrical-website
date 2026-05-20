@@ -3,81 +3,86 @@
 import Link from 'next/link';
 import { Phone, ArrowRight, Award, ThumbsUp, Shield, Star, Wrench, Ban } from 'lucide-react';
 import { Container, Section, Stack } from '@/components/ui/layout';
-import { H2, H3, P, Lead } from '@/components/ui/typography';
+import { H2, H3, P, Small } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
-import { FadeUp, SlideLeft, SlideRight } from '@/components/ui/motion';
+import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const stats = [
-  { icon: Award, label: '7 years of Experience', color: 'bg-primary' },
-  { icon: Star, label: 'Servicing Top Brands', color: 'bg-accent' },
-  { icon: ThumbsUp, label: '100% Client Satisfaction', color: 'bg-accent' },
-  { icon: Wrench, label: 'Periodic AC Maintenance', color: 'bg-primary' },
-  { icon: Shield, label: 'Zero Damage Installation', color: 'bg-primary' },
-  { icon: Ban, label: 'No Hidden Charges', color: 'bg-accent' },
+  { icon: Award, value: '7+', label: 'Years Experience' },
+  { icon: ThumbsUp, value: '100%', label: 'Client Satisfaction' },
+  { icon: Shield, value: 'Zero', label: 'Damage Installation' },
+  { icon: Star, value: 'Top', label: 'Brand Partners' },
+  { icon: Wrench, value: '24/7', label: 'AC Maintenance' },
+  { icon: Ban, value: '$0', label: 'Hidden Charges' },
 ];
 
 export function About() {
   return (
     <>
-      {/* About section — stats left, text right (matching original) */}
-      <Section spacing="lg" className="bg-[#f5f8ed]">
+      {/* Stats counter bar — dark, impactful numbers */}
+      <Section spacing="none" className="bg-primary text-primary-foreground py-10 sm:py-14">
         <Container size="xl">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            {/* Left — staggered stat cards */}
-            <SlideLeft>
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, i) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div
-                      key={stat.label}
-                      className={`${stat.color} flex items-center gap-3 rounded-xl p-4 text-white sm:p-5 ${
-                        i % 2 === 0 ? '' : 'mt-6'
-                      }`}
-                    >
-                      <Icon className="size-8 shrink-0 opacity-80 sm:size-10" />
-                      <H3 className="text-sm font-bold text-white sm:text-base">{stat.label}</H3>
-                    </div>
-                  );
-                })}
-              </div>
-            </SlideLeft>
-
-            {/* Right — welcome text */}
-            <SlideRight>
-              <Stack gap="md">
-                <P variant="muted">Welcome to Links Air &amp; Electrical</P>
-                <H2>
-                  Heating &amp; Air Conditioning{' '}
-                  <span className="text-secondary">Repair &amp; Installation Service Company</span>
-                </H2>
-                <P>
-                  Links Air &amp; Electrical is a leading name when it comes to 360 degree air
-                  conditioning solutions at an unbeatable price. Serving the industry since 2014, we
-                  provide comprehensive solutions to your air conditioning chores which include
-                  installation, repairs and maintenance so that you enjoy peace of mind every time
-                  you settle on bed to relax.
-                </P>
-                <Link
-                  href="/about"
-                  className="bg-secondary inline-flex w-fit items-center gap-2 rounded-md px-5 py-2.5 text-sm font-bold tracking-wide text-white uppercase transition-all hover:scale-105 hover:brightness-110"
-                >
-                  Read More <ArrowRight className="size-4" />
-                </Link>
-              </Stack>
-            </SlideRight>
-          </div>
+          <StaggerGroup className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6 lg:gap-8">
+            {stats.map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <StaggerItem key={stat.label}>
+                  <Stack gap="xs" align="center" className="text-center">
+                    <Icon className="text-accent size-6 sm:size-7" />
+                    <H3 className="text-primary-foreground text-2xl font-bold sm:text-3xl">
+                      {stat.value}
+                    </H3>
+                    <Small className="text-primary-foreground/60 text-xs tracking-wider uppercase">
+                      {stat.label}
+                    </Small>
+                  </Stack>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
         </Container>
       </Section>
 
-      {/* 24/7 CTA Strip */}
-      <Section spacing="md" className="bg-primary text-primary-foreground">
+      {/* Welcome text — centered, clean */}
+      <Section spacing="lg">
+        <Container size="md">
+          <FadeUp>
+            <Stack gap="lg" align="center" className="text-center">
+              <Small className="text-accent font-bold tracking-widest uppercase">
+                Welcome to Links Air &amp; Electrical
+              </Small>
+              <H2 className="text-3xl sm:text-4xl">
+                Heating &amp; Air Conditioning{' '}
+                <span className="text-secondary">Repair &amp; Installation</span> Service Company
+              </H2>
+              <P className="text-muted-foreground max-w-2xl text-base leading-relaxed">
+                Links Air &amp; Electrical is a leading name when it comes to 360 degree air
+                conditioning solutions at an unbeatable price. Serving the industry since 2014, we
+                provide comprehensive solutions to your air conditioning chores which include
+                installation, repairs and maintenance so that you enjoy peace of mind every time you
+                settle on bed to relax.
+              </P>
+              <Link
+                href="/about"
+                className="bg-secondary inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
+              >
+                Read More <ArrowRight className="size-4" />
+              </Link>
+            </Stack>
+          </FadeUp>
+        </Container>
+      </Section>
+
+      {/* 24/7 CTA Strip — gradient */}
+      <Section
+        spacing="none"
+        className="from-primary to-secondary text-primary-foreground bg-gradient-to-r py-8 sm:py-10"
+      >
         <Container size="xl">
           <FadeUp>
             <div className="flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-between lg:text-left">
-              <H2 className="text-primary-foreground lg:max-w-2xl">
-                We&apos;re On Call 24/7 to React Promptly to Your Service Needs, Don&apos;t Hesitate
-                to Call
+              <H2 className="text-primary-foreground text-xl sm:text-2xl lg:max-w-2xl">
+                We&apos;re On Call 24/7 to React Promptly to Your Service Needs
               </H2>
               <div className="flex shrink-0 flex-col items-center gap-3 sm:flex-row">
                 <a
