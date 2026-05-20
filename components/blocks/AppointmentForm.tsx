@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Phone, Send, Calendar } from 'lucide-react';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H2, P, Small } from '@/components/ui/typography';
 import {
@@ -39,8 +40,10 @@ const services = [
   'Other',
 ];
 
-const inputBase =
-  'w-full h-12 rounded-md border-0 bg-[#2d3748] px-4 text-sm text-white outline-none placeholder:text-white/40 transition-all focus:ring-2 focus:ring-accent';
+const fieldStyle =
+  'w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground transition-all focus:border-secondary focus:ring-2 focus:ring-secondary/20';
+
+const fieldError = 'border-destructive focus:border-destructive focus:ring-destructive/20';
 
 export function AppointmentForm() {
   const {
@@ -62,58 +65,44 @@ export function AppointmentForm() {
   }
 
   return (
-    <Section spacing="lg" className="bg-muted/40">
-      <Container size="xl">
-        <div className="grid items-start gap-8 lg:grid-cols-5 lg:gap-12">
-          {/* Left — promo card (2 cols) */}
-          <FadeUp className="lg:col-span-2">
-            <Stack gap="lg" className="bg-secondary text-secondary-foreground rounded-2xl p-8">
-              <H2 className="text-secondary-foreground text-xl font-bold sm:text-2xl">
-                Leading Cooling Company Serving Australia!
-              </H2>
-
-              <div className="flex items-center gap-4">
-                <div className="bg-accent text-accent-foreground flex shrink-0 flex-col items-center rounded-lg px-4 py-3 text-lg leading-tight font-bold">
-                  <span>20%</span>
-                  <span>OFF</span>
-                </div>
-                <P className="text-secondary-foreground font-semibold">
-                  Electrical or AC Maintenance &amp; Repair
-                </P>
+    <Section spacing="lg">
+      <Container size="md">
+        <FadeUp>
+          <div className="overflow-hidden rounded-2xl shadow-xl">
+            {/* Header strip */}
+            <div className="from-primary to-secondary bg-gradient-to-r px-6 py-5 sm:px-8">
+              <div className="flex items-center gap-3">
+                <Calendar className="text-accent size-6" />
+                <H2 className="text-primary-foreground text-xl sm:text-2xl">
+                  Schedule an Appointment
+                </H2>
               </div>
+              <P className="text-primary-foreground/60 mt-1 text-sm">
+                Fill out the form below and we&apos;ll get back to you within 24 hours.
+              </P>
+            </div>
 
-              <hr className="border-secondary-foreground/20" />
-
-              <a
-                href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                className="text-secondary-foreground text-center text-2xl font-bold transition-opacity hover:opacity-80 sm:text-3xl"
-              >
-                {siteConfig.phone}
-              </a>
-            </Stack>
-          </FadeUp>
-
-          {/* Right — form (3 cols) */}
-          <FadeUp delay={0.15} className="lg:col-span-3">
-            <div className="rounded-2xl bg-white p-6 shadow-lg sm:p-8">
-              <H2 className="text-secondary mb-6">Schedule an Appointment</H2>
-
+            {/* Form body */}
+            <div className="bg-white p-6 sm:p-8">
               {isSubmitSuccessful ? (
-                <Stack gap="md" align="center" className="py-8 text-center">
+                <Stack gap="md" align="center" className="py-10 text-center">
+                  <div className="bg-accent/10 flex size-16 items-center justify-center rounded-full">
+                    <Send className="text-accent size-7" />
+                  </div>
                   <H2 className="text-accent">Thank You!</H2>
                   <P variant="muted">
                     Your request has been submitted. We&apos;ll get back to you shortly.
                   </P>
                 </Stack>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3" noValidate>
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
                   {/* Row: Name + Phone */}
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <input
-                        placeholder="Name"
+                        placeholder="Your name"
                         aria-invalid={!!errors.name}
-                        className={`${inputBase} ${errors.name ? 'ring-destructive ring-2' : ''}`}
+                        className={`${fieldStyle} ${errors.name ? fieldError : ''}`}
                         {...register('name')}
                       />
                       {errors.name && (
@@ -123,9 +112,9 @@ export function AppointmentForm() {
                     <div>
                       <input
                         type="tel"
-                        placeholder="Phone"
+                        placeholder="Phone number"
                         aria-invalid={!!errors.phone}
-                        className={`${inputBase} ${errors.phone ? 'ring-destructive ring-2' : ''}`}
+                        className={`${fieldStyle} ${errors.phone ? fieldError : ''}`}
                         {...register('phone')}
                       />
                       {errors.phone && (
@@ -135,13 +124,13 @@ export function AppointmentForm() {
                   </div>
 
                   {/* Row: Email + Service */}
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder="Email address"
                         aria-invalid={!!errors.email}
-                        className={`${inputBase} ${errors.email ? 'ring-destructive ring-2' : ''}`}
+                        className={`${fieldStyle} ${errors.email ? fieldError : ''}`}
                         {...register('email')}
                       />
                       {errors.email && (
@@ -156,10 +145,12 @@ export function AppointmentForm() {
                         }}
                       >
                         <SelectTrigger
-                          className={`!h-12 w-full rounded-md border-0 bg-[#2d3748] px-4 text-sm text-white data-placeholder:text-white/40 ${errors.service ? 'ring-destructive ring-2' : ''}`}
+                          className={`bg-background !h-auto w-full rounded-lg border px-4 py-3 text-sm ${
+                            watch('service') ? 'text-foreground' : 'text-muted-foreground'
+                          } ${errors.service ? 'border-destructive' : 'border-border'}`}
                           aria-invalid={!!errors.service}
                         >
-                          <SelectValue placeholder="Select Service" />
+                          <SelectValue placeholder="Select service" />
                         </SelectTrigger>
                         <SelectContent>
                           {services.map((s) => (
@@ -176,29 +167,42 @@ export function AppointmentForm() {
                   </div>
 
                   {/* Post Code */}
-                  <input placeholder="Post Code" className={inputBase} {...register('postcode')} />
+                  <input placeholder="Post code" className={fieldStyle} {...register('postcode')} />
 
                   {/* Message */}
                   <textarea
-                    placeholder="Message"
-                    rows={3}
-                    className="focus:ring-accent w-full resize-none rounded-md border-0 bg-[#2d3748] px-4 py-3 text-sm text-white transition-all outline-none placeholder:text-white/40 focus:ring-2"
+                    placeholder="Tell us about your project..."
+                    rows={4}
+                    className={`${fieldStyle} resize-none`}
                     {...register('message')}
                   />
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-accent mt-1 w-full rounded-md py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 disabled:opacity-50 sm:w-auto sm:px-10"
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Submit Now'}
-                  </button>
+                  {/* Bottom row: submit + phone */}
+                  <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-accent inline-flex w-full items-center justify-center gap-2 rounded-lg px-8 py-3.5 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110 disabled:opacity-50 sm:w-auto"
+                    >
+                      <Send className="size-4" />
+                      {isSubmitting ? 'Submitting...' : 'Submit Now'}
+                    </button>
+                    <P variant="muted" className="text-sm">
+                      or call{' '}
+                      <a
+                        href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                        className="text-destructive font-bold transition-opacity hover:opacity-80"
+                      >
+                        <Phone className="mr-1 inline size-3.5" />
+                        {siteConfig.phone}
+                      </a>
+                    </P>
+                  </div>
                 </form>
               )}
             </div>
-          </FadeUp>
-        </div>
+          </div>
+        </FadeUp>
       </Container>
     </Section>
   );
