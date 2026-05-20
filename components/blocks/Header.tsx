@@ -146,7 +146,7 @@ export function Header() {
               alt={siteConfig.name}
               width={200}
               height={55}
-              className="h-9 w-auto sm:h-11 md:h-14"
+              className="h-9 w-auto brightness-0 invert sm:h-11 md:h-14"
               priority
             />
           </Link>

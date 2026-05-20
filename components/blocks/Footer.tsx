@@ -63,8 +63,8 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt={siteConfig.name}
-                width={160}
-                height={45}
+                width={213}
+                height={68}
                 className="h-10 w-auto brightness-0 invert"
               />
               <P className="text-primary-foreground/70 text-sm">
