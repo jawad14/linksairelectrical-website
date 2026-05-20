@@ -12,6 +12,12 @@ const galleryImages = [
   { src: '/images/gallery/gallery4.jpg', alt: 'Electrical work' },
   { src: '/images/gallery/ev-charger.png', alt: 'EV charger installation' },
   { src: '/images/gallery/cooktop.png', alt: 'Cooktop installation' },
+  { src: '/images/gallery/ceiling-fan.jpg', alt: 'Ceiling fan installation' },
+  { src: '/images/gallery/ducted-outdoor.jpg', alt: 'Ducted outdoor unit' },
+  { src: '/images/gallery/triple-install.jpg', alt: 'Triple split system installation' },
+  { src: '/images/gallery/led-lights.jpeg', alt: 'LED lights installation' },
+  { src: '/images/gallery/multihead.jpg', alt: 'Multi-head split system' },
+  { src: '/images/gallery/outdoor-unit.jpg', alt: 'Outdoor AC unit installation' },
 ];
 
 export function Gallery() {
@@ -28,7 +34,7 @@ export function Gallery() {
             </Stack>
           </FadeUp>
 
-          <StaggerGroup className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
+          <StaggerGroup className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {galleryImages.map((img) => (
               <StaggerItem key={img.src}>
                 <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">

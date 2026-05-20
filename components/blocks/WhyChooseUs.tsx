@@ -1,43 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { ShieldCheck, Clock, DollarSign, CheckCircle, MessageCircle, Award } from 'lucide-react';
-import { Container, Section, Grid, Stack } from '@/components/ui/layout';
-import { H2, H3, P, Lead } from '@/components/ui/typography';
-import { FadeUp, SlideLeft, SlideRight, StaggerGroup, StaggerItem } from '@/components/ui/motion';
+import { CheckCircle } from 'lucide-react';
+import { Container, Section, Stack } from '@/components/ui/layout';
+import { H2, P, Lead } from '@/components/ui/typography';
+import { FadeUp, SlideLeft, SlideRight } from '@/components/ui/motion';
 
-const reasons = [
-  {
-    icon: ShieldCheck,
-    title: 'Fully Licensed & Insured',
-    description:
-      'All our technicians are fully licensed and insured for both electrical and aircon work.',
-  },
-  {
-    icon: Clock,
-    title: 'On-Time & Tidy',
-    description: 'Punctual arrivals, drop sheets down, mess cleaned up. We respect your property.',
-  },
-  {
-    icon: DollarSign,
-    title: 'Upfront Pricing',
-    description: 'Fixed quotes before we begin. No surprises, no hidden fees.',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Australian Compliance',
-    description: 'Every job meets or exceeds Australian safety and quality standards.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Great Communication',
-    description: 'From quote to completion, we keep you informed every step of the way.',
-  },
-  {
-    icon: Award,
-    title: '5-Year Warranty',
-    description: 'We stand behind our work with comprehensive workmanship warranties.',
-  },
+const expectations = [
+  'Fully licensed and insured technicians',
+  'On-time and tidy service',
+  'Clear quotes — no hidden fees',
+  'Australian standard compliance',
+  'Great communication from start to finish',
 ];
 
 export function WhyChooseUs() {
@@ -45,43 +19,34 @@ export function WhyChooseUs() {
     <Section spacing="lg">
       <Container size="xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left — text + reasons grid */}
           <SlideLeft>
-            <Stack gap="xl">
+            <Stack gap="lg">
+              <H2>Why Choose Links Air?</H2>
+              <P>
+                We believe in honest work, fair prices, and top-quality service. Our licensed
+                electricians and aircon installers are dedicated to doing every job safely, cleanly,
+                and with care.
+              </P>
               <Stack gap="sm">
-                <H2>Why Choose Us?</H2>
-                <Lead>Your trusted local experts delivering outstanding quality workmanship.</Lead>
+                <Lead>What You Can Expect:</Lead>
+                {expectations.map((item) => (
+                  <span key={item} className="text-foreground flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-accent size-5 shrink-0" />
+                    {item}
+                  </span>
+                ))}
               </Stack>
-
-              <StaggerGroup slow>
-                <Grid cols={2} gap="md">
-                  {reasons.map((reason) => {
-                    const Icon = reason.icon;
-                    return (
-                      <StaggerItem key={reason.title}>
-                        <Stack gap="xs">
-                          <div className="flex items-center gap-2">
-                            <Icon className="text-accent size-5" />
-                            <H3 className="text-base">{reason.title}</H3>
-                          </div>
-                          <P variant="muted" className="text-sm">
-                            {reason.description}
-                          </P>
-                        </Stack>
-                      </StaggerItem>
-                    );
-                  })}
-                </Grid>
-              </StaggerGroup>
+              <P variant="muted">
+                We treat your home like our own — leaving it clean and safe after every job.
+              </P>
             </Stack>
           </SlideLeft>
 
-          {/* Right — image */}
           <SlideRight className="max-lg:hidden">
             <div className="relative aspect-square overflow-hidden rounded-xl shadow-lg">
               <Image
-                src="/images/hero/hero-4.png"
-                alt="Professional electrical and AC work"
+                src="/images/why-choose-1.png"
+                alt="Links Air & Electrical professional service"
                 fill
                 className="object-cover"
               />

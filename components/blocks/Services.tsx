@@ -9,25 +9,22 @@ import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const services = [
   {
-    title: 'Air Conditioning',
-    description:
-      'Split systems, ducted AC, VRV/VRF — installation, repairs, and maintenance for all major brands.',
+    title: 'Air Conditioning Services',
+    description: 'Is your air conditioner not cooling well?',
     image: '/images/services/airconditioning.jpg',
     href: '/services/air-conditioning',
     icon: Wind,
   },
   {
-    title: 'Electrical',
-    description:
-      'Lighting, switchboards, EV chargers, CCTV, data cabling, and emergency repairs by licensed electricians.',
+    title: 'Electrical Services',
+    description: 'Professional Electrical Services in Brisbane, Gold Coast.',
     image: '/images/services/electrical.jpg',
     href: '/services/electrical',
     icon: Zap,
   },
   {
     title: 'Building & Construction',
-    description:
-      'Complete electrical and air conditioning fit-outs for new builds, renovations, and commercial projects.',
+    description: 'Are you looking for high-end builder services for your electrical needs?',
     image: '/images/services/construction.jpg',
     href: '/services/builder',
     icon: HardHat,
@@ -43,8 +40,7 @@ export function Services() {
             <Stack gap="sm" align="center" className="text-center">
               <H2>What We Can Offer You</H2>
               <Lead className="max-w-2xl">
-                Comprehensive solutions for residential and commercial properties across Brisbane
-                and Gold Coast.
+                We Provide Fast, Reliable Electrical and Air Conditioning Services in Australia
               </Lead>
             </Stack>
           </FadeUp>

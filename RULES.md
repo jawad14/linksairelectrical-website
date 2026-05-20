@@ -43,9 +43,29 @@ Rules and standards that must be followed across every page and component in thi
 - Service descriptions, FAQ content, and page copy should be defined as data arrays at the top of the file or in `content/`, not inline in JSX.
 - All content visible to search engines must be server-rendered (no client-side-only marketing text).
 
+## Homepage-Only vs Reusable Sections
+
+**Homepage-only** — these sections appear ONLY on the homepage (`app/page.tsx`):
+- `Hero` (slider)
+- `Services` ("What We Can Offer You" cards)
+- `TrustStats` (6 icon stats)
+- `About` (welcome + 24/7 CTA)
+- `Testimonials` (Google reviews)
+- `PromoBanner` (20% OFF)
+- `Gallery` ("Our Featured Works")
+- `WhyChooseUs`
+- `FAQ`
+
+**Reusable across all pages:**
+- `Header` — every page
+- `Footer` — every page
+- `BrandPartners` — homepage + optionally on AC service pages
+
+**Inner/service pages should NOT include** homepage sections like Services cards, TrustStats, Gallery, Testimonials, PromoBanner, or WhyChooseUs. Inner pages have their own content + `ServiceHero` + `ServiceCTA` + `RelatedServices`.
+
 ## Components
 
-- Reuse existing block components from `components/blocks/` where applicable. If a new page needs a section that already exists (e.g., FAQ, BrandPartners, WhyChooseUs), import and reuse — don't rebuild.
+- Reuse existing block components from `components/blocks/` where applicable. If a new page needs a section that already exists (e.g., BrandPartners), import and reuse — don't rebuild.
 - New block components go in `components/blocks/`. New UI primitives go in `components/ui/`.
 - `'use client'` only when interactivity is required (dropdowns, accordions, forms with state). Default to server components.
 

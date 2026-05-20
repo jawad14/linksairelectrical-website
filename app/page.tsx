@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/blocks/Header';
 import { Hero } from '@/components/blocks/Hero';
-import { TrustStats } from '@/components/blocks/TrustStats';
 import { Services } from '@/components/blocks/Services';
+import { TrustStats } from '@/components/blocks/TrustStats';
 import { About } from '@/components/blocks/About';
-import { WhyChooseUs } from '@/components/blocks/WhyChooseUs';
+import { Testimonials } from '@/components/blocks/Testimonials';
+import { PromoBanner } from '@/components/blocks/PromoBanner';
 import { Gallery } from '@/components/blocks/Gallery';
+import { TrustedExperts } from '@/components/blocks/TrustedExperts';
+import { WhyChooseUs } from '@/components/blocks/WhyChooseUs';
+import { ServicesTables } from '@/components/blocks/ServicesTables';
+import { CustomersAndAreas } from '@/components/blocks/CustomersAndAreas';
 import { BrandPartners } from '@/components/blocks/BrandPartners';
 import { FAQ } from '@/components/blocks/FAQ';
 import { Footer } from '@/components/blocks/Footer';
@@ -51,25 +56,33 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        {/* DARK: Hero — full-width gradient with centered headline */}
+        {/* 1. Hero slider (6 slides) */}
         <Hero />
-        {/* LIGHT: Trust indicators strip */}
-        <TrustStats />
-        {/* LIGHT/MUTED: Service cards with dark overlays */}
+        {/* 2. "What We Can Offer You" (3 service cards) */}
         <Services />
-        {/* LIGHT: About — two-column image + text */}
-        {/* DARK: 24/7 CTA strip */}
+        {/* 3. Trust stats (6 icons) */}
+        <TrustStats />
+        {/* 4. "Welcome to Links Air & Electrical" + 24/7 CTA */}
         <About />
-        {/* LIGHT: Why choose us — two-column with image */}
-        <WhyChooseUs />
-        {/* MUTED: Gallery grid */}
+        {/* 5. Testimonials — real Google reviews */}
+        <Testimonials />
+        {/* 6. "20% OFF" promo banner */}
+        <PromoBanner />
+        {/* 7. "Our Featured Works" gallery */}
         <Gallery />
-        {/* LIGHT: Brand logos strip */}
+        {/* 8. "Your Trusted Local Experts" + "One Team" with service icons */}
+        <TrustedExperts />
+        {/* 9. "Why Choose Links Air" with checklist */}
+        <WhyChooseUs />
+        {/* 10. Electrical services table + AC services + Combined + "What Makes Us Different" */}
+        <ServicesTables />
+        {/* 11. "Our Customers" + "Areas We Service" */}
+        <CustomersAndAreas />
+        {/* 12. Brand logos */}
         <BrandPartners />
-        {/* LIGHT: FAQ accordion */}
+        {/* 13. FAQ */}
         <FAQ />
       </main>
-      {/* DARK: Footer */}
       <Footer />
 
       {/* LocalBusiness schema */}
