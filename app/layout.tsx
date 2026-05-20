@@ -1,28 +1,26 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Lato, Open_Sans } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
-const fontSans = Inter({
+const fontSans = Open_Sans({
   variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const fontMono = JetBrains_Mono({
-  variable: '--font-mono',
+const fontHeading = Lato({
+  variable: '--font-heading',
   subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
   display: 'swap',
 });
 
 export const metadata: Metadata = defaultMetadata;
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
+  themeColor: '#0F4C81',
 };
 
 export default function RootLayout({
@@ -34,7 +32,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}
+      className={`${fontSans.variable} ${fontHeading.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

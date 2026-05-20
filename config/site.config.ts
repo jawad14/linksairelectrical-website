@@ -1,19 +1,32 @@
 import type { Metadata } from 'next';
 
-export type NavItem = { label: string; href: string };
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: NavItem[];
+};
 
 export type SocialLink = { label: string; href: string };
 
 export type SiteConfig = {
   name: string;
   shortName: string;
+  tagline: string;
   description: string;
   url: string;
   ogImage: string;
   locale: string;
   author: { name: string; url?: string };
+  phone: string;
+  mobile: string;
+  email: string;
+  address: string;
+  hours: string;
+  license: string;
+  arc: string;
   nav: NavItem[];
   social: SocialLink[];
+  serviceAreas: string[];
   providers: {
     logger: 'console' | 'pino';
     analytics: 'none' | 'plausible' | 'umami' | 'posthog' | 'ga4';
@@ -30,21 +43,55 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: 'Website Template',
-  shortName: 'Template',
+  name: 'Links Air & Electrical',
+  shortName: 'Links Air',
+  tagline: 'Trusted Local Sparkies · A/C Specialists',
   description:
-    'A reusable, static-first Next.js website template. Edit this in config/site.config.ts per fork.',
-  url: 'https://example.com',
+    'Professional air conditioning and electrical services in Brisbane & Gold Coast. Installation, repairs, and maintenance. Call 0468 432 538 for a free quote.',
+  url: 'https://linksairelectrical.com.au',
   ogImage: '/opengraph-image',
-  locale: 'en_US',
-  author: { name: 'Your Brand', url: 'https://example.com' },
+  locale: 'en_AU',
+  author: { name: 'Links Air & Electrical', url: 'https://linksairelectrical.com.au' },
+  phone: '0468 432 538',
+  mobile: '0468 432 538',
+  email: 'info@linksairelectrical.com.au',
+  address: 'Brisbane and Gold Coast, Queensland, QLD 4000',
+  hours: 'Mon–Sun: 09:00–19:00',
+  license: '312045C',
+  arc: 'AU45821',
   nav: [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
+    { label: 'About Us', href: '/about' },
+    {
+      label: 'Air Conditioning',
+      href: '/services/air-conditioning',
+      children: [
+        { label: 'Split System Aircon', href: '/services/air-conditioning/split-system' },
+        { label: 'Ducted AC', href: '/services/air-conditioning/ducted' },
+        { label: 'VRV/VRF AC', href: '/services/air-conditioning/vrv-vrf' },
+        { label: 'Repair & Installation', href: '/services/air-conditioning/repair-installation' },
+        { label: 'Service & Maintenance', href: '/services/air-conditioning/service-maintenance' },
+      ],
+    },
+    {
+      label: 'Electrical',
+      href: '/services/electrical',
+      children: [
+        { label: 'Residential Electrician', href: '/services/electrical/residential' },
+        { label: 'General Maintenance', href: '/services/electrical/maintenance' },
+        { label: 'CCTV Installation', href: '/services/electrical/cctv' },
+        { label: 'EV Charger Installation', href: '/services/electrical/ev-charger' },
+      ],
+    },
+    { label: 'Building & Construction', href: '/services/building-construction' },
     { label: 'Contact', href: '/contact' },
   ],
-  social: [],
+  social: [
+    { label: 'Facebook', href: 'https://www.facebook.com/LinksAirAndElectrical' },
+    { label: 'Instagram', href: 'https://www.instagram.com/linksairaircons/' },
+    { label: 'WhatsApp', href: 'https://wa.me/+61447440050' },
+  ],
+  serviceAreas: ['Brisbane', 'Gold Coast', 'Logan', 'Ipswich', 'Redlands', 'Moreton Bay'],
   providers: {
     logger: 'console',
     analytics: 'none',
@@ -62,22 +109,67 @@ export const siteConfig: SiteConfig = {
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: siteConfig.name, template: `%s · ${siteConfig.name}` },
+  title: {
+    default: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
+    template: `%s · ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  keywords: [
+    'air conditioning Brisbane',
+    'electrician Brisbane',
+    'split system installation',
+    'ducted air conditioning',
+    'AC repair Brisbane',
+    'electrical services Gold Coast',
+    'EV charger installation',
+    'CCTV installation Brisbane',
+    'air conditioning Gold Coast',
+    'emergency electrician Brisbane',
+    'air conditioning installation',
+    'electrical maintenance',
+    'Links Air Electrical',
+  ],
+  alternates: {
+    canonical: siteConfig.url,
+  },
   openGraph: {
     type: 'website',
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
     description: siteConfig.description,
     url: siteConfig.url,
     locale: siteConfig.locale,
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
+    title: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
     description: siteConfig.description,
+    images: [`${siteConfig.url}/opengraph-image`],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'AU-QLD',
+    'geo.placename': 'Brisbane',
+    'format-detection': 'telephone=yes',
+  },
 };
