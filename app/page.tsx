@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/blocks/Header';
 import { Hero } from '@/components/blocks/Hero';
 import { Services } from '@/components/blocks/Services';
-import { TrustStats } from '@/components/blocks/TrustStats';
 import { About } from '@/components/blocks/About';
 import { Testimonials } from '@/components/blocks/Testimonials';
 import { PromoBanner } from '@/components/blocks/PromoBanner';
@@ -61,9 +60,7 @@ export default function HomePage() {
         <Hero />
         {/* 2. "What We Can Offer You" (3 service cards) */}
         <Services />
-        {/* 3. Trust stats (6 icons) */}
-        <TrustStats />
-        {/* 4. "Welcome to Links Air & Electrical" + 24/7 CTA */}
+        {/* 3. "Welcome to Links Air & Electrical" with trust stats + 24/7 CTA */}
         <About />
         {/* 5. Testimonials — real Google reviews */}
         <Testimonials />
