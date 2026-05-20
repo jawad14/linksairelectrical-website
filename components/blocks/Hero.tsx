@@ -18,7 +18,7 @@ const transition = { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const };
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(160deg,#0B3D6B_0%,#1B6EAA_60%,#0F4C81_100%)]">
-      {/* Background image — subtle, not overpowering */}
+      {/* Background image */}
       <Image
         src="/images/hero/hero-1.png"
         alt="Air conditioning and electrical services"
@@ -27,10 +27,9 @@ export function Hero() {
         priority
       />
 
-      {/* Content — centered like Jaric, generous vertical padding */}
       <Container size="xl" className="relative z-10 py-24 sm:py-32 lg:py-40">
         <Stack gap="lg" align="center" className="text-center">
-          {/* Tagline */}
+          {/* Tagline — green like collateral */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -42,7 +41,7 @@ export function Hero() {
             </Small>
           </motion.div>
 
-          {/* Main headline */}
+          {/* Headline */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -51,11 +50,9 @@ export function Hero() {
           >
             <Heading
               level={1}
-              className="font-heading max-w-4xl text-4xl font-light tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="font-heading max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Brisbane Air Conditioning
-              <br className="hidden sm:block" />
-              &amp; Electrical Experts
+              Electrical &amp; air, <span className="text-accent">done right.</span>
             </Heading>
           </motion.div>
 
@@ -72,14 +69,14 @@ export function Hero() {
             </Lead>
           </motion.div>
 
-          {/* Trust bullets */}
+          {/* Trust bullets — green checkmarks */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             transition={{ ...transition, delay: 0.55 }}
           >
-            <Cluster gap="lg" className="text-sm text-white/70">
+            <Cluster gap="lg" className="text-sm text-white/80">
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="text-accent size-4" />
                 Upfront quotes
@@ -95,7 +92,7 @@ export function Hero() {
             </Cluster>
           </motion.div>
 
-          {/* CTA pair */}
+          {/* CTAs — green quote button + red phone button (matching collateral) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -105,13 +102,13 @@ export function Hero() {
             <Cluster gap="md" justify="center" className="mt-4">
               <Link
                 href="/contact"
-                className="bg-accent inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-bold text-white transition-all hover:scale-105 hover:opacity-90"
+                className="bg-accent inline-flex items-center gap-2 rounded-lg px-8 py-4 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
               >
                 Get a Free Quote
               </Link>
               <a
                 href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-8 py-4 text-sm font-bold text-white transition-all hover:scale-105 hover:border-white/60"
+                className="bg-destructive inline-flex items-center gap-2 rounded-lg px-8 py-4 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
               >
                 <Phone className="size-4" />
                 {siteConfig.phone}

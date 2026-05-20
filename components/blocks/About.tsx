@@ -52,7 +52,7 @@ export function About() {
         </Container>
       </Section>
 
-      {/* 24/7 CTA Strip */}
+      {/* 24/7 CTA Strip — green quote + red phone (brand pattern) */}
       <Section spacing="md" className="bg-primary text-primary-foreground">
         <Container size="xl">
           <FadeUp>
@@ -66,14 +66,14 @@ export function About() {
               <div className="flex flex-col items-center gap-3 sm:flex-row">
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                  className="bg-accent inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-bold text-white transition-all hover:scale-105 hover:opacity-90"
+                  className="bg-destructive inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold text-white transition-all hover:scale-105 hover:brightness-110"
                 >
                   <Phone className="size-5" />
                   {siteConfig.phone}
                 </a>
                 <Link
                   href="/contact"
-                  className="border-primary-foreground/30 text-primary-foreground hover:border-primary-foreground/60 inline-flex items-center rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-all hover:scale-105"
+                  className="bg-accent inline-flex items-center rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
                 >
                   Request a Quote
                 </Link>

@@ -22,13 +22,13 @@ export function ServiceCTA({
           <div className="flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="bg-accent inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              className="bg-accent inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
             >
               Request a Free Quote
             </Link>
             <a
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="border-primary-foreground/30 text-primary-foreground hover:border-primary-foreground/60 inline-flex items-center gap-2 rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-colors"
+              className="bg-destructive inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
             >
               <Phone className="size-5" />
               {siteConfig.phone}
