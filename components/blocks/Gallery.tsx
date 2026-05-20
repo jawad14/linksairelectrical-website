@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H2, Lead } from '@/components/ui/typography';
+import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const galleryImages = [
   { src: '/images/gallery/gallery1.jpg', alt: 'Air conditioning installation' },
@@ -16,26 +19,30 @@ export function Gallery() {
     <Section spacing="lg" className="bg-muted/40">
       <Container size="xl">
         <Stack gap="xl" align="center">
-          <Stack gap="sm" align="center" className="text-center">
-            <H2>Our Recent Work</H2>
-            <Lead className="max-w-xl">
-              A selection of projects across Brisbane and Gold Coast.
-            </Lead>
-          </Stack>
+          <FadeUp>
+            <Stack gap="sm" align="center" className="text-center">
+              <H2>Our Recent Work</H2>
+              <Lead className="max-w-xl">
+                A selection of projects across Brisbane and Gold Coast.
+              </Lead>
+            </Stack>
+          </FadeUp>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <StaggerGroup className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
             {galleryImages.map((img) => (
-              <div key={img.src} className="group relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="bg-primary/0 group-hover:bg-primary/30 absolute inset-0 transition-colors" />
-              </div>
+              <StaggerItem key={img.src}>
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="bg-primary/0 group-hover:bg-primary/30 absolute inset-0 transition-colors" />
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </Stack>
       </Container>
     </Section>

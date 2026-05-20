@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H2, Lead, P } from '@/components/ui/typography';
+import { FadeUp, StaggerGroup, StaggerItem, motion } from '@/components/ui/motion';
+import { AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
@@ -37,34 +39,50 @@ export function FAQ() {
     <Section spacing="lg">
       <Container size="md">
         <Stack gap="xl" align="center">
-          <Stack gap="sm" align="center" className="text-center">
-            <H2>Frequently Asked Questions</H2>
-            <Lead>Got questions? We&apos;ve got answers.</Lead>
-          </Stack>
+          <FadeUp>
+            <Stack gap="sm" align="center" className="text-center">
+              <H2>Frequently Asked Questions</H2>
+              <Lead>Got questions? We&apos;ve got answers.</Lead>
+            </Stack>
+          </FadeUp>
 
-          <Stack gap="sm" className="w-full">
-            {faqs.map((faq, index) => (
-              <div key={faq.question} className="border-border bg-card rounded-lg border">
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="text-foreground hover:text-accent flex w-full items-center justify-between px-5 py-4 text-left text-sm font-semibold transition-colors"
-                >
-                  {faq.question}
-                  <ChevronDown
-                    className={`text-muted-foreground size-5 shrink-0 transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openIndex === index && (
-                  <div className="border-border border-t px-5 py-4">
-                    <P variant="muted">{faq.answer}</P>
+          <StaggerGroup className="w-full" slow>
+            <Stack gap="sm" className="w-full">
+              {faqs.map((faq, index) => (
+                <StaggerItem key={faq.question}>
+                  <div className="border-border bg-card overflow-hidden rounded-lg border transition-shadow hover:shadow-sm">
+                    <button
+                      type="button"
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="text-foreground hover:text-accent flex w-full items-center justify-between px-5 py-4 text-left text-sm font-semibold transition-colors"
+                    >
+                      {faq.question}
+                      <motion.div
+                        animate={{ rotate: openIndex === index ? 180 : 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <ChevronDown className="text-muted-foreground size-5 shrink-0" />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {openIndex === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] as const }}
+                        >
+                          <div className="border-border border-t px-5 py-4">
+                            <P variant="muted">{faq.answer}</P>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                )}
-              </div>
-            ))}
-          </Stack>
+                </StaggerItem>
+              ))}
+            </Stack>
+          </StaggerGroup>
         </Stack>
       </Container>
     </Section>

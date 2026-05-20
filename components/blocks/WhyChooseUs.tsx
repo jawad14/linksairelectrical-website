@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import { ShieldCheck, Clock, DollarSign, CheckCircle, MessageCircle, Award } from 'lucide-react';
 import { Container, Section, Grid, Stack } from '@/components/ui/layout';
 import { H2, H3, P, Lead } from '@/components/ui/typography';
+import { FadeUp, SlideLeft, SlideRight, StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const reasons = [
   {
@@ -43,39 +46,47 @@ export function WhyChooseUs() {
       <Container size="xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — text + reasons grid */}
-          <Stack gap="xl">
-            <Stack gap="sm">
-              <H2>Why Choose Us?</H2>
-              <Lead>Your trusted local experts delivering outstanding quality workmanship.</Lead>
-            </Stack>
+          <SlideLeft>
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <H2>Why Choose Us?</H2>
+                <Lead>Your trusted local experts delivering outstanding quality workmanship.</Lead>
+              </Stack>
 
-            <Grid cols={2} gap="md">
-              {reasons.map((reason) => {
-                const Icon = reason.icon;
-                return (
-                  <Stack key={reason.title} gap="xs">
-                    <div className="flex items-center gap-2">
-                      <Icon className="text-accent size-5" />
-                      <H3 className="text-base">{reason.title}</H3>
-                    </div>
-                    <P variant="muted" className="text-sm">
-                      {reason.description}
-                    </P>
-                  </Stack>
-                );
-              })}
-            </Grid>
-          </Stack>
+              <StaggerGroup slow>
+                <Grid cols={2} gap="md">
+                  {reasons.map((reason) => {
+                    const Icon = reason.icon;
+                    return (
+                      <StaggerItem key={reason.title}>
+                        <Stack gap="xs">
+                          <div className="flex items-center gap-2">
+                            <Icon className="text-accent size-5" />
+                            <H3 className="text-base">{reason.title}</H3>
+                          </div>
+                          <P variant="muted" className="text-sm">
+                            {reason.description}
+                          </P>
+                        </Stack>
+                      </StaggerItem>
+                    );
+                  })}
+                </Grid>
+              </StaggerGroup>
+            </Stack>
+          </SlideLeft>
 
           {/* Right — image */}
-          <div className="relative aspect-square overflow-hidden rounded-xl shadow-lg max-lg:hidden">
-            <Image
-              src="/images/hero/hero-4.png"
-              alt="Professional electrical and AC work"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <SlideRight className="max-lg:hidden">
+            <div className="relative aspect-square overflow-hidden rounded-xl shadow-lg">
+              <Image
+                src="/images/hero/hero-4.png"
+                alt="Professional electrical and AC work"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </SlideRight>
         </div>
       </Container>
     </Section>

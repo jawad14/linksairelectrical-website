@@ -1,5 +1,8 @@
+'use client';
+
 import { Clock, Shield, ThumbsUp, Wrench, Star, Ban } from 'lucide-react';
 import { Container, Section } from '@/components/ui/layout';
+import { StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const stats = [
   { icon: Clock, label: '7+ Years Experience' },
@@ -14,17 +17,19 @@ export function TrustStats() {
   return (
     <Section spacing="sm" className="border-border/60 border-y bg-white">
       <Container size="xl">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <StaggerGroup className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.label} className="flex items-center gap-3 py-2">
-                <Icon className="text-accent size-5 shrink-0" />
-                <span className="text-foreground text-sm font-medium">{stat.label}</span>
-              </div>
+              <StaggerItem key={stat.label}>
+                <div className="flex items-center gap-3 py-2">
+                  <Icon className="text-accent size-5 shrink-0" />
+                  <span className="text-foreground text-sm font-medium">{stat.label}</span>
+                </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerGroup>
       </Container>
     </Section>
   );

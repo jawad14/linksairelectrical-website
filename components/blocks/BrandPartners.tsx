@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import { Container, Section } from '@/components/ui/layout';
+import { FadeIn } from '@/components/ui/motion';
 
 const brands = [
   { name: 'Daikin', src: '/images/brands/daikin.webp' },
@@ -15,18 +18,20 @@ export function BrandPartners() {
   return (
     <Section spacing="sm" className="border-border/60 border-y bg-white">
       <Container size="xl">
-        <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14">
-          {brands.map((brand) => (
-            <Image
-              key={brand.name}
-              src={brand.src}
-              alt={brand.name}
-              width={100}
-              height={48}
-              className="h-8 w-auto object-contain opacity-50 transition-opacity hover:opacity-100 sm:h-10"
-            />
-          ))}
-        </div>
+        <FadeIn>
+          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14">
+            {brands.map((brand) => (
+              <Image
+                key={brand.name}
+                src={brand.src}
+                alt={brand.name}
+                width={100}
+                height={48}
+                className="h-8 w-auto object-contain opacity-50 transition-all duration-300 hover:scale-110 hover:opacity-100 sm:h-10"
+              />
+            ))}
+          </div>
+        </FadeIn>
       </Container>
     </Section>
   );
