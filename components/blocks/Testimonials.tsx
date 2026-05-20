@@ -3,7 +3,9 @@
 import { Star } from 'lucide-react';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H2, H3, P } from '@/components/ui/typography';
-import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
+import { FadeUp } from '@/components/ui/motion';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 const reviews = [
   {
@@ -30,6 +32,18 @@ const reviews = [
     name: 'Vinc Menn',
     text: 'Very professional team a wonderful job was done thanks.',
   },
+  {
+    name: 'Dmitry',
+    text: "I'm very happy with Links. Needed a power outlet. The job was well done. Thanks.",
+  },
+  {
+    name: 'Yann',
+    text: 'Good service.',
+  },
+  {
+    name: 'Sibi Varghese',
+    text: 'Excellent Service and highly recommended.',
+  },
 ];
 
 export function Testimonials() {
@@ -44,13 +58,35 @@ export function Testimonials() {
             </Stack>
           </FadeUp>
 
-          <StaggerGroup className="w-full" slow>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <FadeUp className="w-full">
+            <Splide
+              options={{
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                gap: '1.5rem',
+                autoplay: true,
+                interval: 4000,
+                pauseOnHover: true,
+                speed: 600,
+                arrows: true,
+                pagination: false,
+                breakpoints: {
+                  640: { perPage: 1 },
+                  1024: { perPage: 2 },
+                },
+              }}
+              aria-label="Customer testimonials"
+              className="testimonial-slider"
+            >
               {reviews.map((review) => (
-                <StaggerItem key={review.name}>
-                  <Stack gap="sm" className="border-border bg-card rounded-xl border p-6 shadow-sm">
+                <SplideSlide key={review.name}>
+                  <Stack
+                    gap="sm"
+                    className="border-border bg-card h-full rounded-xl border p-6 shadow-sm"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className="bg-primary text-primary-foreground flex size-10 items-center justify-center rounded-full text-sm font-bold">
+                      <div className="bg-primary text-primary-foreground flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-bold">
                         {review.name.charAt(0)}
                       </div>
                       <Stack gap="xs">
@@ -66,10 +102,10 @@ export function Testimonials() {
                       {review.text}
                     </P>
                   </Stack>
-                </StaggerItem>
+                </SplideSlide>
               ))}
-            </div>
-          </StaggerGroup>
+            </Splide>
+          </FadeUp>
 
           <FadeUp>
             <a
@@ -83,6 +119,41 @@ export function Testimonials() {
           </FadeUp>
         </Stack>
       </Container>
+
+      {/* Arrow styling */}
+      <style jsx global>{`
+        .testimonial-slider .splide__arrow {
+          background: var(--color-primary);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          opacity: 1;
+          transition: all 0.3s;
+        }
+        .testimonial-slider .splide__arrow:hover {
+          opacity: 0.8;
+        }
+        .testimonial-slider .splide__arrow svg {
+          fill: white;
+          width: 18px;
+          height: 18px;
+        }
+        .testimonial-slider .splide__arrow--prev {
+          left: -0.5rem;
+        }
+        .testimonial-slider .splide__arrow--next {
+          right: -0.5rem;
+        }
+        @media (min-width: 640px) {
+          .testimonial-slider .splide__arrow--prev {
+            left: -1.25rem;
+          }
+          .testimonial-slider .splide__arrow--next {
+            right: -1.25rem;
+          }
+        }
+      `}</style>
     </Section>
   );
 }

@@ -54,22 +54,22 @@ export function About() {
       <Section spacing="md" className="bg-primary text-primary-foreground">
         <Container size="xl">
           <FadeUp>
-            <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
-              <H2 className="text-primary-foreground">
+            <div className="flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-between lg:text-left">
+              <H2 className="text-primary-foreground lg:max-w-2xl">
                 We&apos;re On Call 24/7 to React Promptly to Your Service Needs, Don&apos;t Hesitate
                 to Call
               </H2>
-              <div className="flex flex-col items-center gap-3 sm:flex-row">
+              <div className="flex shrink-0 flex-col items-center gap-3 sm:flex-row">
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                  className="bg-destructive inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold text-white transition-all hover:scale-105 hover:brightness-110"
+                  className="bg-destructive inline-flex shrink-0 items-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold whitespace-nowrap text-white transition-all hover:scale-105 hover:brightness-110"
                 >
                   <Phone className="size-5" />
                   {siteConfig.phone}
                 </a>
                 <Link
                   href="/contact"
-                  className="bg-accent inline-flex items-center rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
+                  className="bg-accent inline-flex shrink-0 items-center rounded-lg px-7 py-3.5 text-sm font-bold whitespace-nowrap text-white transition-all hover:scale-105 hover:brightness-110"
                 >
                   Get a Free Quote
                 </Link>
