@@ -90,13 +90,14 @@ export function Hero() {
           speed: 800,
           arrows: true,
           pagination: false,
+          heightRatio: 0,
         }}
         aria-label="Hero slider"
         className="hero-slider"
       >
         {slides.map((slide) => (
           <SplideSlide key={slide.headline}>
-            <div className="relative">
+            <div className="relative h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px] xl:h-[600px]">
               {/* Background image */}
               <div className="absolute inset-0">
                 <Image
@@ -112,7 +113,7 @@ export function Hero() {
               {/* Content — padded away from arrow edges */}
               <Container
                 size="xl"
-                className="relative z-10 px-10 py-14 sm:px-14 sm:py-20 md:py-24 lg:px-16 lg:py-28 xl:py-32"
+                className="relative z-10 flex h-full items-center px-10 sm:px-14 lg:px-16"
               >
                 <Stack gap="sm" className="sm:gap-md max-w-2xl">
                   {/* Google reviews badge */}
@@ -194,8 +195,15 @@ export function Hero() {
         ))}
       </Splide>
 
-      {/* Custom arrow styling — positioned outside content area */}
+      {/* Custom arrow styling */}
       <style jsx global>{`
+        .hero-slider,
+        .hero-slider .splide__track,
+        .hero-slider .splide__list,
+        .hero-slider .splide__slide {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
         .hero-slider .splide__arrow {
           background: rgba(255, 255, 255, 0.15);
           border: none;
