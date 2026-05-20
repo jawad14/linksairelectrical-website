@@ -43,14 +43,13 @@ export function WhyChooseUs() {
           </SlideLeft>
 
           <SlideRight className="max-lg:hidden">
-            <div className="relative aspect-square overflow-hidden rounded-xl shadow-lg">
-              <Image
-                src="/images/why-choose-1.png"
-                alt="Links Air & Electrical professional service"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <Image
+              src="/images/why-choose-1.png"
+              alt="Links Air & Electrical professional service"
+              width={1050}
+              height={581}
+              className="rounded-xl shadow-lg"
+            />
           </SlideRight>
         </div>
       </Container>
