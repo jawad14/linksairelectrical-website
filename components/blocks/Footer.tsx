@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
 import { Container, Section, Stack, Grid } from '@/components/ui/layout';
 import { H3, P, Small } from '@/components/ui/typography';
@@ -60,12 +59,11 @@ export function Footer() {
           <Grid cols={4} gap="lg">
             {/* Brand column */}
             <Stack gap="md" className="sm:col-span-2 lg:col-span-1">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/logo.png"
                 alt={siteConfig.name}
-                width={213}
-                height={68}
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto max-w-fit brightness-0 invert"
               />
               <P className="text-primary-foreground/70 text-sm">
                 Links Air &amp; Electrical is a leading name when it comes to 360-degree
