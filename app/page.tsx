@@ -7,7 +7,7 @@ import { Testimonials } from '@/components/blocks/Testimonials';
 import { PromoBanner } from '@/components/blocks/PromoBanner';
 import { AppointmentForm } from '@/components/blocks/AppointmentForm';
 import { Gallery } from '@/components/blocks/Gallery';
-import { TrustedExperts } from '@/components/blocks/TrustedExperts';
+import { TrustedExperts, OneTeam } from '@/components/blocks/TrustedExperts';
 import { WhyChooseUs } from '@/components/blocks/WhyChooseUs';
 import { ServicesTables } from '@/components/blocks/ServicesTables';
 import { CustomersAndAreas } from '@/components/blocks/CustomersAndAreas';
@@ -70,8 +70,10 @@ export default function HomePage() {
         <AppointmentForm />
         {/* 8. "Our Featured Works" gallery */}
         <Gallery />
-        {/* 8. "Your Trusted Local Experts" + "One Team" with service icons */}
+        {/* 8. "Your Trusted Local Experts" — text + image */}
         <TrustedExperts />
+        {/* 9. "One Team" — dark bg + What We Do image cards */}
+        <OneTeam />
         {/* 9. "Why Choose Links Air" with checklist */}
         <WhyChooseUs />
         {/* 10. Electrical services table + AC services + Combined + "What Makes Us Different" */}
