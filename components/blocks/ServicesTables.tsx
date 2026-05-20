@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { Container, Section, Grid, Stack } from '@/components/ui/layout';
 import { H2, H3, P, Lead } from '@/components/ui/typography';
-import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
+import { FadeUp, SlideLeft, SlideRight, StaggerGroup, StaggerItem } from '@/components/ui/motion';
 
 const electricalServices = [
   { service: 'Power point installation', desc: 'Add or upgrade outlets in any room' },
@@ -84,11 +85,11 @@ export function ServicesTables() {
         </Container>
       </Section>
 
-      {/* AC Services */}
+      {/* AC Services — text left, image right */}
       <Section spacing="lg">
         <Container size="xl">
-          <div className="grid items-start gap-12 lg:grid-cols-2">
-            <FadeUp>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <SlideLeft>
               <Stack gap="lg">
                 <H2>Air Conditioning Installation &amp; Servicing</H2>
                 <P>
@@ -109,37 +110,52 @@ export function ServicesTables() {
                   it running smoothly.
                 </P>
               </Stack>
-            </FadeUp>
+            </SlideLeft>
 
-            <FadeUp delay={0.15}>
-              <Stack gap="lg">
-                <H2>Electrical and Air Conditioning in One</H2>
-                <P>
-                  Most homes need both electrical and air conditioning services at some point.
-                  Instead of calling multiple trades, Links Air makes it easy — we do both.
-                </P>
-                <div className="border-border bg-card overflow-hidden rounded-xl border">
-                  <div className="bg-secondary text-secondary-foreground grid grid-cols-2 px-5 py-3 text-sm font-bold">
-                    <span>Need This Done?</span>
-                    <span>We Can Help!</span>
-                  </div>
-                  {combinedServices.map((item, i) => (
-                    <div
-                      key={item.need}
-                      className={`grid grid-cols-2 px-5 py-3 text-sm ${i % 2 === 0 ? '' : 'bg-muted/30'}`}
-                    >
-                      <span className="text-foreground font-medium">{item.need}</span>
-                      <span className="text-muted-foreground">{item.help}</span>
-                    </div>
-                  ))}
-                </div>
-                <P variant="muted">
-                  We save you time and money by offering both electrical and air conditioning work
-                  in one visit.
-                </P>
-              </Stack>
-            </FadeUp>
+            <SlideRight className="max-lg:hidden">
+              <Image
+                src="/images/hero/hero-3.png"
+                alt="Air conditioning installation"
+                width={1050}
+                height={581}
+                className="rounded-xl shadow-lg"
+              />
+            </SlideRight>
           </div>
+        </Container>
+      </Section>
+
+      {/* Combined Services — no image, full width */}
+      <Section spacing="lg" className="bg-muted/40">
+        <Container size="md">
+          <FadeUp>
+            <Stack gap="lg">
+              <H2>Electrical and Air Conditioning in One</H2>
+              <P>
+                Most homes need both electrical and air conditioning services at some point. Instead
+                of calling multiple trades, Links Air makes it easy — we do both.
+              </P>
+              <div className="border-border bg-card overflow-hidden rounded-xl border">
+                <div className="bg-secondary text-secondary-foreground grid grid-cols-2 px-5 py-3 text-sm font-bold">
+                  <span>Need This Done?</span>
+                  <span>We Can Help!</span>
+                </div>
+                {combinedServices.map((item, i) => (
+                  <div
+                    key={item.need}
+                    className={`grid grid-cols-2 px-5 py-3 text-sm ${i % 2 === 0 ? '' : 'bg-muted/30'}`}
+                  >
+                    <span className="text-foreground font-medium">{item.need}</span>
+                    <span className="text-muted-foreground">{item.help}</span>
+                  </div>
+                ))}
+              </div>
+              <P variant="muted">
+                We save you time and money by offering both electrical and air conditioning work in
+                one visit.
+              </P>
+            </Stack>
+          </FadeUp>
         </Container>
       </Section>
 
