@@ -6,6 +6,7 @@ import { TrustStats } from '@/components/blocks/TrustStats';
 import { About } from '@/components/blocks/About';
 import { Testimonials } from '@/components/blocks/Testimonials';
 import { PromoBanner } from '@/components/blocks/PromoBanner';
+import { AppointmentForm } from '@/components/blocks/AppointmentForm';
 import { Gallery } from '@/components/blocks/Gallery';
 import { TrustedExperts } from '@/components/blocks/TrustedExperts';
 import { WhyChooseUs } from '@/components/blocks/WhyChooseUs';
@@ -68,7 +69,9 @@ export default function HomePage() {
         <Testimonials />
         {/* 6. "20% OFF" promo banner */}
         <PromoBanner />
-        {/* 7. "Our Featured Works" gallery */}
+        {/* 7. Schedule an Appointment form */}
+        <AppointmentForm />
+        {/* 8. "Our Featured Works" gallery */}
         <Gallery />
         {/* 8. "Your Trusted Local Experts" + "One Team" with service icons */}
         <TrustedExperts />
