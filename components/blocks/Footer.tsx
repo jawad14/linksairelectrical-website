@@ -10,17 +10,17 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Air Conditioning', href: '/services/air-conditioning' },
   { label: 'Electrical Services', href: '/services/electrical' },
-  { label: 'Building & Construction', href: '/services/building-construction' },
+  { label: 'Builder Services', href: '/services/builder' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
 const serviceLinks = [
   { label: 'Split System AC', href: '/services/air-conditioning/split-system' },
   { label: 'Ducted AC', href: '/services/air-conditioning/ducted' },
+  { label: 'VRV/VRF Systems', href: '/services/air-conditioning/vrv-vrf' },
   { label: 'AC Repairs', href: '/services/air-conditioning/repair-installation' },
-  { label: 'EV Charger Installation', href: '/services/electrical/ev-charger' },
-  { label: 'CCTV Installation', href: '/services/electrical/cctv' },
   { label: 'Residential Electrician', href: '/services/electrical/residential' },
+  { label: 'General Maintenance', href: '/services/electrical/maintenance' },
 ];
 
 export function Footer() {

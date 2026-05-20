@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/blocks/Header';
 import { Hero } from '@/components/blocks/Hero';
-import { Services } from '@/components/blocks/Services';
 import { TrustStats } from '@/components/blocks/TrustStats';
+import { Services } from '@/components/blocks/Services';
 import { About } from '@/components/blocks/About';
-import { Gallery } from '@/components/blocks/Gallery';
 import { WhyChooseUs } from '@/components/blocks/WhyChooseUs';
+import { Gallery } from '@/components/blocks/Gallery';
 import { BrandPartners } from '@/components/blocks/BrandPartners';
 import { FAQ } from '@/components/blocks/FAQ';
 import { Footer } from '@/components/blocks/Footer';
@@ -15,7 +15,7 @@ import { siteConfig } from '@/config/site.config';
 export const metadata: Metadata = {
   title: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
   description:
-    'Links Air & Electrical provides professional air conditioning and electrical services across Brisbane & Gold Coast. Split systems, ducted AC, repairs, EV chargers, and more. 200+ 5-star Google reviews. Call 1300 010 393.',
+    'Links Air & Electrical provides professional air conditioning and electrical services across Brisbane & Gold Coast. Split systems, ducted AC, repairs, EV chargers, and more. 200+ 5-star Google reviews. Call 0468 432 538.',
   alternates: {
     canonical: siteConfig.url,
   },
@@ -51,15 +51,25 @@ export default function HomePage() {
     <>
       <Header />
       <main>
+        {/* DARK: Hero — full-width gradient with centered headline */}
         <Hero />
-        <Services />
+        {/* LIGHT: Trust indicators strip */}
         <TrustStats />
+        {/* LIGHT/MUTED: Service cards with dark overlays */}
+        <Services />
+        {/* LIGHT: About — two-column image + text */}
+        {/* DARK: 24/7 CTA strip */}
         <About />
-        <Gallery />
+        {/* LIGHT: Why choose us — two-column with image */}
         <WhyChooseUs />
+        {/* MUTED: Gallery grid */}
+        <Gallery />
+        {/* LIGHT: Brand logos strip */}
         <BrandPartners />
+        {/* LIGHT: FAQ accordion */}
         <FAQ />
       </main>
+      {/* DARK: Footer */}
       <Footer />
 
       {/* LocalBusiness schema */}
@@ -158,7 +168,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* WebSite schema with search action */}
+      {/* WebSite schema */}
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -167,9 +177,7 @@ export default function HomePage() {
           name: siteConfig.name,
           url: siteConfig.url,
           description: siteConfig.description,
-          publisher: {
-            '@id': `${siteConfig.url}/#business`,
-          },
+          publisher: { '@id': `${siteConfig.url}/#business` },
         }}
       />
 
@@ -181,10 +189,7 @@ export default function HomePage() {
           mainEntity: faqItems.map((item) => ({
             '@type': 'Question',
             name: item.question,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.answer,
-            },
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
           })),
         }}
       />

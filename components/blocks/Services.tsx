@@ -1,70 +1,82 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Wind, Zap, HardHat } from 'lucide-react';
 import { Container, Section, Grid, Stack } from '@/components/ui/layout';
 import { H2, H3, P, Lead } from '@/components/ui/typography';
 
 const services = [
   {
-    title: 'Air Conditioning Services',
+    title: 'Air Conditioning',
     description:
-      'From split systems to ducted AC, we handle installation, repairs, and maintenance for all major brands across Brisbane and Gold Coast.',
+      'Split systems, ducted AC, VRV/VRF — installation, repairs, and maintenance for all major brands.',
     image: '/images/services/airconditioning.jpg',
     href: '/services/air-conditioning',
+    icon: Wind,
   },
   {
-    title: 'Electrical Services',
+    title: 'Electrical',
     description:
-      'Professional electrical services including lighting, switchboard upgrades, EV chargers, CCTV installation, and emergency repairs.',
+      'Lighting, switchboards, EV chargers, CCTV, data cabling, and emergency repairs by licensed electricians.',
     image: '/images/services/electrical.jpg',
     href: '/services/electrical',
+    icon: Zap,
   },
   {
     title: 'Building & Construction',
     description:
-      'Complete electrical and air conditioning solutions for new builds, renovations, and full house fit-outs.',
+      'Complete electrical and air conditioning fit-outs for new builds, renovations, and commercial projects.',
     image: '/images/services/construction.jpg',
     href: '/services/building-construction',
+    icon: HardHat,
   },
 ];
 
 export function Services() {
   return (
-    <Section spacing="lg">
+    <Section spacing="lg" className="bg-muted/40">
       <Container size="xl">
         <Stack gap="xl" align="center">
           <Stack gap="sm" align="center" className="text-center">
             <H2>What We Can Offer You</H2>
             <Lead className="max-w-2xl">
-              Comprehensive air conditioning, electrical, and construction services delivered by
-              licensed professionals.
+              Comprehensive solutions for residential and commercial properties across Brisbane and
+              Gold Coast.
             </Lead>
           </Stack>
 
           <Grid cols={3} gap="lg">
-            {services.map((service) => (
-              <Link
-                key={service.title}
-                href={service.href}
-                className="group border-border bg-card overflow-hidden rounded-xl border shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="group relative overflow-hidden rounded-xl"
+                >
+                  {/* Background image */}
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
-                <Stack gap="sm" className="p-6">
-                  <H3 className="group-hover:text-accent transition-colors">{service.title}</H3>
-                  <P variant="muted">{service.description}</P>
-                  <span className="text-accent inline-flex items-center gap-1 text-sm font-semibold">
-                    Read More <ArrowRight className="size-4" />
-                  </span>
-                </Stack>
-              </Link>
-            ))}
+                  {/* Dark overlay */}
+                  <div className="from-primary/95 via-primary/70 to-primary/40 group-hover:from-primary/98 absolute inset-0 bg-gradient-to-t transition-colors" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex min-h-[320px] flex-col justify-end p-8">
+                    <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-white/10">
+                      <Icon className="text-accent size-6" />
+                    </div>
+                    <H3 className="mb-2 text-white">{service.title}</H3>
+                    <P className="mb-4 text-sm text-white/70">{service.description}</P>
+                    <span className="text-accent inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-1">
+                      Learn More <ArrowRight className="size-4" />
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </Grid>
         </Stack>
       </Container>

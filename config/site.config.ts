@@ -67,10 +67,12 @@ export const siteConfig: SiteConfig = {
       href: '/services/air-conditioning',
       children: [
         { label: 'Split System Aircon', href: '/services/air-conditioning/split-system' },
-        { label: 'Ducted AC', href: '/services/air-conditioning/ducted' },
-        { label: 'VRV/VRF AC', href: '/services/air-conditioning/vrv-vrf' },
+        { label: 'Ducted Air Conditioning', href: '/services/air-conditioning/ducted' },
+        { label: 'VRV/VRF Air Conditioning', href: '/services/air-conditioning/vrv-vrf' },
+        { label: 'Design & Construction', href: '/services/air-conditioning/design-construction' },
         { label: 'Repair & Installation', href: '/services/air-conditioning/repair-installation' },
         { label: 'Service & Maintenance', href: '/services/air-conditioning/service-maintenance' },
+        { label: 'AC FAQ', href: '/services/air-conditioning/faq' },
       ],
     },
     {
@@ -79,11 +81,9 @@ export const siteConfig: SiteConfig = {
       children: [
         { label: 'Residential Electrician', href: '/services/electrical/residential' },
         { label: 'General Maintenance', href: '/services/electrical/maintenance' },
-        { label: 'CCTV Installation', href: '/services/electrical/cctv' },
-        { label: 'EV Charger Installation', href: '/services/electrical/ev-charger' },
       ],
     },
-    { label: 'Building & Construction', href: '/services/building-construction' },
+    { label: 'Builder Services', href: '/services/builder' },
     { label: 'Contact', href: '/contact' },
   ],
   social: [

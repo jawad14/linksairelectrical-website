@@ -9,39 +9,30 @@ const galleryImages = [
   { src: '/images/gallery/gallery4.jpg', alt: 'Electrical work' },
   { src: '/images/gallery/ev-charger.png', alt: 'EV charger installation' },
   { src: '/images/gallery/cooktop.png', alt: 'Cooktop installation' },
-  { src: '/images/gallery/daikin-ducted.webp', alt: 'Daikin ducted system' },
-  { src: '/images/gallery/samsung-ducted.webp', alt: 'Samsung ducted outdoor unit' },
 ];
 
 export function Gallery() {
   return (
-    <Section spacing="lg">
+    <Section spacing="lg" className="bg-muted/40">
       <Container size="xl">
         <Stack gap="xl" align="center">
           <Stack gap="sm" align="center" className="text-center">
             <H2>Our Recent Work</H2>
-            <Lead className="max-w-2xl">
-              Browse our portfolio of air conditioning and electrical projects across Brisbane and
-              Gold Coast.
+            <Lead className="max-w-xl">
+              A selection of projects across Brisbane and Gold Coast.
             </Lead>
           </Stack>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {galleryImages.map((img) => (
-              <div
-                key={img.src}
-                className="group relative aspect-square overflow-hidden rounded-lg"
-              >
+              <div key={img.src} className="group relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="bg-primary/0 group-hover:bg-primary/40 absolute inset-0 transition-colors" />
-                <div className="absolute inset-0 flex items-end p-3 opacity-0 transition-opacity group-hover:opacity-100">
-                  <span className="text-xs font-medium text-white">{img.alt}</span>
-                </div>
+                <div className="bg-primary/0 group-hover:bg-primary/30 absolute inset-0 transition-colors" />
               </div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { Container, Section, Stack } from '@/components/ui/layout';
-import { H2 } from '@/components/ui/typography';
+import { Container, Section } from '@/components/ui/layout';
 
 const brands = [
   { name: 'Daikin', src: '/images/brands/daikin.webp' },
@@ -10,32 +9,24 @@ const brands = [
   { name: 'ActronAir', src: '/images/brands/actronair.png' },
   { name: 'Hisense', src: '/images/brands/hisense.webp' },
   { name: 'TECO', src: '/images/brands/teco.webp' },
-  { name: 'Mitsubishi Electric', src: '/images/brands/mitsubishi-electric.png' },
 ];
 
 export function BrandPartners() {
   return (
-    <Section spacing="md">
+    <Section spacing="sm" className="border-border/60 border-y bg-white">
       <Container size="xl">
-        <Stack gap="lg" align="center">
-          <H2 className="text-center">Brands We Service &amp; Install</H2>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-            {brands.map((brand) => (
-              <div
-                key={brand.name}
-                className="flex items-center justify-center grayscale transition-all hover:grayscale-0"
-              >
-                <Image
-                  src={brand.src}
-                  alt={brand.name}
-                  width={120}
-                  height={60}
-                  className="h-10 w-auto object-contain sm:h-12"
-                />
-              </div>
-            ))}
-          </div>
-        </Stack>
+        <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14">
+          {brands.map((brand) => (
+            <Image
+              key={brand.name}
+              src={brand.src}
+              alt={brand.name}
+              width={100}
+              height={48}
+              className="h-8 w-auto object-contain opacity-50 transition-opacity hover:opacity-100 sm:h-10"
+            />
+          ))}
+        </div>
       </Container>
     </Section>
   );

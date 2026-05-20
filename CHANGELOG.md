@@ -4,7 +4,45 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## 2026-05-20
+## 2026-05-20 (Session 2)
+
+### Full Site Structure & Service Pages
+
+**Navigation updated** to match client content brief:
+- Air Conditioning: 7 sub-pages (split system, ducted, VRV/VRF, design & construction, repair, maintenance, FAQ)
+- Split System: 3 installation type sub-pages (back-to-back, side entry, up & over)
+- Electrical: 2 sub-categories (residential, general maintenance)
+- Builder Services: combined electrical + AC page
+
+**Reusable service page components created:**
+- `ServiceHero` — dark banner with breadcrumbs, title, description, CTA pair
+- `ServiceCTA` — dark section with heading, description, quote + phone buttons
+- `RelatedServices` — 3-column grid of linked service cards
+
+**15 service pages built:**
+- `/services/air-conditioning` — main landing with service grid
+- `/services/air-conditioning/split-system` — overview with 3 install types
+- `/services/air-conditioning/split-system/back-to-back` — standard install details + pricing
+- `/services/air-conditioning/split-system/side-entry` — side entry details + pricing
+- `/services/air-conditioning/split-system/up-and-over` — up & over details + pricing
+- `/services/air-conditioning/ducted` — ducted AC with AirTouch 5 zone controller
+- `/services/air-conditioning/vrv-vrf` — VRV/VRF systems for larger buildings
+- `/services/air-conditioning/design-construction` — AC design for new builds
+- `/services/air-conditioning/repair-installation` — repair & installation services
+- `/services/air-conditioning/service-maintenance` — servicing & maintenance
+- `/services/air-conditioning/faq` — 10-question FAQ accordion
+- `/services/electrical` — main electrical landing
+- `/services/electrical/residential` — 8 residential service cards
+- `/services/electrical/maintenance` — 8 maintenance service cards
+- `/services/builder` — builder services with 3-stage process
+
+**Content brief saved** to `content/pages/site-content-brief.md` for reference.
+
+**Footer updated** with correct service links matching new page structure.
+
+---
+
+## 2026-05-20 (Session 1)
 
 ### Project Setup & Homepage Build
 
@@ -28,6 +66,27 @@ All notable changes to this project will be documented in this file.
 - **Brand Partners** — logo row (Daikin, Mitsubishi, Fujitsu, Panasonic, ActronAir, Hisense, TECO)
 - **FAQ** — accordion with 5 Q&As
 - **Footer** — 4-column (brand, quick links, services, contact), license in copyright bar
+
+### Design Refinement — Jaric-Inspired Overhaul
+
+Restructured homepage to follow Jaric Group's design philosophy: cleaner, more minimal, professional with generous whitespace and dark/light section rhythm. Not a copy — adapted to Links Air branding and content.
+
+**Hero** — Changed from split two-column layout to centered headline (Jaric style). Light font weight on headline. Removed decorative circles. Phone CTA changed from red filled to white-bordered (one solid CTA + one outlined). Reviews badge made smaller/subtler.
+
+**Services** — Changed from white card-with-image to dark overlay cards (image background with gradient overlay, white text). Added service icons. More impactful, Jaric-inspired treatment.
+
+**Trust Stats** — Changed from full dark section with icon circles to a clean horizontal strip with small green icons + text. Less visual weight, more professional.
+
+**About** — Simplified copy. Changed CTA from green filled button to text link with arrow. 24/7 CTA strip changed from blue (`bg-secondary`) to dark (`bg-primary`) for dark/light rhythm.
+
+**Why Choose Us** — Changed from 3-column centered cards to two-column layout (text + reasons grid on left, image on right). More Jaric-like asymmetric layout.
+
+**Gallery** — Reduced from 8 to 6 images. Changed from 4-column to 3-column. Simplified hover effects. Changed aspect ratio from square to 4:3.
+
+**Brand Partners** — Changed from heading + grayscale logos to a clean border strip with faded logos (50% opacity, full on hover). More subtle/professional.
+
+**Section flow** — Reordered for proper dark/light alternation:
+`Hero (dark) → Stats (light strip) → Services (muted) → About (light) → CTA (dark) → Why Us (light) → Gallery (muted) → Brands (light strip) → FAQ (light) → Footer (dark)`
 
 **SEO Setup**
 - Page title: "Air Conditioning Service in Brisbane - Links Air & Electrical"
