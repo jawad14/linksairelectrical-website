@@ -1,41 +1,74 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Smartphone, Mail, MapPin } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 
 export function UtilityBar() {
   return (
     <div className="bg-[#0E1B2C] text-[13px] text-white/[0.78]">
-      <div className="mx-auto flex h-[44px] max-w-[1240px] items-center justify-between px-[clamp(20px,4vw,56px)] max-sm:h-auto max-sm:flex-col max-sm:items-start max-sm:gap-1.5 max-sm:py-2">
-        {/* Left: email + phones */}
-        <div className="flex items-center gap-6">
-          <Link
-            href={`mailto:${siteConfig.email}`}
-            className="inline-flex items-center gap-2 transition-colors hover:text-white max-[960px]:hidden"
-          >
-            <Mail className="h-3.5 w-3.5 opacity-70" />
-            {siteConfig.email}
-          </Link>
-          <Link
-            href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-            className="inline-flex items-center gap-2 transition-colors hover:text-white"
-          >
-            <Phone className="h-3.5 w-3.5 opacity-70" />
-            {siteConfig.phone}
-          </Link>
-          <Link
-            href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
-            className="inline-flex items-center gap-2 transition-colors hover:text-white max-[760px]:hidden"
-          >
-            <Phone className="h-3.5 w-3.5 opacity-70" />
-            {siteConfig.mobile}
-          </Link>
+      <div className="mx-auto max-w-[1240px] px-[clamp(16px,3vw,56px)]">
+        {/* Desktop: single row, left/right */}
+        <div className="hidden h-[44px] items-center justify-between sm:flex">
+          <div className="flex items-center gap-6">
+            <Link
+              href={`mailto:${siteConfig.email}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white max-md:hidden"
+            >
+              <Mail className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.email}
+            </Link>
+            <Link
+              href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Phone className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.phone}
+            </Link>
+            <Link
+              href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Smartphone className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.mobile}
+            </Link>
+          </div>
+          <span className="inline-flex items-center gap-2">
+            <MapPin className="h-3.5 w-3.5 opacity-70" />
+            brisbane and gold coast
+          </span>
         </div>
 
-        {/* Right: location */}
-        <span className="inline-flex items-center gap-2 max-sm:hidden">
-          <MapPin className="h-3.5 w-3.5 opacity-70" />
-          brisbane and gold coast
-        </span>
+        {/* Mobile: stacked two rows */}
+        <div className="flex flex-col gap-1.5 py-2.5 sm:hidden">
+          <div className="flex items-center justify-between">
+            <Link
+              href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Phone className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.phone}
+            </Link>
+            <Link
+              href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Smartphone className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.mobile}
+            </Link>
+          </div>
+          <div className="flex items-center justify-between">
+            <Link
+              href={`mailto:${siteConfig.email}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Mail className="h-3.5 w-3.5 opacity-70" />
+              {siteConfig.email}
+            </Link>
+            <span className="inline-flex items-center gap-1.5 text-[12px]">
+              <MapPin className="h-3 w-3 opacity-70" />
+              brisbane and gold coast
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

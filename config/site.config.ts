@@ -132,7 +132,6 @@ export const siteConfig: SiteConfig = {
         { label: 'Ipswich', href: '/areas/ipswich' },
       ],
     },
-    { label: 'Get a Quote', href: '/contact-us' },
   ],
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/LinksAirAndElectrical' },
