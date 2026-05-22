@@ -4,14 +4,29 @@ Rules and standards that must be followed across every page and component in thi
 
 ---
 
+## Two Reference Sites
+
+This project uses two reference websites. Both must be consulted when building pages:
+
+1. **https://linksairelectrical.com.au/** — the **ORIGINAL** live site. Use for:
+   - Navigation structure, page links, URLs (must match exactly)
+   - Phone numbers, email, service areas, all business data
+   - Section order and page structure
+2. **https://jaricgroup.com.au/** — the **DESIGN/CONTENT** reference. Use for:
+   - Section layout patterns, design approach
+   - Content style — how services, testimonials, CTAs, stats are presented
+   - **Always rephrase content for Links Air & Electrical — never copy verbatim**
+
+**Rule:** Structure/links/pages come from the original site. Content style comes from Jaric. Business data comes from `siteConfig`.
+
 ## Branding
 
-- **Colors must come from theme tokens.** Never hardcode hex values in components. Use `primary`, `secondary`, `accent`, `destructive` CSS variables via Tailwind classes (`bg-primary`, `text-accent`, etc.).
-- **Phone number: `0468 432 538`.** Always pull from `siteConfig.phone`. Never hardcode.
+- **Phone: `1300 010 393` (primary) / `0447 440 050` (mobile).** Always pull from `siteConfig.phone` and `siteConfig.mobile`. Never hardcode.
 - **License: `312045C` / ARC: `AU45821`.** Always pull from `siteConfig.license` and `siteConfig.arc`.
 - **Tagline: "Trusted Local Sparkies · A/C Specialists".** Pull from `siteConfig.tagline`.
-- **CTA color convention:** Red (`bg-destructive`) for phone/call buttons. Green (`bg-accent`) for quote/action buttons. Consistent across all pages.
-- **Logo:** Always use `next/image` with `/images/logo.png`. Never inline SVG or raw `<img>`.
+- **CTA color convention:** Red (`bg-[#E73438]`) for phone/call buttons and primary CTAs. Blue (`bg-[#2196D6]`) for secondary. Consistent across all pages.
+- **Logo:** Always use `next/image` with `/logo.jpg`. Never inline SVG or raw `<img>`.
+- **Fonts:** Poppins (headings via `font-heading`) + Inter (body via `font-sans`).
 
 ## SEO (every page)
 
@@ -45,23 +60,27 @@ Rules and standards that must be followed across every page and component in thi
 
 ## Homepage-Only vs Reusable Sections
 
-**Homepage-only** — these sections appear ONLY on the homepage (`app/page.tsx`):
-- `Hero` (slider)
-- `Services` ("What We Can Offer You" cards)
-- `TrustStats` (6 icon stats)
-- `About` (welcome + 24/7 CTA)
-- `Testimonials` (Google reviews)
-- `PromoBanner` (20% OFF)
-- `Gallery` ("Our Featured Works")
-- `WhyChooseUs`
-- `FAQ`
+**Homepage section order** (must match):
+1. `UtilityBar` — email, phone, mobile (left) | location (right)
+2. `Header` — logo + full mega-menu nav matching original site
+3. `Hero` — dark overlay hero, CTAs, service entry cards
+4. `TrustStats` — 6 trust icons
+5. `Services` — 3 main cards (AC, Electrical, Building)
+6. `WhyUs` — welcome/about company intro
+7. `Testimonials` — 3 reviews + Google link
+8. `PromoBanner` — 20% OFF red banner
+9. `Contact` — form + contact info + emergency CTA
+10. `About` — "Why Choose Links" checklist
+11. `Areas` — 6 service areas
+12. `CTABand` — final blue CTA
+13. `Footer` — brand, useful links, contact, social
 
 **Reusable across all pages:**
+- `UtilityBar` — every page
 - `Header` — every page
 - `Footer` — every page
-- `BrandPartners` — homepage + optionally on AC service pages
 
-**Inner/service pages should NOT include** homepage sections like Services cards, TrustStats, Gallery, Testimonials, PromoBanner, or WhyChooseUs. Inner pages have their own content + `ServiceHero` + `ServiceCTA` + `RelatedServices`.
+**Inner/service pages should NOT include** homepage-only sections (Hero, TrustStats, PromoBanner, etc.). Inner pages will have their own content sections.
 
 ## Components
 
