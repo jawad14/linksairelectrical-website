@@ -12,7 +12,11 @@ import { OneTeam } from '@/components/blocks/OneTeam';
 import { PromoBanner } from '@/components/blocks/PromoBanner';
 import { Contact } from '@/components/blocks/Contact';
 import { About } from '@/components/blocks/About';
+import { ServicesTables } from '@/components/blocks/ServicesTables';
+import { WhatMakesUsDifferent } from '@/components/blocks/WhatMakesUsDifferent';
+import { OurCustomers } from '@/components/blocks/OurCustomers';
 import { Areas } from '@/components/blocks/Areas';
+import { FAQ } from '@/components/blocks/FAQ';
 import { CTABand } from '@/components/blocks/CTABand';
 import { Footer } from '@/components/blocks/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -55,8 +59,16 @@ export default function HomePage() {
         <Contact />
         {/* Why Choose Links — checklist */}
         <About />
-        {/* Service areas */}
+        {/* Electrical Services + AC Services + Combined table */}
+        <ServicesTables />
+        {/* What Makes Us Different — 5 badges */}
+        <WhatMakesUsDifferent />
+        {/* Our Customers — 5 customer types */}
+        <OurCustomers />
+        {/* Service areas — dark bg */}
         <Areas />
+        {/* FAQs accordion */}
+        <FAQ />
         {/* Final CTA band */}
         <CTABand />
       </main>

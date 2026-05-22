@@ -3,14 +3,13 @@ import { Check, ChevronRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Heading, P } from '@/components/ui/typography';
 
-const areaLinks: Record<string, string> = {
-  Brisbane: '/areas/brisbane',
-  'Gold Coast': '/areas/gold-coast',
-  Logan: '/areas/logan',
-  Ipswich: '/areas/ipswich',
-  Redlands: '/areas/redlands',
-  'Moreton Bay': '/areas/moreton-bay',
-};
+const areas = [
+  { label: 'Brisbane (North, South, East & West)', href: '/areas/brisbane' },
+  { label: 'Gold Coast', href: '/areas/gold-coast' },
+  { label: 'Logan & Ipswich', href: '/areas/logan' },
+  { label: 'Redlands', href: '/areas/redlands' },
+  { label: 'Moreton Bay & surrounding suburbs', href: '/areas/moreton-bay' },
+];
 
 export function Areas() {
   return (
@@ -36,20 +35,24 @@ export function Areas() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 max-[760px]:grid-cols-2 max-[420px]:grid-cols-1">
-          {siteConfig.serviceAreas.map((area) => (
+          {areas.map((area) => (
             <Link
-              key={area}
-              href={areaLinks[area] || '#'}
+              key={area.label}
+              href={area.href}
               className="group flex items-center justify-between rounded-xl border border-white/[0.12] bg-white/[0.03] px-6 py-5 text-[16px] font-medium text-white transition-all hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.08]"
             >
               <span className="flex items-center gap-3">
                 <Check className="h-4 w-4 shrink-0 text-[#82BD3F]" strokeWidth={2.5} />
-                {area}
+                {area.label}
               </span>
               <ChevronRight className="h-4 w-4 text-white/30 transition-transform group-hover:translate-x-1 group-hover:text-white/60" />
             </Link>
           ))}
         </div>
+
+        <P className="mt-8 text-center text-[15px] text-white/60">
+          Not sure if we service your area? Just give us a call — we&apos;re local and flexible.
+        </P>
       </div>
     </section>
   );
