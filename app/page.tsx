@@ -7,6 +7,8 @@ import { Services } from '@/components/blocks/Services';
 import { WhyUs } from '@/components/blocks/WhyUs';
 import { Testimonials } from '@/components/blocks/Testimonials';
 import { Gallery } from '@/components/blocks/Gallery';
+import { TrustedExperts } from '@/components/blocks/TrustedExperts';
+import { OneTeam } from '@/components/blocks/OneTeam';
 import { PromoBanner } from '@/components/blocks/PromoBanner';
 import { Contact } from '@/components/blocks/Contact';
 import { About } from '@/components/blocks/About';
@@ -45,6 +47,10 @@ export default function HomePage() {
         <PromoBanner />
         {/* Work gallery — project photos */}
         <Gallery />
+        {/* Your Trusted Local Experts */}
+        <TrustedExperts />
+        {/* One Team — 8 service cards on dark bg */}
+        <OneTeam />
         {/* Appointment / contact form */}
         <Contact />
         {/* Why Choose Links — checklist */}

@@ -30,6 +30,10 @@ When writing content for any section or page, draw from these three sources:
 **Never copy verbatim from Jaric.** Always rewrite in Links Air & Electrical's voice.
 **Content always comes from the original site first.** Only fall back to Jaric or rephrased content when the original site has no content for that section. If original site content exists, use it — don't replace it with Jaric-style content.
 
+### Sections not in index.html
+
+When the original site has a section that didn't exist in the index.html (e.g. Gallery, TrustedExperts, OneTeam), create it as a new component using the **same styling patterns** as existing sections (same container widths, eyebrow style, heading sizes, border radius, shadows, color tokens, spacing). Match the look and feel — don't invent a new design language.
+
 ## Branding
 
 - **Phone: `1300 010 393` (primary) / `0447 440 050` (mobile).** Always pull from `siteConfig.phone` and `siteConfig.mobile`. Never hardcode.
