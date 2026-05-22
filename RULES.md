@@ -40,18 +40,27 @@ When the original site has a section that didn't exist in the index.html (e.g. G
 - **License: `312045C` / ARC: `AU45821`.** Always pull from `siteConfig.license` and `siteConfig.arc`.
 - **Tagline: "Trusted Local Sparkies · A/C Specialists".** Pull from `siteConfig.tagline`.
 - **CTA color convention:** Red (`bg-[#E73438]`) for phone/call buttons and primary CTAs. Blue (`bg-[#2196D6]`) for secondary. Consistent across all pages.
-- **Logo:** Always use `next/image` with `/logo.jpg`. Never inline SVG or raw `<img>`.
+- **Logo:** Always use `next/image` with `/logo.webp`. Never inline SVG or raw `<img>`.
 - **Fonts:** Poppins (headings via `font-heading`) + Inter (body via `font-sans`).
+- **Images:** All images must be `.webp` format. When adding new images, download them, convert with `cwebp -q 80`, delete originals. Always add this rule when creating pages.
 
-## SEO (every page)
+## SEO (every page — non-negotiable)
 
-- Every page must have a unique `<title>` and `meta description` via Next.js `metadata` export.
-- Every page must set `alternates.canonical` to its own URL.
-- Every page must include at least one JSON-LD schema (use `<JsonLd>` component). Minimum: `WebPage` with `name`, `description`, `url`. Service pages should add `Service` schema.
-- Homepage includes `LocalBusiness`, `WebSite`, and `FAQPage` schemas — do not duplicate these on other pages.
-- OG image is auto-generated at `/opengraph-image` — no per-page override needed unless the page has a unique image.
-- All images must have descriptive `alt` text. No empty `alt=""` on content images.
-- Headings must follow semantic order: one `H1` per page, followed by `H2`, `H3`, etc. Never skip levels.
+Every new page MUST include all of the following before it ships:
+
+1. **Unique `metadata` export** with:
+   - `title` — unique, keyword-rich, under 60 chars. Format: `Page Name — Links Air & Electrical`
+   - `description` — unique, benefit-driven, 120–155 chars, include location (Brisbane/Gold Coast)
+   - `alternates.canonical` — set to the page's own full URL (`${siteConfig.url}/page-slug`)
+   - `openGraph.title` and `openGraph.description` — can match title/description
+   - `openGraph.url` — page's full URL
+2. **JSON-LD schema** via `<JsonLd>` component:
+   - Every page: minimum `WebPage` or more specific type (`AboutPage`, `ContactPage`, `FAQPage`)
+   - Service pages: add `Service` schema with `name`, `description`, `provider`
+   - Homepage only: `LocalBusiness` + `WebSite` + `FAQPage` — do not duplicate on other pages
+3. **Images**: all must use `next/image` with descriptive `alt` text. No empty `alt=""`. All images must be `.webp` format.
+4. **Headings**: one `H1` per page, semantic order (H1 → H2 → H3). Never skip levels.
+5. **Page shell**: `<UtilityBar />` → `<Header />` → `<main>` → content → `<Footer />` on every page.
 
 ## Layout & Structure (consistency with homepage)
 
