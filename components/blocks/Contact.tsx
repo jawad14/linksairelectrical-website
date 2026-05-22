@@ -8,28 +8,30 @@ export function Contact() {
   return (
     <section id="contact" className="py-[clamp(72px,9vw,120px)]">
       <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+        <div className="mx-auto mb-14 max-w-[760px] text-center">
+          <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+            Schedule an appointment
+          </span>
+          <Heading
+            level={2}
+            className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+          >
+            Tell us about the job.
+          </Heading>
+          <P className="mt-3.5 text-[17px] text-[#4F6172]">
+            Fill in the form and a real human gets back to you — usually within a few business
+            hours. Need someone today? Give us a call directly.
+          </P>
+        </div>
+
         <div className="grid grid-cols-[1fr_1.1fr] items-start gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-10">
           {/* Info */}
           <div>
-            <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-              Get in touch
-            </span>
-            <Heading
-              level={2}
-              className="font-heading mt-4 text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-            >
-              Tell us about the job.
-            </Heading>
-            <P className="mt-3.5 text-[17px] text-[#4F6172]">
-              Fill in the form and a real human gets back to you — usually within a few business
-              hours. Need someone today? Give us a bell directly.
-            </P>
-
             <InfoBlock
               icon={Phone}
               label="Phone"
               value={siteConfig.phone}
-              sub="Mon–Sat, 7am–6pm · 24/7 for emergencies"
+              sub={`Mobile: ${siteConfig.mobile}`}
             />
             <InfoBlock
               icon={Mail}
@@ -40,9 +42,24 @@ export function Contact() {
             <InfoBlock
               icon={MapPin}
               label="Service area"
-              value="Sydney metro & surrounds"
-              sub="Based in NSW · servicing all major suburbs"
+              value="Brisbane & Gold Coast"
+              sub="Servicing all major suburbs across SEQ"
             />
+
+            {/* Emergency CTA */}
+            <div className="mt-8 rounded-[14px] bg-[#E73438] p-6 text-white">
+              <div className="font-heading text-[18px] font-bold">We&apos;re On Call</div>
+              <P className="mt-2 text-[14px] text-white/85">
+                Need an emergency electrician? We offer call-outs across Brisbane and Gold Coast.
+              </P>
+              <a
+                href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
+                className="font-heading mt-4 inline-flex items-center gap-2 text-[20px] font-bold"
+              >
+                <Phone className="h-5 w-5" />
+                {siteConfig.mobile}
+              </a>
+            </div>
           </div>
 
           {/* Form */}
@@ -51,7 +68,7 @@ export function Contact() {
             onSubmit={(e) => {
               e.preventDefault();
               const btn = e.currentTarget.querySelector('button') as HTMLButtonElement;
-              btn.textContent = 'Thanks — we\u2019ll be in touch';
+              btn.textContent = 'Thanks \u2014 we\u2019ll be in touch';
               btn.style.background = '#6BA432';
             }}
           >
@@ -61,19 +78,16 @@ export function Contact() {
             </div>
             <Field label="Email" type="email" placeholder="you@example.com" required />
             <div className="grid grid-cols-2 gap-4 max-[900px]:grid-cols-1">
-              <Field label="Suburb" type="text" placeholder="e.g. Marrickville" />
+              <Field label="Postcode" type="text" placeholder="e.g. 4000" />
               <div className="mb-[18px] flex flex-col">
                 <label className="mb-2 text-[13px] font-semibold text-[#0E1B2C]">
                   Service needed
                 </label>
                 <select className="rounded-[10px] border border-[#E3E9F0] bg-white px-3.5 py-[13px] text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none">
-                  <option>General electrical</option>
-                  <option>Switchboard upgrade</option>
-                  <option>Split-system A/C</option>
-                  <option>LED lighting</option>
-                  <option>EV charger</option>
-                  <option>Smoke alarms / safety</option>
-                  <option>Emergency call-out</option>
+                  <option>Air Conditioning</option>
+                  <option>Electrical</option>
+                  <option>Building &amp; Construction</option>
+                  <option>Emergency Call-out</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -84,20 +98,19 @@ export function Contact() {
               </label>
               <textarea
                 className="min-h-[120px] resize-y rounded-[10px] border border-[#E3E9F0] bg-white px-3.5 py-[13px] text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none"
-                placeholder="A few sentences about what you're after — feel free to mention timeframe, photos welcome via email after."
+                placeholder="Describe what you need — feel free to mention timeframe."
               />
             </div>
             <button
               type="submit"
               className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#E73438] px-[22px] py-3.5 text-[15px] font-semibold text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229]"
             >
-              Send enquiry
+              Send Enquiry
               <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
             </button>
             <div className="mt-3 flex items-start gap-2 text-[12px] leading-[1.4] text-[#4F6172]">
               <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#6BA432]" strokeWidth={2.5} />
-              We never share your details. Your info goes to our office team only — no spam, no
-              marketing lists.
+              We never share your details. Your info goes to our office team only.
             </div>
           </form>
         </div>

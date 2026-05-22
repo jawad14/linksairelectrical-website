@@ -1,10 +1,11 @@
-import { Star } from 'lucide-react';
+import Link from 'next/link';
+import { Star, ExternalLink } from 'lucide-react';
 import { Heading, P } from '@/components/ui/typography';
 
 const reviews = [
   {
     quote:
-      'Booked a switchboard upgrade and a new A/C install. They turned up early, were genuinely tidy and explained everything as they went. Quote matched the invoice exactly.',
+      'Booked a switchboard upgrade and a new split system install. They turned up early, were genuinely tidy and explained everything as they went. Quote matched the invoice exactly.',
     initials: 'SA',
     name: 'Sarah A.',
     meta: 'Hornsby · Switchboard + Split A/C',
@@ -30,9 +31,12 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="py-[clamp(72px,9vw,120px)]">
-      <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-        <div className="mb-14 max-w-[760px]">
+    <section className="relative overflow-hidden py-[clamp(72px,9vw,120px)]">
+      {/* Subtle background */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_50%_0%,rgba(33,150,214,0.06),transparent_60%)]" />
+
+      <div className="relative mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+        <div className="mx-auto mb-14 max-w-[760px] text-center">
           <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#E73438] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#E73438]">
             What customers say
           </span>
@@ -40,7 +44,7 @@ export function Testimonials() {
             level={2}
             className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
           >
-            Reviews from real jobs, not stock testimonials.
+            Trusted by Over 200 Reviewers on Google
           </Heading>
         </div>
 
@@ -71,6 +75,18 @@ export function Testimonials() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="https://www.google.com/maps/place/Links+Air+%26+Electrical"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#1779B8] transition-colors hover:text-[#0F5E94]"
+          >
+            View More Reviews on Google
+            <ExternalLink className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
