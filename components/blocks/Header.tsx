@@ -76,7 +76,7 @@ export function Header() {
 
           {/* Desktop nav — centered */}
           <nav className="mr-auto max-[1024px]:hidden">
-            <ul className="m-0 flex list-none items-center gap-6 p-0 xl:gap-8">
+            <ul className="m-0 flex list-none items-center gap-3 p-0 lg:gap-4 xl:gap-6">
               {siteConfig.nav.map((item) => (
                 <DesktopNavItem key={item.label} item={item} />
               ))}
@@ -88,7 +88,7 @@ export function Header() {
             {/* Phone number — visible on tablet+ */}
             <Link
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-2 rounded-full px-3 py-2 text-[14px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-[1024px]:hidden"
+              className="flex items-center gap-2 rounded-full px-3 py-2 text-[14px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-xl:hidden"
             >
               <Phone className="h-4 w-4 text-[#2196D6]" />
               {siteConfig.phone}
