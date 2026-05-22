@@ -19,6 +19,17 @@ This project uses two reference websites. Both must be consulted when building p
 
 **Rule:** Structure/links/pages come from the original site. Content style comes from Jaric. Business data comes from `siteConfig`.
 
+### Three sources for content (priority order)
+
+When writing content for any section or page, draw from these three sources:
+
+1. **index.html** (deleted but was the design reference) — use its **layout, structure, and visual design** (two-column grids, badge positions, color accents, spacing). This is the gold standard for how sections should look.
+2. **Original site** (linksairelectrical.com.au) — use its **business-specific content** (service descriptions, feature bullets, stats like "200+ Google reviews", "since 2014", service areas). This is the factual source.
+3. **Jaric site** (jaricgroup.com.au) — use its **content style and tone** (how they write welcome text, testimonials, CTAs). Rephrase everything for Links Air & Electrical.
+
+**Never copy verbatim from Jaric.** Always rewrite in Links Air & Electrical's voice.
+**Prefer original site content** when it exists for a section. Only fall back to Jaric-style rephrasing when the original site lacks content for that section.
+
 ## Branding
 
 - **Phone: `1300 010 393` (primary) / `0447 440 050` (mobile).** Always pull from `siteConfig.phone` and `siteConfig.mobile`. Never hardcode.
