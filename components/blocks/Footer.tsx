@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <Image
-                src="/logo.jpg"
+                src="/logo.webp"
                 alt="Links Air & Electrical"
                 width={140}
                 height={54}

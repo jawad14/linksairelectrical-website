@@ -87,7 +87,7 @@ export function Hero() {
           {/* Image container — clips the photo to rounded shape */}
           <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
             <Image
-              src="/images/services/electrical.jpg"
+              src="/images/services/electrical.webp"
               alt="Electrician testing a switchboard with professional equipment"
               fill
               className="object-cover object-right"

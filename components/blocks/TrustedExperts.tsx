@@ -33,7 +33,7 @@ export function TrustedExperts() {
           <div className="relative aspect-[4/3] max-[900px]:max-w-[560px]">
             <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
               <Image
-                src="/images/services/construction.jpg"
+                src="/images/services/construction.webp"
                 alt="Links Air & Electrical team at work"
                 fill
                 className="object-cover"

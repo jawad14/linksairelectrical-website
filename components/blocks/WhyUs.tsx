@@ -55,7 +55,7 @@ export function WhyUs() {
           <div className="relative aspect-[4/5] max-[900px]:aspect-[4/3] max-[900px]:max-w-[560px]">
             <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
               <Image
-                src="/images/gallery/gallery4.jpg"
+                src="/images/gallery/gallery4.webp"
                 alt="Technician servicing an outdoor air conditioning unit"
                 fill
                 className="object-cover"
