@@ -6,7 +6,7 @@ import { Heading, P } from '@/components/ui/typography';
 
 export function Contact() {
   return (
-    <section id="contact" className="py-[clamp(72px,9vw,120px)]">
+    <section id="contact" className="bg-[#F4F7FA] py-[clamp(72px,9vw,120px)]">
       <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
         <div className="mx-auto mb-14 max-w-[760px] text-center">
           <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">

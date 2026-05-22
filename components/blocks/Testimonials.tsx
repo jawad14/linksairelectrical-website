@@ -31,7 +31,7 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-[clamp(72px,9vw,120px)]">
+    <section className="relative overflow-hidden bg-[#F4F7FA] py-[clamp(72px,9vw,120px)]">
       {/* Subtle background */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_50%_0%,rgba(33,150,214,0.06),transparent_60%)]" />
 
