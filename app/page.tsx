@@ -4,6 +4,7 @@ import { Header } from '@/components/blocks/Header';
 import { Hero } from '@/components/blocks/Hero';
 import { TrustStats } from '@/components/blocks/TrustStats';
 import { Services } from '@/components/blocks/Services';
+import { BrandPartners } from '@/components/blocks/BrandPartners';
 import { WhyUs } from '@/components/blocks/WhyUs';
 import { Testimonials } from '@/components/blocks/Testimonials';
 import { Gallery } from '@/components/blocks/Gallery';
@@ -43,6 +44,8 @@ export default function HomePage() {
         <TrustStats />
         {/* 3 main service cards: AC, Electrical, Building */}
         <Services />
+        {/* Brand logos — trust strip */}
+        <BrandPartners />
         {/* Welcome / About section with company intro */}
         <WhyUs />
         {/* Customer testimonials */}
