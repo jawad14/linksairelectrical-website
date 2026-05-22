@@ -28,7 +28,7 @@ When writing content for any section or page, draw from these three sources:
 3. **Jaric site** (jaricgroup.com.au) — use its **content style and tone** (how they write welcome text, testimonials, CTAs). Rephrase everything for Links Air & Electrical.
 
 **Never copy verbatim from Jaric.** Always rewrite in Links Air & Electrical's voice.
-**Prefer original site content** when it exists for a section. Only fall back to Jaric-style rephrasing when the original site lacks content for that section.
+**Content always comes from the original site first.** Only fall back to Jaric or rephrased content when the original site has no content for that section. If original site content exists, use it — don't replace it with Jaric-style content.
 
 ## Branding
 

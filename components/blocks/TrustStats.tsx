@@ -1,30 +1,28 @@
-import { Award, ThumbsUp, Shield, Wrench, Clock, DollarSign } from 'lucide-react';
-import { P } from '@/components/ui/typography';
+import { Award, ThumbsUp, Shield, DollarSign } from 'lucide-react';
 
 const stats = [
   { icon: Award, label: '10+ Years Experience' },
   { icon: ThumbsUp, label: '100% Client Satisfaction' },
   { icon: Shield, label: 'Zero Damage Installation' },
-  { icon: Wrench, label: 'Servicing Top Brands' },
-  { icon: Clock, label: 'Periodic AC Maintenance' },
   { icon: DollarSign, label: 'No Hidden Charges' },
 ];
 
 export function TrustStats() {
   return (
-    <section className="border-y border-[#E3E9F0] bg-white py-12">
+    <div className="bg-[#0E1B2C] py-7 text-white/70">
       <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-        <div className="grid grid-cols-6 gap-6 max-[900px]:grid-cols-3 max-[520px]:grid-cols-2">
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-3 text-center">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#E9F4FB] text-[#1779B8]">
-                <stat.icon className="h-7 w-7" />
-              </div>
-              <P className="text-[13px] leading-[1.3] font-semibold text-[#2A3A4E]">{stat.label}</P>
-            </div>
+            <span
+              key={stat.label}
+              className="flex items-center gap-2.5 text-[14px] font-medium text-white/85"
+            >
+              <stat.icon className="h-[22px] w-[22px] shrink-0 text-[#82BD3F]" />
+              {stat.label}
+            </span>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
