@@ -10,17 +10,17 @@ export function CTABand() {
         <div className="relative grid grid-cols-[1.4fr_1fr] items-center gap-12 overflow-hidden rounded-[22px] bg-gradient-to-r from-[#0F5E94] to-[#2196D6] p-[clamp(40px,6vw,72px)_clamp(28px,5vw,64px)] text-white shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)] before:absolute before:-top-[100px] before:right-[-100px] before:h-[340px] before:w-[340px] before:rounded-full before:bg-white/[0.08] after:absolute after:right-[60px] after:-bottom-[140px] after:h-[280px] after:w-[280px] after:rounded-full after:bg-[rgba(130,189,63,0.18)] max-[840px]:grid-cols-1">
           <div className="relative z-[1]">
             <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-white/85 uppercase before:inline-block before:h-0.5 before:w-6 before:bg-white/60">
-              Get started today
+              Don&apos;t put it off any longer
             </span>
             <Heading
               level={2}
               className="font-heading mt-4 max-w-[560px] text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-white"
             >
-              Need reliable electrical and air conditioning services?
+              That electrical issue won&apos;t fix itself — let&apos;s sort it today
             </Heading>
             <P className="mt-3.5 max-w-[480px] text-white/85">
-              We&apos;re here to help — whether it&apos;s a quick repair or a full installation
-              across Brisbane or the Gold Coast.
+              Call or fill out the form — it takes 30 seconds. We&apos;ll give you an honest quote
+              with zero obligation. No pushy sales, just straight answers.
             </P>
           </div>
           <div className="relative z-[1] flex flex-wrap gap-3.5 justify-self-end max-[840px]:justify-self-start">

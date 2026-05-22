@@ -37,7 +37,6 @@ export function Contact() {
   });
 
   function onSubmit(data: ContactFormData) {
-     
     console.log('Form submitted:', data);
     setSubmitted(true);
   }
@@ -55,11 +54,12 @@ export function Contact() {
               level={2}
               className="font-heading mt-4 text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
             >
-              Schedule an Appointment
+              Let&apos;s Fix It For You
             </Heading>
             <P className="mt-3.5 text-[17px] text-[#4F6172]">
-              Fill in the form and our team will get back to you — usually within a few business
-              hours. Need someone today? Give us a call directly.
+              Tell us what&apos;s going on and we&apos;ll get back to you fast — usually within a
+              couple of hours. No obligation, no pressure. Just honest advice on the best way to
+              sort your problem.
             </P>
 
             <InfoBlock
@@ -84,10 +84,11 @@ export function Contact() {
             {/* Emergency CTA */}
             <div className="mt-8 rounded-[14px] bg-[#E73438] p-6 text-white">
               <Heading level={4} className="font-heading text-[18px] font-bold text-white">
-                We&apos;re On Call
+                Electrical Emergency?
               </Heading>
               <P className="mt-2 text-[14px] text-white/85">
-                Need an emergency electrician? We offer call-outs across Brisbane and Gold Coast.
+                Power out, sparking outlet, or no AC on a 40-degree day? We answer 24/7 and get to
+                you fast.
               </P>
               <a
                 href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}

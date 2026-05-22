@@ -12,25 +12,24 @@ export function WhyUs() {
           {/* Text */}
           <div>
             <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-              Welcome to Links Air &amp; Electrical
+              Why homeowners switch to us
             </span>
             <Heading
               level={2}
               className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
             >
-              Heating &amp; Air Conditioning Repair &amp; Installation Service Company
+              Sick of tradies who don&apos;t show up, overcharge, or leave a mess?
             </Heading>
             <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-              Links Air &amp; Electrical is a leading name when it comes to 360-degree air
-              conditioning solutions at an unbeatable price. Serving the industry since 2014, we
-              provide comprehensive solutions to your air conditioning needs — including
-              installation, repairs and maintenance — so that you enjoy peace of mind every time.
+              You&apos;ve been there. The tradie who never returns your call. The quote that doubles
+              once the work starts. The mess they leave behind. It&apos;s stressful, it wastes your
+              time, and it leaves you wondering if the job was even done right.
             </P>
             <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-              We believe in being upfront about our costs, so you&apos;ll have no hidden surprises
-              once the job is done. Our teams are geared for fast response to your electrical or air
-              conditioning needs. We keep a ready supply of parts in-hand so we can get you up and
-              running quickly.
+              That&apos;s where we come in. Since 2014 we&apos;ve built our reputation on doing the
+              opposite — showing up on time, quoting honestly, and leaving your place cleaner than
+              we found it. We carry parts on the van so most jobs are done the same day. Over 200
+              five-star Google reviews say we&apos;re doing something right.
             </P>
 
             <div className="mt-8 flex flex-wrap gap-3.5">
@@ -89,10 +88,10 @@ export function WhyUs() {
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 rounded-[14px] bg-[#0E1B2C] px-8 py-6 max-[640px]:flex-col max-[640px]:text-center">
           <div>
             <Heading level={3} className="font-heading text-[20px] font-bold text-white">
-              We&apos;re On Call 24/7 to React Promptly to Your Needs
+              Power out? AC dead? We&apos;re on call 24/7 — help is one call away
             </Heading>
             <P className="mt-1 text-[14px] text-white/70">
-              Don&apos;t hesitate to call — our team is ready to help.
+              Don&apos;t sweat it alone — we answer day and night, weekends included.
             </P>
           </div>
           <div className="flex flex-wrap items-center gap-3">

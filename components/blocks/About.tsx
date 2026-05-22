@@ -37,11 +37,11 @@ export function About() {
               level={2}
               className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
             >
-              We believe in honest work, fair prices, and top-quality service.
+              You deserve a tradie who actually cares about your home.
             </Heading>
 
             <P className="font-heading mt-5 text-[17px] font-semibold text-[#0E1B2C]">
-              What You Can Expect:
+              Here&apos;s our promise to you:
             </P>
 
             <ul className="m-0 mt-4 flex list-none flex-col gap-3 p-0">
@@ -56,7 +56,7 @@ export function About() {
             </ul>
 
             <P className="mt-6 text-[16px] leading-[1.7] text-[#4F6172]">
-              We treat your home like our own — leaving it clean and safe after every job.
+              Your home is your sanctuary. We leave it cleaner than we found it — every single time.
             </P>
           </div>
         </div>

@@ -93,7 +93,7 @@ export function Testimonials() {
             level={2}
             className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
           >
-            Trusted by Over 200 Reviewers on Google
+            Don&apos;t Take Our Word for It — Hear From 200+ Happy Homeowners
           </Heading>
         </div>
 

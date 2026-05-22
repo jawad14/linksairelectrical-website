@@ -15,17 +15,17 @@ export function TrustedExperts() {
               level={2}
               className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
             >
-              Your Trusted Local Experts in Electrical and Air Conditioning
+              Get your electrical and AC problems solved — properly, the first time
             </Heading>
             <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-              Links Air &amp; Electrical is your trustworthy team for everything electrical and air
-              conditioning. Whether you need a light installation, power point upgrade, or an air
-              conditioner fitting, we have all the right skills and experience to do the job
-              flawlessly.
+              Whether it&apos;s a dodgy power point that worries you every time you plug something
+              in, or an AC unit that&apos;s blowing warm air in the middle of February — you want it
+              fixed fast, fixed right, and fixed once. That&apos;s exactly what we do.
             </P>
             <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-              We provide services across Brisbane and the Gold Coast, offering fast &amp; affordable
-              solutions for homes and businesses.
+              Our licensed team has been keeping Brisbane and Gold Coast homes comfortable and safe
+              since 2014. You get a clear quote before we start, and the job gets done the same day
+              whenever possible.
             </P>
           </div>
 

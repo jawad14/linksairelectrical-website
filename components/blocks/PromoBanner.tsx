@@ -11,7 +11,7 @@ export function PromoBanner() {
           level={3}
           className="font-heading text-[clamp(22px,2.5vw,32px)] leading-[1.2] font-bold text-white"
         >
-          20% OFF Electrical or AC Maintenance &amp; Repair
+          Save 20% on Electrical &amp; AC Repairs — Limited Time, Don&apos;t Miss Out
         </Heading>
         <div className="flex flex-wrap items-center gap-3">
           <Link
