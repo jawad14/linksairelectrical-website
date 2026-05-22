@@ -57,42 +57,58 @@ export function Header() {
         ref={headerRef}
         className="sticky top-0 z-50 border-b border-[#E3E9F0] bg-white/[0.92] backdrop-blur-[10px] backdrop-saturate-[140%]"
       >
-        <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-[clamp(16px,3vw,56px)] max-sm:h-[64px]">
-          <Link href="/" className="shrink-0" aria-label="Links Air & Electrical home">
+        <div className="mx-auto flex h-[84px] max-w-[1360px] items-center justify-between px-5 max-sm:h-[72px] sm:px-8">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="mr-6 shrink-0 lg:mr-10"
+            aria-label="Links Air & Electrical home"
+          >
             <Image
               src="/logo.jpg"
               alt="Links Air & Electrical"
-              width={140}
-              height={52}
-              className="h-[52px] w-auto object-contain max-sm:h-[44px]"
+              width={160}
+              height={62}
+              className="h-[62px] w-auto object-contain max-sm:h-[50px]"
               priority
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="max-[1024px]:hidden">
-            <ul className="m-0 flex list-none items-center gap-5 p-0 lg:gap-6">
+          {/* Desktop nav — centered */}
+          <nav className="mr-auto max-[1024px]:hidden">
+            <ul className="m-0 flex list-none items-center gap-6 p-0 xl:gap-8">
               {siteConfig.nav.map((item) => (
                 <DesktopNavItem key={item.label} item={item} />
               ))}
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2.5">
+          {/* Right side: phone + CTA + mobile toggle */}
+          <div className="flex shrink-0 items-center gap-4">
+            {/* Phone number — visible on tablet+ */}
             <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-4 max-sm:py-2 max-sm:text-[13px]"
+              href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+              className="flex items-center gap-2 rounded-full px-3 py-2 text-[14px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-[1024px]:hidden"
             >
-              Get a Quote
-              <ChevronRight className="h-3.5 w-3.5 max-sm:hidden" strokeWidth={2.5} />
+              <Phone className="h-4 w-4 text-[#2196D6]" />
+              {siteConfig.phone}
             </Link>
 
+            {/* CTA button */}
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-5 py-3 text-[14px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-4 max-sm:py-2.5 max-sm:text-[13px]"
+            >
+              Get a free quote
+              <ChevronRight className="h-4 w-4 max-sm:hidden" strokeWidth={2.5} />
+            </Link>
+
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="relative grid h-10 w-10 place-items-center rounded-lg border border-[#E3E9F0] bg-white text-[#0E1B2C] transition-colors hover:bg-[#F4F7FA] min-[1025px]:hidden"
               aria-label="Toggle menu"
             >
-              {/* Animated hamburger / X */}
               <div className="flex h-4 w-[18px] flex-col justify-between">
                 <span
                   className={`block h-[2px] w-full rounded-full bg-current transition-transform duration-200 ${mobileOpen ? 'translate-y-[7px] rotate-45' : ''}`}
