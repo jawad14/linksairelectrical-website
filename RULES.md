@@ -78,10 +78,11 @@ When writing content for any section or page, draw from these three sources:
 4. `TrustStats` — 6 trust icons
 5. `Services` — 3 main cards (AC, Electrical, Building)
 6. `WhyUs` — welcome/about company intro
-7. `Testimonials` — 3 reviews + Google link
+7. `Testimonials` — 9 reviews Splide slider + Google link
 8. `PromoBanner` — 20% OFF red banner
-9. `Contact` — form + contact info + emergency CTA
-10. `About` — "Why Choose Links" checklist
+9. `Gallery` — project photos Splide slider (4-col desktop)
+10. `Contact` — form + contact info + emergency CTA
+11. `About` — "Why Choose Links" checklist
 11. `Areas` — 6 service areas
 12. `CTABand` — final blue CTA
 13. `Footer` — brand, useful links, contact, social
