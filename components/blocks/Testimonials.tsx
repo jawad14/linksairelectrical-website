@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { Star, ExternalLink } from 'lucide-react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 import { Heading, P } from '@/components/ui/typography';
 
 const reviews = [
@@ -27,15 +31,60 @@ const reviews = [
     meta: 'Chatswood · Emergency call-out',
     color: 'from-[#82BD3F] to-[#6BA432]',
   },
+  {
+    quote:
+      'Had three split systems installed across the house. The team was professional from the quote right through to cleanup. Pipework was neat and they even helped us pick the right units for each room.',
+    initials: 'DK',
+    name: 'Daniel K.',
+    meta: 'Carindale · 3x Split System Install',
+    color: 'from-[#2196D6] to-[#0F5E94]',
+  },
+  {
+    quote:
+      'Called about a dodgy power point that was sparking. They came out same day, found the issue and replaced the lot. Very safety-conscious and explained what went wrong so we understood.',
+    initials: 'LT',
+    name: 'Lisa T.',
+    meta: 'Logan · Emergency Electrical',
+    color: 'from-[#E73438] to-[#D62229]',
+  },
+  {
+    quote:
+      'Needed a full electrical fit-out for our new office space. Links handled everything from the switchboard to data cabling. Delivered on time and the final walkthrough was thorough.',
+    initials: 'RB',
+    name: 'Ryan B.',
+    meta: 'Fortitude Valley · Commercial Fit-out',
+    color: 'from-[#82BD3F] to-[#6BA432]',
+  },
+  {
+    quote:
+      'As a property manager I deal with a lot of tradies. Links are consistently reliable — they show up on time, send invoices promptly, and the tenants always report a good experience.',
+    initials: 'MW',
+    name: 'Michelle W.',
+    meta: 'Gold Coast · Property Management',
+    color: 'from-[#2196D6] to-[#0F5E94]',
+  },
+  {
+    quote:
+      'Fantastic service from start to finish. Had a ducted system installed and the team kept the house spotless throughout. Very impressed with the attention to detail.',
+    initials: 'AT',
+    name: 'Andrew T.',
+    meta: 'Ipswich · Ducted A/C Install',
+    color: 'from-[#E73438] to-[#D62229]',
+  },
+  {
+    quote:
+      'Quick, affordable, and friendly. Got our ceiling fans, downlights and safety switches all done in one visit. Will definitely use again for our next reno.',
+    initials: 'NC',
+    name: 'Nina C.',
+    meta: 'Redlands · Lighting + Safety Switches',
+    color: 'from-[#82BD3F] to-[#6BA432]',
+  },
 ];
 
 export function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-[#F4F7FA] py-[clamp(72px,9vw,120px)]">
-      {/* Subtle background */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_50%_0%,rgba(33,150,214,0.06),transparent_60%)]" />
-
-      <div className="relative mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+      <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
         <div className="mx-auto mb-14 max-w-[760px] text-center">
           <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#E73438] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#E73438]">
             What customers say
@@ -48,34 +97,49 @@ export function Testimonials() {
           </Heading>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 max-[900px]:grid-cols-1">
+        <Splide
+          options={{
+            type: 'loop',
+            perPage: 3,
+            gap: '20px',
+            pagination: true,
+            arrows: true,
+            autoplay: true,
+            interval: 5000,
+            pauseOnHover: true,
+            breakpoints: {
+              900: { perPage: 2 },
+              560: { perPage: 1 },
+            },
+          }}
+          aria-label="Customer testimonials"
+        >
           {reviews.map((r) => (
-            <article
-              key={r.name}
-              className="flex flex-col rounded-[14px] border border-[#E3E9F0] bg-white p-8"
-            >
-              <div className="mb-4 flex gap-0.5 text-[#F5A524]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <P className="font-heading grow text-[17px] leading-[1.5] font-medium text-[#0E1B2C]">
-                &ldquo;{r.quote}&rdquo;
-              </P>
-              <div className="mt-6 flex items-center gap-3 border-t border-[#E3E9F0] pt-5">
-                <div
-                  className={`grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full bg-gradient-to-br ${r.color} font-heading text-[15px] font-bold text-white`}
-                >
-                  {r.initials}
+            <SplideSlide key={r.name}>
+              <article className="flex h-full flex-col rounded-[14px] border border-[#E3E9F0] bg-white p-8">
+                <div className="mb-4 flex gap-0.5 text-[#F5A524]">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
                 </div>
-                <div>
-                  <div className="text-[14px] font-semibold text-[#0E1B2C]">{r.name}</div>
-                  <div className="mt-0.5 text-[12px] text-[#4F6172]">{r.meta}</div>
+                <P className="font-heading grow text-[16px] leading-[1.55] font-medium text-[#0E1B2C]">
+                  &ldquo;{r.quote}&rdquo;
+                </P>
+                <div className="mt-6 flex items-center gap-3 border-t border-[#E3E9F0] pt-5">
+                  <div
+                    className={`grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full bg-gradient-to-br ${r.color} font-heading text-[15px] font-bold text-white`}
+                  >
+                    {r.initials}
+                  </div>
+                  <div>
+                    <div className="text-[14px] font-semibold text-[#0E1B2C]">{r.name}</div>
+                    <div className="mt-0.5 text-[12px] text-[#4F6172]">{r.meta}</div>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </SplideSlide>
           ))}
-        </div>
+        </Splide>
 
         <div className="mt-10 text-center">
           <Link
