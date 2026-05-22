@@ -1,159 +1,78 @@
-'use client';
-
 import { Star } from 'lucide-react';
-import { Container, Section, Stack } from '@/components/ui/layout';
-import { H2, H3, P } from '@/components/ui/typography';
-import { FadeUp } from '@/components/ui/motion';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
+import { Heading, P } from '@/components/ui/typography';
 
 const reviews = [
   {
-    name: 'Margaret McFarlane',
-    text: 'Excellent service. Would highly recommend for any aircon or electrical work. A pleasure to deal with.',
+    quote:
+      'Booked a switchboard upgrade and a new A/C install. They turned up early, were genuinely tidy and explained everything as they went. Quote matched the invoice exactly.',
+    initials: 'SA',
+    name: 'Sarah A.',
+    meta: 'Hornsby · Switchboard + Split A/C',
+    color: 'from-[#2196D6] to-[#0F5E94]',
   },
   {
-    name: 'Sharon Parker',
-    text: "I can't recommend this business highly enough. After shopping around I contacted Links Electrical and Air that quoted instantly over the phone for a new Daikin Cora and it was installed next day. Sensational customer care with a couple of lovely installation technicians.",
+    quote:
+      'We use Links across our renovation projects. Drawings done properly, certificates back the same week, never a callback. Hard to find that combo these days.',
+    initials: 'JM',
+    name: 'Josh M.',
+    meta: 'Marrickville · Builder, ongoing',
+    color: 'from-[#E73438] to-[#D62229]',
   },
   {
-    name: 'John Gould',
-    text: 'Work was done for installation of air con unit. Work was done so professional and polite. Contacted links and next day was installed. Wife and I are extremely happy. Recommend this company to anyone and price was so affordable.',
-  },
-  {
-    name: 'Safari Hair',
-    text: 'Links Air & Electrical did an amazing job on a short notice of an Aircon install. Despite the challenging nature of the job. I am very satisfied with the outcome.',
-  },
-  {
-    name: 'Sancha Ochsner',
-    text: 'Polite and thorough. Economically priced, on time, and work completed well. Will definitely use again, Thank you.',
-  },
-  {
-    name: 'Vinc Menn',
-    text: 'Very professional team a wonderful job was done thanks.',
-  },
-  {
-    name: 'Dmitry',
-    text: "I'm very happy with Links. Needed a power outlet. The job was well done. Thanks.",
-  },
-  {
-    name: 'Yann',
-    text: 'Good service.',
-  },
-  {
-    name: 'Sibi Varghese',
-    text: 'Excellent Service and highly recommended.',
+    quote:
+      'Lost power on a Friday night with a newborn at home. They answered on the second ring and had it sorted within the hour. Properly grateful.',
+    initials: 'PD',
+    name: 'Priya D.',
+    meta: 'Chatswood · Emergency call-out',
+    color: 'from-[#82BD3F] to-[#6BA432]',
   },
 ];
 
 export function Testimonials() {
   return (
-    <Section spacing="lg">
-      <Container size="xl">
-        <Stack gap="xl" align="center">
-          <FadeUp>
-            <Stack gap="sm" align="center" className="text-center">
-              <H2>Testimonials</H2>
-              <P variant="muted">Trusted by Over 200 Reviewers on Google</P>
-            </Stack>
-          </FadeUp>
+    <section className="py-[clamp(72px,9vw,120px)]">
+      <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+        <div className="mb-14 max-w-[760px]">
+          <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#E73438] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#E73438]">
+            What customers say
+          </span>
+          <Heading
+            level={2}
+            className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+          >
+            Reviews from real jobs, not stock testimonials.
+          </Heading>
+        </div>
 
-          <FadeUp className="w-full">
-            <Splide
-              options={{
-                type: 'loop',
-                perPage: 3,
-                perMove: 1,
-                gap: '1.5rem',
-                autoplay: true,
-                interval: 4000,
-                pauseOnHover: true,
-                speed: 600,
-                arrows: true,
-                pagination: false,
-                breakpoints: {
-                  640: { perPage: 1 },
-                  1024: { perPage: 2 },
-                },
-              }}
-              aria-label="Customer testimonials"
-              className="testimonial-slider"
+        <div className="grid grid-cols-3 gap-5 max-[900px]:grid-cols-1">
+          {reviews.map((r) => (
+            <article
+              key={r.name}
+              className="flex flex-col rounded-[14px] border border-[#E3E9F0] bg-white p-8"
             >
-              {reviews.map((review) => (
-                <SplideSlide key={review.name}>
-                  <Stack
-                    gap="sm"
-                    className="border-border bg-card h-full rounded-xl border p-6 shadow-sm"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="bg-primary text-primary-foreground flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-bold">
-                        {review.name.charAt(0)}
-                      </div>
-                      <Stack gap="xs">
-                        <H3 className="text-sm">{review.name}</H3>
-                        <div className="flex items-center gap-0.5">
-                          {[1, 2, 3, 4, 5].map((i) => (
-                            <Star key={i} className="size-3 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                      </Stack>
-                    </div>
-                    <P variant="muted" className="text-sm leading-relaxed">
-                      {review.text}
-                    </P>
-                  </Stack>
-                </SplideSlide>
-              ))}
-            </Splide>
-          </FadeUp>
-
-          <FadeUp>
-            <a
-              href="https://www.google.com/maps/place/Links+Air+%26+Electrical"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-accent inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
-            >
-              View More Reviews
-            </a>
-          </FadeUp>
-        </Stack>
-      </Container>
-
-      {/* Arrow styling */}
-      <style jsx global>{`
-        .testimonial-slider .splide__arrow {
-          background: var(--color-primary);
-          border: none;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          opacity: 1;
-          transition: all 0.3s;
-        }
-        .testimonial-slider .splide__arrow:hover {
-          opacity: 0.8;
-        }
-        .testimonial-slider .splide__arrow svg {
-          fill: white;
-          width: 18px;
-          height: 18px;
-        }
-        .testimonial-slider .splide__arrow--prev {
-          left: -0.5rem;
-        }
-        .testimonial-slider .splide__arrow--next {
-          right: -0.5rem;
-        }
-        @media (min-width: 640px) {
-          .testimonial-slider .splide__arrow--prev {
-            left: -1.25rem;
-          }
-          .testimonial-slider .splide__arrow--next {
-            right: -1.25rem;
-          }
-        }
-      `}</style>
-    </Section>
+              <div className="mb-4 flex gap-0.5 text-[#F5A524]">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <P className="font-heading grow text-[17px] leading-[1.5] font-medium text-[#0E1B2C]">
+                &ldquo;{r.quote}&rdquo;
+              </P>
+              <div className="mt-6 flex items-center gap-3 border-t border-[#E3E9F0] pt-5">
+                <div
+                  className={`grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full bg-gradient-to-br ${r.color} font-heading text-[15px] font-bold text-white`}
+                >
+                  {r.initials}
+                </div>
+                <div>
+                  <div className="text-[14px] font-semibold text-[#0E1B2C]">{r.name}</div>
+                  <div className="mt-0.5 text-[12px] text-[#4F6172]">{r.meta}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

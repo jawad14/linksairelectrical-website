@@ -1,26 +1,26 @@
 import type { Metadata, Viewport } from 'next';
-import { Lato, Open_Sans } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
-const fontSans = Open_Sans({
+const fontSans = Inter({
   variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const fontHeading = Lato({
+const fontHeading = Poppins({
   variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['300', '400', '700', '900'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
 export const metadata: Metadata = defaultMetadata;
 
 export const viewport: Viewport = {
-  themeColor: '#0F4C81',
+  themeColor: '#0F5E94',
 };
 
 export default function RootLayout({

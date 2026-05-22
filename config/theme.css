@@ -1,11 +1,13 @@
 :root {
   /*
-   * Links Air & Electrical — Brand Palette (from brand collateral)
-   * Primary blue:  #0F4C81 (dark navy gradient base)
-   * Secondary blue: #1B6EAA (lighter blue, gradient end)
-   * Accent green:  #7AC943 (lime green — CTAs, highlights, "done right.")
-   * CTA red:       #ED1C24 (phone buttons, badges, emergency callouts)
-   * White:         text on dark backgrounds
+   * Links Air & Electrical — Brand Palette (from index.html reference)
+   * Blue-700: #0F5E94 (deep blue)
+   * Blue-600: #1779B8
+   * Blue-500: #2196D6 (primary brand blue)
+   * Blue-400: #4FB3E8
+   * Red-500:  #E73438 (brand red — CTAs)
+   * Green-500: #82BD3F (lime accent from logo)
+   * Ink-900:  #0E1B2C (near-black, navy-tinged)
    */
 
   --background: oklch(1 0 0);
@@ -15,39 +17,39 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.03 245);
 
-  /* Primary: deep steel blue #0F4C81 */
-  --primary: oklch(0.38 0.1 245);
+  /* Primary: brand blue #2196D6 */
+  --primary: oklch(0.62 0.13 235);
   --primary-foreground: oklch(0.99 0 0);
 
-  /* Secondary: lighter blue #1B6EAA */
-  --secondary: oklch(0.5 0.12 245);
+  /* Secondary: deep blue #0F5E94 */
+  --secondary: oklch(0.43 0.1 240);
   --secondary-foreground: oklch(0.99 0 0);
 
-  --muted: oklch(0.96 0.005 245);
-  --muted-foreground: oklch(0.45 0.02 245);
+  --muted: oklch(0.97 0.003 245);
+  --muted-foreground: oklch(0.48 0.03 245);
 
-  /* Accent: bright lime green #7AC943 */
-  --accent: oklch(0.72 0.19 135);
-  --accent-foreground: oklch(0.99 0 0);
+  /* Accent: lime green #82BD3F */
+  --accent: oklch(0.72 0.17 135);
+  --accent-foreground: oklch(0.15 0.03 245);
 
-  /* Destructive / CTA red: #ED1C24 */
-  --destructive: oklch(0.55 0.24 28);
+  /* Destructive / CTA red: #E73438 */
+  --destructive: oklch(0.55 0.22 25);
 
-  --border: oklch(0.9 0.01 245);
-  --input: oklch(0.9 0.01 245);
-  --ring: oklch(0.5 0.12 245);
-  --chart-1: oklch(0.38 0.1 245);
-  --chart-2: oklch(0.5 0.12 245);
-  --chart-3: oklch(0.72 0.19 135);
-  --chart-4: oklch(0.55 0.24 28);
+  --border: oklch(0.92 0.005 245);
+  --input: oklch(0.92 0.005 245);
+  --ring: oklch(0.62 0.13 235);
+  --chart-1: oklch(0.43 0.1 240);
+  --chart-2: oklch(0.62 0.13 235);
+  --chart-3: oklch(0.72 0.17 135);
+  --chart-4: oklch(0.55 0.22 25);
   --chart-5: oklch(0.2 0.03 245);
-  --radius: 0.5rem;
+  --radius: 0.875rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.2 0.03 245);
-  --sidebar-primary: oklch(0.38 0.1 245);
+  --sidebar-primary: oklch(0.62 0.13 235);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.96 0.005 245);
+  --sidebar-accent: oklch(0.97 0.003 245);
   --sidebar-accent-foreground: oklch(0.2 0.03 245);
-  --sidebar-border: oklch(0.9 0.01 245);
-  --sidebar-ring: oklch(0.5 0.12 245);
+  --sidebar-border: oklch(0.92 0.005 245);
+  --sidebar-ring: oklch(0.62 0.13 235);
 }

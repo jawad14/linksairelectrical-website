@@ -1,108 +1,69 @@
-'use client';
-
-import Link from 'next/link';
-import { Phone, ArrowRight, Award, ThumbsUp, Shield, Star, Wrench, Ban } from 'lucide-react';
-import { Container, Section, Stack } from '@/components/ui/layout';
-import { H2, H3, P, Small } from '@/components/ui/typography';
-import { siteConfig } from '@/config/site.config';
-import { FadeUp, StaggerGroup, StaggerItem } from '@/components/ui/motion';
-
-const stats = [
-  { icon: Award, value: '7+', label: 'Years Experience' },
-  { icon: ThumbsUp, value: '100%', label: 'Client Satisfaction' },
-  { icon: Shield, value: 'Zero', label: 'Damage Installation' },
-  { icon: Star, value: 'Top', label: 'Brand Partners' },
-  { icon: Wrench, value: '24/7', label: 'AC Maintenance' },
-  { icon: Ban, value: '$0', label: 'Hidden Charges' },
-];
+import { Heading, P } from '@/components/ui/typography';
 
 export function About() {
   return (
-    <>
-      {/* Stats counter bar — dark, impactful numbers */}
-      <Section spacing="none" className="bg-primary text-primary-foreground py-10 sm:py-14">
-        <Container size="xl">
-          <StaggerGroup className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6 lg:gap-8">
-            {stats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <StaggerItem key={stat.label}>
-                  <Stack gap="xs" align="center" className="text-center">
-                    <Icon className="text-accent size-6 sm:size-7" />
-                    <H3 className="text-primary-foreground text-2xl font-bold sm:text-3xl">
-                      {stat.value}
-                    </H3>
-                    <Small className="text-primary-foreground/60 text-xs tracking-wider uppercase">
-                      {stat.label}
-                    </Small>
-                  </Stack>
-                </StaggerItem>
-              );
-            })}
-          </StaggerGroup>
-        </Container>
-      </Section>
+    <section id="about" className="py-[clamp(72px,9vw,120px)]">
+      <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+        <div className="grid grid-cols-[1.1fr_1fr] items-center gap-20 max-[900px]:grid-cols-1 max-[900px]:gap-12">
+          {/* Text */}
+          <div>
+            <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+              About Links Air &amp; Electrical
+            </span>
+            <Heading
+              level={2}
+              className="font-heading text-[clamp(30px,3.8vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+            >
+              A locally-run team that treats your home like our own.
+            </Heading>
+            <P className="mt-5 text-[17px] text-[#4F6172]">
+              Links Air &amp; Electrical was founded by a small group of qualified electricians
+              who&apos;d had enough of the no-shows, the runaround quotes, and the rough work that
+              goes on in our trade.
+            </P>
+            <P className="mt-4 text-[16px] text-[#4F6172]">
+              We built Links to be the opposite — punctual, honest, and obsessive about doing the
+              work properly. Today we service hundreds of homes, builders and small businesses
+              across the region, with the same hands-on approach we started with.
+            </P>
 
-      {/* Welcome text — centered, clean */}
-      <Section spacing="lg">
-        <Container size="md">
-          <FadeUp>
-            <Stack gap="lg" align="center" className="text-center">
-              <Small className="text-accent font-bold tracking-widest uppercase">
-                Welcome to Links Air &amp; Electrical
-              </Small>
-              <H2 className="text-3xl sm:text-4xl">
-                Heating &amp; Air Conditioning{' '}
-                <span className="text-secondary">Repair &amp; Installation</span> Service Company
-              </H2>
-              <P className="text-muted-foreground max-w-2xl text-base leading-relaxed">
-                Links Air &amp; Electrical is a leading name when it comes to 360 degree air
-                conditioning solutions at an unbeatable price. Serving the industry since 2014, we
-                provide comprehensive solutions to your air conditioning chores which include
-                installation, repairs and maintenance so that you enjoy peace of mind every time you
-                settle on bed to relax.
-              </P>
-              <Link
-                href="/about"
-                className="bg-secondary inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:brightness-110"
-              >
-                Read More <ArrowRight className="size-4" />
-              </Link>
-            </Stack>
-          </FadeUp>
-        </Container>
-      </Section>
-
-      {/* 24/7 CTA Strip — gradient */}
-      <Section
-        spacing="none"
-        className="from-primary to-secondary text-primary-foreground bg-gradient-to-r py-8 sm:py-10"
-      >
-        <Container size="xl">
-          <FadeUp>
-            <div className="flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-between lg:text-left">
-              <H2 className="text-primary-foreground text-xl sm:text-2xl lg:max-w-2xl">
-                We&apos;re On Call 24/7 to React Promptly to Your Service Needs
-              </H2>
-              <div className="flex shrink-0 flex-col items-center gap-3 sm:flex-row">
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                  className="bg-destructive inline-flex shrink-0 items-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold whitespace-nowrap text-white transition-all hover:scale-105 hover:brightness-110"
-                >
-                  <Phone className="size-5" />
-                  {siteConfig.phone}
-                </a>
-                <Link
-                  href="/contact"
-                  className="bg-accent inline-flex shrink-0 items-center rounded-lg px-7 py-3.5 text-sm font-bold whitespace-nowrap text-white transition-all hover:scale-105 hover:brightness-110"
-                >
-                  Get a Free Quote
-                </Link>
+            <div className="mt-10 grid grid-cols-3 gap-6 border-t border-[#E3E9F0] pt-8 max-[520px]:grid-cols-2">
+              <div>
+                <div className="font-heading text-[38px] leading-none font-extrabold text-[#1779B8]">
+                  15+
+                </div>
+                <div className="mt-1.5 text-[13px] text-[#4F6172]">Years in the trade</div>
+              </div>
+              <div>
+                <div className="font-heading text-[38px] leading-none font-extrabold text-[#E73438]">
+                  2,400+
+                </div>
+                <div className="mt-1.5 text-[13px] text-[#4F6172]">Jobs completed</div>
+              </div>
+              <div>
+                <div className="font-heading text-[38px] leading-none font-extrabold text-[#6BA432]">
+                  4.9★
+                </div>
+                <div className="mt-1.5 text-[13px] text-[#4F6172]">Average rating</div>
               </div>
             </div>
-          </FadeUp>
-        </Container>
-      </Section>
-    </>
+          </div>
+
+          {/* Visual */}
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] bg-gradient-to-br from-[#82BD3F] to-[#6BA432] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+            <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,rgba(255,255,255,0.08)_0_2px,transparent_2px_20px)]" />
+            <div className="absolute top-12 -left-[22px] max-w-[260px] rounded-[14px] bg-white p-[18px_22px] shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
+              <div className="text-[14px] leading-[1.4] font-medium text-[#0E1B2C]">
+                &ldquo;If it&apos;s not work I&apos;d put in my own house, it doesn&apos;t leave the
+                van.&rdquo;
+              </div>
+              <div className="mt-2 text-[12px] text-[#4F6172]">
+                — Mark, Director &amp; Licensed Electrician
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
