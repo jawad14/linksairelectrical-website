@@ -1,31 +1,29 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { Wind, Zap, HardHat, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Heading, P } from '@/components/ui/typography';
 
 const services = [
   {
-    icon: Wind,
     title: 'Air Conditioning Services',
-    desc: 'From split systems and ducted installs to repairs, servicing and maintenance — we handle every aspect of your cooling and heating needs with ARC-licensed precision.',
+    desc: 'Is your air conditioner not cooling well? From split systems and ducted installs to repairs, servicing and maintenance — we handle it all with ARC-licensed precision.',
+    image: '/images/services/airconditioning.jpg',
     href: '/air-conditioning',
-    color: 'bg-[#E9F4FB] text-[#1779B8]',
-    accent: 'after:bg-[#2196D6]',
+    accent: 'bg-[#2196D6]',
   },
   {
-    icon: Zap,
     title: 'Electrical Services',
-    desc: 'Power points, switchboard upgrades, LED lighting, EV chargers, smoke alarms and more. Fully licensed electricians delivering safe, code-compliant work every time.',
+    desc: 'Professional electrical services across Brisbane and Gold Coast. Power points, switchboard upgrades, LED lighting, EV chargers, smoke alarms and more.',
+    image: '/images/services/electrical.jpg',
     href: '/electricals',
-    color: 'bg-[#FDE7E8] text-[#E73438]',
-    accent: 'after:bg-[#E73438]',
+    accent: 'bg-[#E73438]',
   },
   {
-    icon: HardHat,
     title: 'Building & Construction',
-    desc: 'Complete electrical and air conditioning solutions for new builds, renovations and commercial fit-outs. We work alongside builders to deliver on time and on spec.',
+    desc: 'Looking for high-end builder services? Complete electrical and air conditioning solutions for new builds, renovations and commercial fit-outs.',
+    image: '/images/services/construction.jpg',
     href: '/building-and-construction',
-    color: 'bg-[#F0F7E6] text-[#6BA432]',
-    accent: 'after:bg-[#82BD3F]',
+    accent: 'bg-[#82BD3F]',
   },
 ];
 
@@ -58,24 +56,35 @@ export function Services() {
             <Link
               key={svc.title}
               href={svc.href}
-              className={`group relative flex flex-col overflow-hidden rounded-[14px] border border-[#E3E9F0] bg-white p-10 text-center transition-all duration-250 after:absolute after:top-0 after:left-0 after:h-[3px] after:w-full ${svc.accent} hover:-translate-y-1 hover:border-transparent hover:shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]`}
+              className="group relative flex flex-col overflow-hidden rounded-[14px] border border-[#E3E9F0] bg-white transition-all duration-250 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]"
             >
-              <div
-                className={`mx-auto mb-6 grid h-16 w-16 place-items-center rounded-2xl ${svc.color}`}
-              >
-                <svc.icon className="h-8 w-8" />
+              {/* Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={svc.image}
+                  alt={svc.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+                {/* Accent bar at bottom of image */}
+                <div className={`absolute bottom-0 left-0 h-1 w-full ${svc.accent}`} />
               </div>
-              <Heading
-                level={3}
-                className="font-heading mb-3 text-[22px] leading-[1.15] font-bold text-[#0E1B2C]"
-              >
-                {svc.title}
-              </Heading>
-              <P className="grow text-[15px] leading-[1.6] text-[#4F6172]">{svc.desc}</P>
-              <span className="mx-auto mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#0E1B2C]">
-                Read More
-                <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </span>
+
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-7">
+                <Heading
+                  level={3}
+                  className="font-heading mb-3 text-[20px] leading-[1.2] font-bold text-[#0E1B2C]"
+                >
+                  {svc.title}
+                </Heading>
+                <P className="grow text-[15px] leading-[1.6] text-[#4F6172]">{svc.desc}</P>
+                <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#0E1B2C]">
+                  Read More
+                  <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
             </Link>
           ))}
         </div>
