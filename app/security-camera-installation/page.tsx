@@ -332,15 +332,15 @@ export default function SecurityCameraInstallationPage() {
         </section>
 
         {/* ── Why Choose Us ── */}
-        <section className="bg-[#0E1B2C] py-[clamp(72px,9vw,120px)] text-white">
+        <section className="bg-[#F4F7FA] py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="mx-auto mb-14 max-w-[760px] text-center">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-white/80 uppercase before:inline-block before:h-0.5 before:w-6 before:bg-white/50">
+              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
                 Why Links
               </span>
               <Heading
                 level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-white"
+                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
               >
                 Why Choose Links Air &amp; Electrical
               </Heading>
@@ -350,15 +350,18 @@ export default function SecurityCameraInstallationPage() {
               {whyUs.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[14px] border border-white/[0.08] bg-white/[0.04] p-7"
+                  className="rounded-[14px] border border-[#E3E9F0] bg-white p-7"
                 >
-                  <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-white/[0.08] text-[#4FB3E8]">
+                  <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-[#E9F4FB] text-[#1779B8]">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <Heading level={3} className="font-heading mb-2 text-[17px] font-bold text-white">
+                  <Heading
+                    level={3}
+                    className="font-heading mb-2 text-[17px] font-bold text-[#0E1B2C]"
+                  >
                     {item.title}
                   </Heading>
-                  <P className="text-[14px] leading-[1.6] text-white/60">{item.desc}</P>
+                  <P className="text-[14px] leading-[1.6] text-[#4F6172]">{item.desc}</P>
                 </div>
               ))}
             </div>
