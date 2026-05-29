@@ -161,6 +161,21 @@ export default function AirConditioningPage() {
           </div>
         </section>
 
+        {/* ── Service Image ── */}
+        <section className="bg-[#F8FAFC] py-[clamp(48px,6vw,72px)]">
+          <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+            <div className="relative aspect-[16/7] overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+              <Image
+                src="/images/services/pages/ac-services-inner2.webp"
+                alt="Air conditioning service and installation work by Links Air & Electrical"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1240px) 100vw, 1240px"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* ── Services Grid ── */}
         <section className="bg-[#F4F7FA] py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
@@ -196,6 +211,21 @@ export default function AirConditioningPage() {
                   </span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Tips Image ── */}
+        <section className="bg-[#F8FAFC] py-[clamp(48px,6vw,72px)]">
+          <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+            <div className="relative aspect-[16/7] overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+              <Image
+                src="/images/services/pages/ac-services-inner3.webp"
+                alt="Air conditioning maintenance tips by Links Air & Electrical"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1240px) 100vw, 1240px"
+              />
             </div>
           </div>
         </section>

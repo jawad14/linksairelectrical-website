@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { CheckCircle, Home, Eye, Gauge, Volume2, Leaf, TrendingUp } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -84,7 +85,7 @@ export default function DuctedAirconditioningPage() {
         <ServiceHero
           eyebrow="Ducted Systems"
           title="Ducted Air Conditioning Brisbane & Gold Coast"
-          image="/images/services/pages/ducted-ref.webp"
+          image="/images/services/airconditioning.webp"
           imageAlt="Ducted air conditioning systems by Links Air & Electrical"
         />
 
@@ -113,6 +114,17 @@ export default function DuctedAirconditioningPage() {
                 what temperature. That means you can keep the living areas cool during the day and
                 switch to bedrooms at night — without wasting energy on empty spaces.
               </P>
+              <div className="relative mt-10 aspect-[1/1] max-w-[600px] max-[900px]:max-w-[560px]">
+                <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+                  <Image
+                    src="/images/services/pages/ducted-ref.webp"
+                    alt="Ducted air conditioning systems by Links Air & Electrical"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 900px) 560px, 600px"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
 import { Footer } from '@/components/blocks/Footer';
@@ -32,7 +33,7 @@ export default function UpOverPage() {
         <ServiceHero
           eyebrow="Split System"
           title="Up & Over Installation"
-          image="/images/services/pages/up-over-1.webp"
+          image="/images/services/airconditioning.webp"
           imageAlt="Up and over air conditioning installation by Links Air & Electrical"
         />
 
@@ -68,6 +69,26 @@ export default function UpOverPage() {
                 space. Our team has done hundreds of these and knows exactly how to route the
                 pipework for the cleanest, most reliable result.
               </P>
+              <div className="mt-10 flex flex-col gap-8 sm:flex-row">
+                <div className="relative aspect-[3/2] flex-1 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+                  <Image
+                    src="/images/services/pages/up-over-1.webp"
+                    alt="Up and over air conditioning installation"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="relative aspect-[6/5] flex-1 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
+                  <Image
+                    src="/images/services/pages/up-over-2.webp"
+                    alt="Up and over installation pipework routing"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>

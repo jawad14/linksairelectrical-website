@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ChevronRight,
@@ -42,6 +43,7 @@ const installationTypes = [
     desc: 'The most straightforward setup — indoor and outdoor units sit on opposite sides of the same wall. Shortest pipe run, lowest cost.',
     price: 'From $600 – $850',
     href: '/back-to-back-installation',
+    image: '/images/services/pages/split-b2b-card.webp',
   },
   {
     icon: ArrowRightLeft,
@@ -49,6 +51,7 @@ const installationTypes = [
     desc: 'Pipework runs along the wall to the side of the unit. Ideal for brick walls or situations where back-to-back is not an option.',
     price: 'From $700 – $950',
     href: '/side-entry-installation',
+    image: '/images/services/pages/split-side-entry-card.webp',
   },
   {
     icon: ArrowUpFromLine,
@@ -56,6 +59,7 @@ const installationTypes = [
     desc: 'Pipes travel up and over the roof cavity. Used for multi-storey homes or when the outdoor unit needs to be placed further away.',
     price: 'From $1,000 – $1,500+',
     href: '/up-over-installation',
+    image: '/images/services/pages/split-up-over-card.webp',
   },
 ];
 
@@ -162,8 +166,14 @@ export default function SplitSystemPage() {
                   href={item.href}
                   className="group flex flex-col gap-4 rounded-[14px] border border-[#E3E9F0] bg-white p-7 transition-shadow hover:shadow-[0_12px_32px_-12px_rgba(14,27,44,0.15)]"
                 >
-                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#E9F4FB] text-[#1779B8]">
-                    <item.icon className="h-7 w-7" />
+                  <div className="relative aspect-[1/1] w-full overflow-hidden rounded-xl">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                    />
                   </div>
                   <Heading level={3} className="font-heading text-[17px] font-bold text-[#0E1B2C]">
                     {item.title}
