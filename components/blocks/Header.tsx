@@ -65,7 +65,7 @@ export function Header() {
             aria-label="Links Air & Electrical home"
           >
             <Image
-              src="/logo.webp"
+              src="/logo-cropped.webp"
               alt="Links Air & Electrical"
               width={160}
               height={62}

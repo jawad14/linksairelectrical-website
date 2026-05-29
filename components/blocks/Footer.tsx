@@ -13,11 +13,11 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <Image
-                src="/logo.webp"
+                src="/logo-cropped.webp"
                 alt="Links Air & Electrical"
                 width={140}
                 height={54}
-                className="h-[54px] w-auto rounded-[10px] bg-white p-1.5 px-2.5"
+                className="h-[54px] w-auto"
               />
             </div>
             <P className="mt-[18px] max-w-[320px] text-[14px] leading-[1.6] text-white/70">
