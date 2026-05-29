@@ -145,7 +145,7 @@ export default function ResidentialElectricianPage() {
                 </div>
               </div>
 
-              <div className="relative aspect-[4/3] max-[900px]:max-w-[560px]">
+              <div className="relative hidden aspect-[4/3] max-[900px]:max-w-[560px] md:block">
                 <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
                   <Image
                     src="/images/about/about-inner.webp"

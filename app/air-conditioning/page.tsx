@@ -147,7 +147,7 @@ export default function AirConditioningPage() {
                 </div>
               </div>
 
-              <div className="relative aspect-[4/3] max-[900px]:max-w-[560px]">
+              <div className="relative hidden aspect-[4/3] max-[900px]:max-w-[560px] md:block">
                 <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
                   <Image
                     src="/images/services/pages/ac-services-intro.webp"
@@ -162,8 +162,8 @@ export default function AirConditioningPage() {
           </div>
         </section>
 
-        {/* ── Service Image ── */}
-        <section className="bg-[#F8FAFC] py-[clamp(48px,6vw,72px)]">
+        {/* ── Service Image (desktop only) ── */}
+        <section className="hidden bg-[#F8FAFC] py-[clamp(48px,6vw,72px)] md:block">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="relative aspect-[16/7] overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
               <Image
@@ -216,8 +216,8 @@ export default function AirConditioningPage() {
           </div>
         </section>
 
-        {/* ── Tips Image ── */}
-        <section className="bg-[#F8FAFC] py-[clamp(48px,6vw,72px)]">
+        {/* ── Tips Image (desktop only) ── */}
+        <section className="hidden bg-[#F8FAFC] py-[clamp(48px,6vw,72px)] md:block">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="relative aspect-[16/7] overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
               <Image
