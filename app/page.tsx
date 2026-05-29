@@ -55,22 +55,34 @@ export default function HomePage() {
         <Testimonials />
         {/* 20% OFF promo banner */}
         <PromoBanner />
-        {/* Work gallery — project photos */}
-        <Gallery />
-        {/* Your Trusted Local Experts */}
-        <TrustedExperts />
+        {/* Work gallery — project photos (desktop only to reduce mobile scroll) */}
+        <div className="hidden md:block">
+          <Gallery />
+        </div>
+        {/* Your Trusted Local Experts (desktop only) */}
+        <div className="hidden md:block">
+          <TrustedExperts />
+        </div>
         {/* One Team — 8 service cards on dark bg */}
         <OneTeam />
         {/* Appointment / contact form */}
         <Contact />
-        {/* Why Choose Links — checklist */}
-        <About />
-        {/* Electrical Services + AC Services + Combined table */}
-        <ServicesTables />
-        {/* What Makes Us Different — 5 badges */}
-        <WhatMakesUsDifferent />
-        {/* Our Customers — 5 customer types */}
-        <OurCustomers />
+        {/* Why Choose Links — checklist (desktop only, WhyUs already covers this on mobile) */}
+        <div className="hidden md:block">
+          <About />
+        </div>
+        {/* Electrical Services + AC Services + Combined table (desktop only) */}
+        <div className="hidden md:block">
+          <ServicesTables />
+        </div>
+        {/* What Makes Us Different — 5 badges (desktop only) */}
+        <div className="hidden md:block">
+          <WhatMakesUsDifferent />
+        </div>
+        {/* Our Customers — 5 customer types (desktop only) */}
+        <div className="hidden md:block">
+          <OurCustomers />
+        </div>
         {/* Service areas — dark bg */}
         <Areas />
         {/* FAQs accordion */}

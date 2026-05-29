@@ -134,7 +134,7 @@ export default function BuildingAndConstructionPage() {
                   systems. The work is carried out at different stages alongside other trade works.
                 </P>
               </div>
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-electricals.webp"
                   alt="Electrician working on a new residential build"
@@ -202,7 +202,7 @@ export default function BuildingAndConstructionPage() {
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="grid items-center gap-14 max-[900px]:grid-cols-1 min-[900px]:grid-cols-[1fr_1fr]">
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-why-choose.webp"
                   alt="Links Air & Electrical team working on site"
@@ -275,7 +275,7 @@ export default function BuildingAndConstructionPage() {
                   the specific needs of residential, commercial, and industrial projects.
                 </P>
               </div>
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-aircon.webp"
                   alt="Air conditioning installation for new construction"
@@ -292,7 +292,7 @@ export default function BuildingAndConstructionPage() {
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="grid items-center gap-14 max-[900px]:grid-cols-1 min-[900px]:grid-cols-[1fr_1fr]">
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-specialised.webp"
                   alt="Specialised electrical services for builders"
@@ -353,7 +353,7 @@ export default function BuildingAndConstructionPage() {
                   ))}
                 </div>
               </div>
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-basic.webp"
                   alt="Basic electrical services for new home builds"
@@ -370,7 +370,7 @@ export default function BuildingAndConstructionPage() {
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
             <div className="grid items-center gap-14 max-[900px]:grid-cols-1 min-[900px]:grid-cols-[1fr_1fr]">
-              <div className="overflow-hidden rounded-[14px]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
                 <Image
                   src="/images/services/pages/building-ac-wiring.webp"
                   alt="Air conditioning electrical wiring installation"
