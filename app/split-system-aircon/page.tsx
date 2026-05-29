@@ -107,8 +107,8 @@ export default function SplitSystemPage() {
         <ServiceHero
           eyebrow="Split Systems"
           title="Split System Air Conditioning"
-          image="/images/services/airconditioning.webp"
-          imageAlt="Split system air conditioning unit installed by Links Air & Electrical"
+          image="/images/services/pages/split-system.webp"
+          imageAlt="Split system air conditioning by Links Air & Electrical"
         />
 
         {/* ── How Split Systems Work ── */}

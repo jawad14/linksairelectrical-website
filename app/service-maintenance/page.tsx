@@ -64,8 +64,8 @@ export default function ServiceMaintenancePage() {
         <ServiceHero
           eyebrow="Servicing"
           title="Air Conditioning Service & Maintenance"
-          image="/images/services/airconditioning.webp"
-          imageAlt="Technician performing maintenance on an air conditioning unit"
+          image="/images/services/pages/service-maintenance.webp"
+          imageAlt="Air conditioning service and maintenance by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

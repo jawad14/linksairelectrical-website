@@ -39,8 +39,8 @@ export default function BackToBackPage() {
         <ServiceHero
           eyebrow="Split System"
           title="Back to Back Installation"
-          image="/images/services/pages/back-to-back.webp"
-          imageAlt="Back to back split system air conditioning installation"
+          image="/images/services/pages/back-to-back-ref.webp"
+          imageAlt="Back to back air conditioning installation by Links Air & Electrical"
         />
 
         {/* ── Content Section ── */}

@@ -66,8 +66,8 @@ export default function VrvVrfPage() {
         <ServiceHero
           eyebrow="Commercial AC"
           title="VRV/VRF Air Conditioning Systems"
-          image="/images/services/airconditioning.webp"
-          imageAlt="Commercial VRV air conditioning outdoor unit on a rooftop"
+          image="/images/services/pages/vrv-vrf.webp"
+          imageAlt="VRV VRF air conditioning systems by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

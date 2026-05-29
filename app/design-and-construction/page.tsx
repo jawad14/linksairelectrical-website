@@ -66,8 +66,8 @@ export default function DesignAndConstructionPage() {
         <ServiceHero
           eyebrow="Design & Build"
           title="Air Conditioning Design & Construction"
-          image="/images/services/construction.webp"
-          imageAlt="Air conditioning system being installed during building construction"
+          image="/images/services/pages/design-construction.webp"
+          imageAlt="Air conditioning design and construction by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

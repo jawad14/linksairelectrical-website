@@ -66,8 +66,8 @@ export default function SecurityCameraInstallationPage() {
         <ServiceHero
           eyebrow="Security"
           title="Security Camera Installation"
-          image="/images/services/electrical.webp"
-          imageAlt="Security camera installed on the exterior of a building"
+          image="/images/services/pages/security-camera.webp"
+          imageAlt="Security camera installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

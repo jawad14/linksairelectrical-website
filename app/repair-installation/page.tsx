@@ -79,8 +79,8 @@ export default function RepairInstallationPage() {
         <ServiceHero
           eyebrow="Repairs"
           title="Air Conditioning Repair & Installation"
-          image="/images/services/pages/repair.webp"
-          imageAlt="Technician repairing an air conditioning unit"
+          image="/images/services/pages/repair-ref.webp"
+          imageAlt="Air conditioning repair and installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

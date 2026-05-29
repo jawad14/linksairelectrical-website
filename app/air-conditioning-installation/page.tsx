@@ -62,8 +62,8 @@ export default function AirConditioningInstallationPage() {
         <ServiceHero
           eyebrow="Installation"
           title="Air Conditioning Installation Brisbane"
-          image="/images/services/airconditioning.webp"
-          imageAlt="New air conditioning unit being installed on a wall"
+          image="/images/services/pages/ac-installation-hero.webp"
+          imageAlt="Air conditioning installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

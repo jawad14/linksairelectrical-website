@@ -32,8 +32,8 @@ export default function UpOverPage() {
         <ServiceHero
           eyebrow="Split System"
           title="Up & Over Installation"
-          image="/images/services/airconditioning.webp"
-          imageAlt="Up and over split system air conditioning installation"
+          image="/images/services/pages/up-over-1.webp"
+          imageAlt="Up and over air conditioning installation by Links Air & Electrical"
         />
 
         {/* ── Content Section ── */}

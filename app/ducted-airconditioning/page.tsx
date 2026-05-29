@@ -84,8 +84,8 @@ export default function DuctedAirconditioningPage() {
         <ServiceHero
           eyebrow="Ducted Systems"
           title="Ducted Air Conditioning Brisbane & Gold Coast"
-          image="/images/services/pages/ducted.webp"
-          imageAlt="Ducted air conditioning ceiling vent installed in a modern home"
+          image="/images/services/pages/ducted-ref.webp"
+          imageAlt="Ducted air conditioning systems by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}

@@ -32,8 +32,8 @@ export default function SideEntryPage() {
         <ServiceHero
           eyebrow="Split System"
           title="Side Entry Installation"
-          image="/images/services/airconditioning.webp"
-          imageAlt="Side entry split system air conditioning installation"
+          image="/images/services/pages/side-entry.webp"
+          imageAlt="Side entry air conditioning installation by Links Air & Electrical"
         />
 
         {/* ── Content Section ── */}
