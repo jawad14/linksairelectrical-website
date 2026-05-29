@@ -17,6 +17,7 @@ import { Header } from '@/components/blocks/Header';
 import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
+import { Testimonials } from '@/components/blocks/Testimonials';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
@@ -261,6 +262,7 @@ export default function AirConditioningPage() {
           </div>
         </section>
 
+        <Testimonials />
         <ServiceCTA />
       </main>
       <Footer />

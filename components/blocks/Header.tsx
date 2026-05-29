@@ -85,10 +85,19 @@ export function Header() {
 
           {/* Right side: phone + CTA + mobile toggle */}
           <div className="flex shrink-0 items-center gap-3">
-            {/* Phone number — visible on tablet+ */}
+            {/* Phone icon — mobile only */}
             <Link
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[13px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-xl:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full bg-[#E9F4FB] text-[#1779B8] sm:hidden"
+              aria-label="Call us"
+            >
+              <Phone className="h-5 w-5" />
+            </Link>
+
+            {/* Phone number — tablet+ */}
+            <Link
+              href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+              className="hidden items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[13px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] sm:flex xl:flex"
             >
               <Phone className="h-4 w-4 text-[#2196D6]" />
               {siteConfig.phone}
@@ -97,7 +106,7 @@ export function Header() {
             {/* CTA button */}
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-4 py-2 text-[13px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-3.5 max-sm:py-2 max-sm:text-[12px]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-4 py-2.5 text-[13px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-3.5 max-sm:py-2.5"
             >
               Get a free quote
               <ChevronRight className="h-4 w-4 max-sm:hidden" strokeWidth={2.5} />
@@ -106,7 +115,7 @@ export function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative grid h-10 w-10 place-items-center rounded-lg border border-[#E3E9F0] bg-white text-[#0E1B2C] transition-colors hover:bg-[#F4F7FA] min-[1025px]:hidden"
+              className="relative grid h-11 w-11 place-items-center rounded-lg border border-[#E3E9F0] bg-white text-[#0E1B2C] transition-colors hover:bg-[#F4F7FA] min-[1025px]:hidden"
               aria-label="Toggle menu"
             >
               <div className="flex h-4 w-[18px] flex-col justify-between">
@@ -303,14 +312,14 @@ function MobileNavItem({
           <Link
             href={item.href}
             onClick={onClose}
-            className="font-heading flex h-[44px] flex-1 items-center text-[15px] font-semibold text-[#0E1B2C]"
+            className="font-heading flex min-h-[44px] flex-1 items-center text-[15px] font-semibold text-[#0E1B2C]"
           >
             {item.label}
           </Link>
           {hasChildren && (
             <button
               onClick={() => setOpen(!open)}
-              className="grid h-[44px] w-10 place-items-center text-[#6E7E8E]"
+              className="grid min-h-[44px] w-11 place-items-center text-[#6E7E8E]"
               aria-label={open ? `Collapse ${item.label}` : `Expand ${item.label}`}
             >
               <ChevronDown
@@ -349,14 +358,14 @@ function MobileChildItem({ item, onClose }: { item: NavItem; onClose: () => void
         <Link
           href={item.href}
           onClick={onClose}
-          className={`flex h-[38px] flex-1 items-center text-[14px] text-[#2A3A4E] transition-colors hover:text-[#1779B8] ${hasChildren ? 'font-semibold' : ''}`}
+          className={`flex min-h-[44px] flex-1 items-center text-[14px] text-[#2A3A4E] transition-colors hover:text-[#1779B8] ${hasChildren ? 'font-semibold' : ''}`}
         >
           {item.label}
         </Link>
         {hasChildren && (
           <button
             onClick={() => setOpen(!open)}
-            className="grid h-[38px] w-10 place-items-center text-[#6E7E8E]"
+            className="grid min-h-[44px] w-11 place-items-center text-[#6E7E8E]"
             aria-label={open ? `Collapse ${item.label}` : `Expand ${item.label}`}
           >
             <ChevronDown
@@ -373,7 +382,7 @@ function MobileChildItem({ item, onClose }: { item: NavItem; onClose: () => void
               <Link
                 href={gc.href}
                 onClick={onClose}
-                className="flex h-[34px] items-center text-[13px] text-[#4F6172] transition-colors hover:text-[#1779B8]"
+                className="flex min-h-[44px] items-center text-[13px] text-[#4F6172] transition-colors hover:text-[#1779B8]"
               >
                 {gc.label}
               </Link>

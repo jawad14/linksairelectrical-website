@@ -6,7 +6,7 @@ import { Heading, P } from '@/components/ui/typography';
 
 export function Footer() {
   return (
-    <footer className="bg-[#08111E] pt-[72px] pb-7 text-white/70">
+    <footer className="bg-[#08111E] pt-[72px] pb-[72px] text-white/70 md:pb-7">
       <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
         <div className="grid grid-cols-[1.4fr_1fr_1fr] gap-12 border-b border-white/[0.08] pb-12 max-[900px]:grid-cols-2 max-[520px]:grid-cols-1 max-[520px]:gap-8">
           {/* Brand */}
@@ -59,7 +59,7 @@ export function Footer() {
             >
               Useful Links
             </Heading>
-            <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+            <ul className="m-0 flex list-none flex-col gap-0 p-0">
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/about-us">About Us</FooterLink>
               <FooterLink href="/air-conditioning">AC Services</FooterLink>
@@ -79,37 +79,37 @@ export function Footer() {
             >
               Contact Us
             </Heading>
-            <ul className="m-0 flex list-none flex-col gap-4 p-0">
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#2196D6]" />
+            <ul className="m-0 flex list-none flex-col gap-0 p-0">
+              <li>
                 <Link
                   href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                  className="text-[14px] transition-colors hover:text-white"
+                  className="inline-flex min-h-[44px] items-center gap-3 text-[14px] transition-colors hover:text-white"
                 >
+                  <Phone className="h-4 w-4 shrink-0 text-[#2196D6]" />
                   {siteConfig.phone}
                 </Link>
               </li>
-              <li className="flex items-start gap-3">
-                <Smartphone className="mt-0.5 h-4 w-4 shrink-0 text-[#2196D6]" />
+              <li>
                 <Link
                   href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
-                  className="text-[14px] transition-colors hover:text-white"
+                  className="inline-flex min-h-[44px] items-center gap-3 text-[14px] transition-colors hover:text-white"
                 >
+                  <Smartphone className="h-4 w-4 shrink-0 text-[#2196D6]" />
                   {siteConfig.mobile}
                 </Link>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#2196D6]" />
+              <li>
                 <Link
                   href={`mailto:${siteConfig.email}`}
-                  className="text-[14px] transition-colors hover:text-white"
+                  className="inline-flex min-h-[44px] items-center gap-3 text-[14px] transition-colors hover:text-white"
                 >
+                  <Mail className="h-4 w-4 shrink-0 text-[#2196D6]" />
                   {siteConfig.email}
                 </Link>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#2196D6]" />
-                <span className="text-[14px]">brisbane and gold coast</span>
+              <li className="inline-flex min-h-[44px] items-center gap-3 text-[14px]">
+                <MapPin className="h-4 w-4 shrink-0 text-[#2196D6]" />
+                brisbane and gold coast
               </li>
             </ul>
           </div>
@@ -135,7 +135,10 @@ export function Footer() {
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-[14px] transition-colors hover:text-white">
+      <Link
+        href={href}
+        className="inline-flex min-h-[44px] items-center text-[14px] transition-colors hover:text-white"
+      >
         {children}
       </Link>
     </li>
@@ -157,7 +160,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="grid h-9 w-9 place-items-center rounded-full bg-white/[0.06] text-white transition-all hover:-translate-y-0.5 hover:bg-[#2196D6]"
+      className="grid h-11 w-11 place-items-center rounded-full bg-white/[0.06] text-white transition-all hover:-translate-y-0.5 hover:bg-[#2196D6]"
     >
       {children}
     </Link>

@@ -1,11 +1,23 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle, Home, Eye, Gauge, Volume2, Leaf, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
+import {
+  CheckCircle,
+  Home,
+  Eye,
+  Gauge,
+  Volume2,
+  Leaf,
+  TrendingUp,
+  ChevronRight,
+  Phone,
+} from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
 import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
+import { Testimonials } from '@/components/blocks/Testimonials';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
@@ -114,6 +126,22 @@ export default function DuctedAirconditioningPage() {
                 what temperature. That means you can keep the living areas cool during the day and
                 switch to bedrooms at night — without wasting energy on empty spaces.
               </P>
+              <div className="mt-6 flex flex-wrap gap-3.5">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#E73438] px-[22px] py-3.5 text-[15px] font-semibold text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229]"
+                >
+                  Get a Free Quote
+                  <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+                </Link>
+                <Link
+                  href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                  className="inline-flex items-center gap-2.5 rounded-full border border-[#E3E9F0] bg-transparent px-[22px] py-3.5 text-[15px] font-semibold text-[#0E1B2C] transition-colors hover:bg-[#F4F7FA]"
+                >
+                  <Phone className="h-4 w-4 text-[#2196D6]" />
+                  Call {siteConfig.phone}
+                </Link>
+              </div>
               <div className="relative mt-10 aspect-[1/1] max-w-[600px] max-[900px]:max-w-[560px]">
                 <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
                   <Image
@@ -215,6 +243,7 @@ export default function DuctedAirconditioningPage() {
           </div>
         </section>
 
+        <Testimonials />
         <ServiceCTA />
       </main>
       <Footer />

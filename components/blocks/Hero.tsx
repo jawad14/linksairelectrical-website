@@ -45,7 +45,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center gap-7 border-t border-[#E3E9F0] pt-7">
+          <div className="mt-12 flex flex-wrap items-center gap-7 border-t border-[#E3E9F0] pt-7 max-[520px]:flex-col max-[520px]:items-start max-[520px]:gap-3">
             {[
               'Licensed & insured — your home is protected',
               'Guaranteed workmanship — or we come back free',
@@ -74,7 +74,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="grid h-9 w-9 place-items-center rounded-full border border-[#E3E9F0] text-[#4F6172] transition-all hover:-translate-y-0.5 hover:border-[#2196D6] hover:text-[#2196D6]"
+                className="grid h-11 w-11 place-items-center rounded-full border border-[#E3E9F0] text-[#4F6172] transition-all hover:-translate-y-0.5 hover:border-[#2196D6] hover:text-[#2196D6]"
               >
                 <SocialIcon name={s.label} />
               </Link>
@@ -97,7 +97,7 @@ export function Hero() {
           </div>
 
           {/* Years badge — bottom left, pokes out */}
-          <div className="absolute bottom-[60px] -left-6 z-10 flex min-w-[240px] items-center gap-3.5 rounded-[14px] bg-white p-[18px_22px] shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)] max-[900px]:bottom-3 max-[900px]:left-3 max-[900px]:min-w-[220px]">
+          <div className="absolute bottom-[60px] -left-6 z-10 flex min-w-[240px] items-center gap-3.5 rounded-[14px] bg-white p-[18px_22px] shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)] max-[900px]:bottom-3 max-[900px]:left-3 max-[900px]:min-w-[220px] max-[520px]:min-w-0">
             <span className="font-heading text-4xl leading-none font-extrabold text-[#1779B8]">
               10+
             </span>

@@ -164,7 +164,7 @@ export function Contact() {
                       Select Service
                     </label>
                     <select
-                      className={`rounded-[10px] border bg-white px-3.5 py-[13px] text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${errors.service ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
+                      className={`rounded-[10px] border bg-white px-3.5 py-3.5 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${errors.service ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
                       {...register('service')}
                     >
                       <option value="">Select Service</option>
@@ -181,7 +181,7 @@ export function Contact() {
                     Tell us about the job
                   </label>
                   <textarea
-                    className="min-h-[120px] resize-y rounded-[10px] border border-[#E3E9F0] bg-white px-3.5 py-[13px] text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none"
+                    className="min-h-[120px] resize-y rounded-[10px] border border-[#E3E9F0] bg-white px-3.5 py-3.5 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none"
                     placeholder="Describe what you need — feel free to mention timeframe."
                     {...register('message')}
                   />
@@ -239,7 +239,7 @@ const Field = forwardRef<
         ref={ref}
         type={type}
         placeholder={placeholder}
-        className={`rounded-[10px] border bg-white px-3.5 py-[13px] text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${error ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
+        className={`rounded-[10px] border bg-white px-3.5 py-3.5 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${error ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
         {...rest}
       />
       <FieldError message={error} />

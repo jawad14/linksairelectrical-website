@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { FloatingMobileCTA } from '@/components/blocks/FloatingMobileCTA';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <FloatingMobileCTA />
         </ThemeProvider>
         <Analytics />
       </body>

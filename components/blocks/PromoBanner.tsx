@@ -1,18 +1,23 @@
 import Link from 'next/link';
 import { Phone, ChevronRight } from 'lucide-react';
-import { Heading } from '@/components/ui/typography';
+import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export function PromoBanner() {
   return (
     <section className="bg-[#E73438] py-10">
-      <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-6 px-[clamp(20px,4vw,56px)]">
-        <Heading
-          level={3}
-          className="font-heading text-[clamp(22px,2.5vw,32px)] leading-[1.2] font-bold text-white"
-        >
-          Save 20% on Electrical &amp; AC Repairs — Limited Time, Don&apos;t Miss Out
-        </Heading>
+      <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-6 px-[clamp(20px,4vw,56px)] max-[640px]:flex-col max-[640px]:items-start">
+        <div className="max-w-[600px]">
+          <Heading
+            level={3}
+            className="font-heading text-[clamp(22px,2.5vw,32px)] leading-[1.2] font-bold text-white"
+          >
+            Save 20% on Electrical &amp; AC Repairs — Limited Time, Don&apos;t Miss Out
+          </Heading>
+          <P className="mt-2 text-[15px] text-white/85">
+            Offer ends June 30 — book this week to lock in your discount.
+          </P>
+        </div>
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}

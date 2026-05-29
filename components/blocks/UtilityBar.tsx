@@ -38,18 +38,18 @@ export function UtilityBar() {
         </div>
 
         {/* Mobile: stacked two rows */}
-        <div className="flex flex-col gap-1.5 py-2.5 sm:hidden">
+        <div className="flex flex-col py-1 text-sm sm:hidden">
           <div className="flex items-center justify-between">
             <Link
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+              className="inline-flex min-h-[44px] items-center gap-2 transition-colors hover:text-white"
             >
               <Phone className="h-3.5 w-3.5 opacity-70" />
               {siteConfig.phone}
             </Link>
             <Link
               href={`tel:${siteConfig.mobile.replace(/\s/g, '')}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+              className="inline-flex min-h-[44px] items-center gap-2 transition-colors hover:text-white"
             >
               <Smartphone className="h-3.5 w-3.5 opacity-70" />
               {siteConfig.mobile}
@@ -58,13 +58,13 @@ export function UtilityBar() {
           <div className="flex items-center justify-between">
             <Link
               href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+              className="inline-flex min-h-[44px] items-center gap-2 transition-colors hover:text-white"
             >
               <Mail className="h-3.5 w-3.5 opacity-70" />
               {siteConfig.email}
             </Link>
-            <span className="inline-flex items-center gap-1.5 text-[12px]">
-              <MapPin className="h-3 w-3 opacity-70" />
+            <span className="inline-flex min-h-[44px] items-center gap-1.5 text-[13px]">
+              <MapPin className="h-3.5 w-3.5 opacity-70" />
               brisbane and gold coast
             </span>
           </div>
