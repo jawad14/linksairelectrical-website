@@ -4,7 +4,7 @@ import { siteConfig } from '@/config/site.config';
 
 export function UtilityBar() {
   return (
-    <div className="bg-[#0E1B2C] text-[13px] text-white/[0.78]">
+    <div className="hidden bg-[#0E1B2C] text-[13px] text-white/[0.78] sm:block">
       <div className="mx-auto max-w-[1240px] px-[clamp(16px,3vw,56px)]">
         {/* Desktop: single row, left/right */}
         <div className="hidden h-[44px] items-center justify-between sm:flex">
