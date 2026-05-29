@@ -57,7 +57,7 @@ export function Header() {
         ref={headerRef}
         className="sticky top-0 z-50 border-b border-[#E3E9F0] bg-white/[0.92] backdrop-blur-[10px] backdrop-saturate-[140%]"
       >
-        <div className="mx-auto flex h-[84px] max-w-[1360px] items-center justify-between px-5 max-sm:h-[72px] sm:px-8">
+        <div className="mx-auto flex h-[64px] max-w-[1360px] items-center justify-between px-5 max-sm:h-[56px] sm:px-8">
           {/* Logo */}
           <Link
             href="/"
@@ -69,14 +69,14 @@ export function Header() {
               alt="Links Air & Electrical"
               width={160}
               height={62}
-              className="h-[62px] w-auto object-contain max-sm:h-[50px]"
+              className="h-[44px] w-auto object-contain max-sm:h-[38px]"
               priority
             />
           </Link>
 
           {/* Desktop nav — centered */}
           <nav className="mr-auto max-[1024px]:hidden">
-            <ul className="m-0 flex list-none items-center gap-3 p-0 lg:gap-4 xl:gap-6">
+            <ul className="m-0 flex list-none items-center gap-1.5 p-0 lg:gap-2.5 xl:gap-4">
               {siteConfig.nav.map((item) => (
                 <DesktopNavItem key={item.label} item={item} />
               ))}
@@ -84,11 +84,11 @@ export function Header() {
           </nav>
 
           {/* Right side: phone + CTA + mobile toggle */}
-          <div className="flex shrink-0 items-center gap-4">
+          <div className="flex shrink-0 items-center gap-3">
             {/* Phone number — visible on tablet+ */}
             <Link
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-2 rounded-full px-3 py-2 text-[14px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-xl:hidden"
+              className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[13px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8] max-xl:hidden"
             >
               <Phone className="h-4 w-4 text-[#2196D6]" />
               {siteConfig.phone}
@@ -97,7 +97,7 @@ export function Header() {
             {/* CTA button */}
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-5 py-3 text-[14px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-4 max-sm:py-2.5 max-sm:text-[13px]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#E73438] px-4 py-2 text-[13px] font-semibold whitespace-nowrap text-white shadow-[0_6px_16px_-6px_rgba(231,52,56,0.6)] transition-transform hover:-translate-y-px hover:bg-[#D62229] max-sm:px-3.5 max-sm:py-2 max-sm:text-[12px]"
             >
               Get a free quote
               <ChevronRight className="h-4 w-4 max-sm:hidden" strokeWidth={2.5} />
@@ -144,8 +144,6 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     timeout.current = setTimeout(() => setOpen(false), 150);
   }
 
-  const isMega = item.children && item.children.length > 3;
-
   return (
     <li className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <Link
@@ -159,114 +157,63 @@ function DesktopNavItem({ item }: { item: NavItem }) {
           />
         )}
       </Link>
-      {item.children &&
-        open &&
-        (isMega ? <MegaMenu item={item} /> : <SimpleDropdown items={item.children} />)}
+      {item.children && open && <Dropdown items={item.children} />}
     </li>
   );
 }
 
-/* ═══════════════════════ MEGA MENU ═══════════════════════ */
+/* ═══════════════════════ DROPDOWN ═══════════════════════ */
 
-function MegaMenu({ item }: { item: NavItem }) {
-  const Icon = categoryIcons[item.label];
-  const children = item.children ?? [];
-  const deep = hasGrandchildren(item);
-
+function Dropdown({ items }: { items: NavItem[] }) {
   return (
-    <div className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
-      <div className="w-[680px] rounded-2xl border border-[#E3E9F0] bg-white p-6 shadow-[0_16px_48px_-12px_rgba(14,27,44,0.20),0_4px_12px_rgba(14,27,44,0.06)]">
-        <div className="mb-4 flex items-center gap-3 border-b border-[#E3E9F0] pb-4">
-          {Icon && (
-            <div className="grid h-9 w-9 place-items-center rounded-lg bg-[#E9F4FB] text-[#1779B8]">
-              <Icon className="h-[18px] w-[18px]" />
-            </div>
-          )}
-          <div>
-            <Link
-              href={item.href}
-              className="font-heading text-[15px] font-bold text-[#0E1B2C] transition-colors hover:text-[#1779B8]"
-            >
-              {item.label}
-            </Link>
-            <P className="text-[12px] text-[#6E7E8E]">
-              View all {item.label.toLowerCase()} services
-            </P>
-          </div>
-        </div>
-
-        {deep ? (
-          <div className="grid grid-cols-2 gap-6">
-            {children.map((child) =>
-              child.children ? (
-                <div key={child.label}>
-                  <Link
-                    href={child.href}
-                    className="font-heading mb-2 block text-[13px] font-bold tracking-[0.06em] text-[#0E1B2C] uppercase transition-colors hover:text-[#1779B8]"
-                  >
-                    {child.label}
-                  </Link>
-                  <ul className="m-0 flex list-none flex-col gap-0.5 p-0">
-                    {child.children.map((gc) => (
-                      <li key={gc.label}>
-                        <Link
-                          href={gc.href}
-                          className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-[13px] text-[#4F6172] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-                        >
-                          <ChevronRight className="h-3 w-3 opacity-30" />
-                          {gc.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <Link
-                  key={child.label}
-                  href={child.href}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-[13px] text-[#4F6172] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-                >
-                  <ChevronRight className="h-3 w-3 opacity-30" />
-                  {child.label}
-                </Link>
-              ),
-            )}
-          </div>
-        ) : (
-          <div className="grid grid-cols-3 gap-1">
-            {children.map((child) => (
-              <Link
-                key={child.label}
-                href={child.href}
-                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-[#4F6172] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-              >
-                <ChevronRight className="h-3 w-3 opacity-30" />
-                {child.label}
-              </Link>
-            ))}
-          </div>
-        )}
+    <div className="absolute top-full left-0 z-50 pt-1.5">
+      <div className="min-w-[220px] rounded-lg border border-[#E3E9F0] bg-white py-1 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
+        {items.map((child) => (
+          <DropdownItem key={child.label} item={child} />
+        ))}
       </div>
     </div>
   );
 }
 
-/* ═══════════════════════ SIMPLE DROPDOWN ═══════════════════════ */
+/* ═══════════════════ DROPDOWN ITEM (with flyout) ═══════════════════ */
 
-function SimpleDropdown({ items }: { items: NavItem[] }) {
+function DropdownItem({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+  const timeout = useRef<ReturnType<typeof setTimeout>>(null);
+
+  function enter() {
+    if (timeout.current) clearTimeout(timeout.current);
+    setOpen(true);
+  }
+  function leave() {
+    timeout.current = setTimeout(() => setOpen(false), 120);
+  }
+
   return (
-    <div className="absolute top-full left-0 z-50 pt-3">
-      <div className="min-w-[200px] rounded-xl border border-[#E3E9F0] bg-white p-1.5 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
-        {items.map((child) => (
-          <Link
-            key={child.label}
-            href={child.href}
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-          >
-            {child.label}
-          </Link>
-        ))}
-      </div>
+    <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+      <Link
+        href={item.href}
+        className="flex items-center justify-between gap-4 px-3.5 py-[7px] text-[13px] text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
+      >
+        {item.label}
+        {item.children && <ChevronRight className="h-3 w-3 opacity-40" />}
+      </Link>
+      {item.children && open && (
+        <div className="absolute top-0 left-full z-50 pl-1">
+          <div className="min-w-[200px] rounded-lg border border-[#E3E9F0] bg-white py-1 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
+            {item.children.map((gc) => (
+              <Link
+                key={gc.label}
+                href={gc.href}
+                className="block px-3.5 py-[7px] text-[13px] text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
+              >
+                {gc.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -356,14 +303,14 @@ function MobileNavItem({
           <Link
             href={item.href}
             onClick={onClose}
-            className="font-heading flex h-[50px] flex-1 items-center text-[16px] font-semibold text-[#0E1B2C]"
+            className="font-heading flex h-[44px] flex-1 items-center text-[15px] font-semibold text-[#0E1B2C]"
           >
             {item.label}
           </Link>
           {hasChildren && (
             <button
               onClick={() => setOpen(!open)}
-              className="grid h-[50px] w-12 place-items-center text-[#6E7E8E]"
+              className="grid h-[44px] w-10 place-items-center text-[#6E7E8E]"
               aria-label={open ? `Collapse ${item.label}` : `Expand ${item.label}`}
             >
               <ChevronDown
@@ -402,14 +349,14 @@ function MobileChildItem({ item, onClose }: { item: NavItem; onClose: () => void
         <Link
           href={item.href}
           onClick={onClose}
-          className={`flex h-[42px] flex-1 items-center text-[14px] text-[#2A3A4E] transition-colors hover:text-[#1779B8] ${hasChildren ? 'font-semibold' : ''}`}
+          className={`flex h-[38px] flex-1 items-center text-[14px] text-[#2A3A4E] transition-colors hover:text-[#1779B8] ${hasChildren ? 'font-semibold' : ''}`}
         >
           {item.label}
         </Link>
         {hasChildren && (
           <button
             onClick={() => setOpen(!open)}
-            className="grid h-[42px] w-10 place-items-center text-[#6E7E8E]"
+            className="grid h-[38px] w-10 place-items-center text-[#6E7E8E]"
             aria-label={open ? `Collapse ${item.label}` : `Expand ${item.label}`}
           >
             <ChevronDown
@@ -426,7 +373,7 @@ function MobileChildItem({ item, onClose }: { item: NavItem; onClose: () => void
               <Link
                 href={gc.href}
                 onClick={onClose}
-                className="flex h-[38px] items-center text-[13px] text-[#4F6172] transition-colors hover:text-[#1779B8]"
+                className="flex h-[34px] items-center text-[13px] text-[#4F6172] transition-colors hover:text-[#1779B8]"
               >
                 {gc.label}
               </Link>
