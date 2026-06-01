@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
 import { Hero } from '@/components/blocks/Hero';
-import { TrustBadges } from '@/components/blocks/TrustBadges';
-import { TrustStats } from '@/components/blocks/TrustStats';
 import { Services } from '@/components/blocks/Services';
 import { BrandPartners } from '@/components/blocks/BrandPartners';
 import { WhyUs } from '@/components/blocks/WhyUs';
@@ -45,12 +43,8 @@ export default function HomePage() {
       <UtilityBar />
       <Header />
       <main>
-        {/* Hero with service entry cards */}
+        {/* Hero with service entry cards + trust signals built in */}
         <Hero />
-        {/* Licence & credential badges */}
-        <TrustBadges />
-        {/* Trust indicator icons */}
-        <TrustStats />
         {/* 3 main service cards: AC, Electrical, Building */}
         <Services />
         {/* Brand logos — trust strip */}
