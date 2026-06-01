@@ -57,7 +57,7 @@ export default function AreasPage() {
         <ServiceHero
           eyebrow="Service Areas"
           title="Areas We Service Across South East Queensland"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Links Air & Electrical service areas across South East Queensland"
         />
 

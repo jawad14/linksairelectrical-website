@@ -78,7 +78,7 @@ export default function LoganPage() {
         <ServiceHero
           eyebrow="Logan"
           title="Electrician & Air Conditioning Logan"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Licensed electrician servicing Logan homes and businesses"
         />
 

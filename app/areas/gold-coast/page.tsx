@@ -84,7 +84,7 @@ export default function GoldCoastPage() {
         <ServiceHero
           eyebrow="Gold Coast"
           title="Electrician & Air Conditioning Gold Coast"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Licensed electrician servicing Gold Coast homes and businesses"
         />
 

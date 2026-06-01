@@ -78,7 +78,7 @@ export default function IpswichPage() {
         <ServiceHero
           eyebrow="Ipswich"
           title="Electrician & Air Conditioning Ipswich"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Licensed electrician servicing Ipswich homes and businesses"
         />
 

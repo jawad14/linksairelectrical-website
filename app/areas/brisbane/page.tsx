@@ -86,7 +86,7 @@ export default function BrisbanePage() {
         <ServiceHero
           eyebrow="Brisbane"
           title="Electrician & Air Conditioning Brisbane"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Licensed electrician servicing Brisbane homes and businesses"
         />
 
