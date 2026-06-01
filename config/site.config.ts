@@ -1,9 +1,19 @@
 import type { Metadata } from 'next';
 
+export type NavPromo = {
+  image: string;
+  alt: string;
+  heading: string;
+  subtitle: string;
+  cta: string;
+  href: string;
+};
+
 export type NavItem = {
   label: string;
   href: string;
   children?: NavItem[];
+  promo?: NavPromo;
 };
 
 export type SocialLink = { label: string; href: string };
@@ -65,6 +75,14 @@ export const siteConfig: SiteConfig = {
     {
       label: 'Air Con',
       href: '/air-conditioning',
+      promo: {
+        image: '/images/services/airconditioning.webp',
+        alt: 'Air conditioning installation by Links Air & Electrical',
+        heading: 'Unbeatable Air Con Deals',
+        subtitle: 'Quality systems at great prices!',
+        cta: 'View our specials!',
+        href: '/air-conditioning',
+      },
       children: [
         {
           label: 'Split System Aircon',
@@ -88,6 +106,14 @@ export const siteConfig: SiteConfig = {
     {
       label: 'Electricals',
       href: '/electricals',
+      promo: {
+        image: '/images/services/electrical.webp',
+        alt: 'Electrical services by Links Air & Electrical',
+        heading: 'Expert Electrical Services',
+        subtitle: 'Licensed electricians you can trust!',
+        cta: 'Get a free quote',
+        href: '/electricals',
+      },
       children: [
         {
           label: 'Residential Electrician',

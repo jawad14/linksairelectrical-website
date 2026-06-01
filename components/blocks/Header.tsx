@@ -4,18 +4,11 @@ import { useState, useRef, useEffect, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Phone, Mail, Wind, Zap, HardHat, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronRight, Phone, Mail } from 'lucide-react';
 import { siteConfig, type NavItem } from '@/config/site.config';
-import { P } from '@/components/ui/typography';
+import { Text } from '@/components/ui/typography';
 
 /* ───────────────────────── helpers ───────────────────────── */
-
-const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  'Air Con': Wind,
-  Electricals: Zap,
-  'Building & Construction': HardHat,
-  Areas: MapPin,
-};
 
 function hasGrandchildren(item: NavItem) {
   return item.children?.some((c) => c.children && c.children.length > 0);
@@ -153,8 +146,10 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     timeout.current = setTimeout(() => setOpen(false), 150);
   }
 
+  const isMega = hasGrandchildren(item);
+
   return (
-    <li className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+    <li className={isMega ? 'static' : 'relative'} onMouseEnter={enter} onMouseLeave={leave}>
       <Link
         href={item.href}
         className="inline-flex items-center gap-1 text-[14px] font-medium whitespace-nowrap text-[#2A3A4E] transition-colors hover:text-[#1779B8]"
@@ -166,63 +161,127 @@ function DesktopNavItem({ item }: { item: NavItem }) {
           />
         )}
       </Link>
-      {item.children && open && <Dropdown items={item.children} />}
+      {item.children &&
+        open &&
+        (isMega ? (
+          <MegaMenu items={item.children} promo={item.promo} />
+        ) : (
+          <SimpleDropdown items={item.children} />
+        ))}
     </li>
   );
 }
 
-/* ═══════════════════════ DROPDOWN ═══════════════════════ */
+/* ═══════════════════════ MEGA MENU ═══════════════════════ */
 
-function Dropdown({ items }: { items: NavItem[] }) {
+function MegaMenu({ items, promo }: { items: NavItem[]; promo?: NavItem['promo'] }) {
+  // Split items: those with children get their own column, those without are grouped
+  const columnItems = items.filter((i) => i.children && i.children.length > 0);
+  const standaloneItems = items.filter((i) => !i.children || i.children.length === 0);
+
   return (
-    <div className="absolute top-full left-0 z-50 pt-1.5">
-      <div className="min-w-[220px] rounded-lg border border-[#E3E9F0] bg-white py-1 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
-        {items.map((child) => (
-          <DropdownItem key={child.label} item={child} />
-        ))}
+    <div className="absolute inset-x-0 top-full z-50 pt-1.5">
+      <div className="mx-auto max-w-[1060px] px-5">
+        <div className="rounded-xl border border-[#E3E9F0] bg-white shadow-[0_12px_36px_-12px_rgba(14,27,44,0.18),0_2px_8px_rgba(14,27,44,0.06)]">
+          {/* Content: columns + promo */}
+          <div className="flex">
+            {/* Nav columns */}
+            <div className="flex flex-1 p-2">
+              {/* Items with children — each gets its own column */}
+              {columnItems.map((col) => (
+                <div key={col.label} className="flex-1 px-4 py-3">
+                  <Link
+                    href={col.href}
+                    className="mb-2 block text-[13px] font-semibold text-[#0E1B2C] transition-colors hover:text-[#1779B8]"
+                  >
+                    {col.label}
+                  </Link>
+                  <ul className="m-0 list-none space-y-0.5 p-0">
+                    {col.children!.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="block rounded-md px-2 py-[5px] text-[13px] text-[#4F6172] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {/* Standalone items (no children) — grouped into one column */}
+              {standaloneItems.length > 0 && (
+                <div className="flex-1 px-4 py-3">
+                  <span className="mb-2 block text-[13px] font-semibold text-[#0E1B2C]">
+                    Other Services
+                  </span>
+                  <ul className="m-0 list-none space-y-0.5 p-0">
+                    {standaloneItems.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
+                          className="block rounded-md px-2 py-[5px] text-[13px] text-[#4F6172] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {/* Promo card */}
+            {promo && (
+              <div className="w-[280px] shrink-0 p-3">
+                <Link href={promo.href} className="group block overflow-hidden rounded-lg">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                    <Image
+                      src={promo.image}
+                      alt={promo.alt}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="280px"
+                    />
+                    {/* Overlay content */}
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4">
+                      <Text className="m-0 text-[18px] leading-tight font-bold text-white">
+                        {promo.heading}
+                      </Text>
+                      <Text className="m-0 mt-1 text-[13px] text-white/90">{promo.subtitle}</Text>
+                      <span className="mt-2.5 inline-flex w-fit items-center rounded-full bg-[#E73438] px-4 py-1.5 text-[12px] font-semibold text-white transition-colors group-hover:bg-[#D62229]">
+                        {promo.cta}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-/* ═══════════════════ DROPDOWN ITEM (with flyout) ═══════════════════ */
+/* ═══════════════════════ SIMPLE DROPDOWN ═══════════════════════ */
 
-function DropdownItem({ item }: { item: NavItem }) {
-  const [open, setOpen] = useState(false);
-  const timeout = useRef<ReturnType<typeof setTimeout>>(null);
-
-  function enter() {
-    if (timeout.current) clearTimeout(timeout.current);
-    setOpen(true);
-  }
-  function leave() {
-    timeout.current = setTimeout(() => setOpen(false), 120);
-  }
-
+function SimpleDropdown({ items }: { items: NavItem[] }) {
   return (
-    <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
-      <Link
-        href={item.href}
-        className="flex items-center justify-between gap-4 px-3.5 py-[7px] text-[13px] text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-      >
-        {item.label}
-        {item.children && <ChevronRight className="h-3 w-3 opacity-40" />}
-      </Link>
-      {item.children && open && (
-        <div className="absolute top-0 left-full z-50 pl-1">
-          <div className="min-w-[200px] rounded-lg border border-[#E3E9F0] bg-white py-1 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
-            {item.children.map((gc) => (
-              <Link
-                key={gc.label}
-                href={gc.href}
-                className="block px-3.5 py-[7px] text-[13px] text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
-              >
-                {gc.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className="absolute top-full left-0 z-50 pt-1.5">
+      <div className="min-w-[220px] rounded-lg border border-[#E3E9F0] bg-white py-1 shadow-[0_8px_24px_-8px_rgba(14,27,44,0.18),0_2px_6px_rgba(14,27,44,0.06)]">
+        {items.map((child) => (
+          <Link
+            key={child.label}
+            href={child.href}
+            className="flex items-center gap-2 px-3.5 py-[7px] text-[13px] text-[#2A3A4E] transition-colors hover:bg-[#F4F7FA] hover:text-[#1779B8]"
+          >
+            {child.label}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
