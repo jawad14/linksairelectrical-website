@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { MonitorPlay, Moon, Smartphone, HardDrive, Cable, Home } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,36 +67,47 @@ export default function CctvCameraInstallationPage() {
         <ServiceHero
           eyebrow="Security"
           title="CCTV Camera Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="CCTV camera installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Security
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Professional Security Camera Systems
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                A properly installed CCTV system is one of the most effective deterrents against
-                break- ins — and when incidents do occur, high-quality footage makes all the
-                difference. We design and install security camera systems for homes and businesses
-                across Brisbane and the Gold Coast, with HD and 4K options to suit every budget.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Every system includes night vision cameras, a network video recorder (NVR) or
-                digital video recorder (DVR) for continuous recording, and remote viewing via a free
-                smartphone app so you can check in from anywhere. Because we&apos;re licensed
-                electricians, all cabling is installed to code — neatly run, weatherproofed, and
-                built to last.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Security
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Professional Security Camera Systems
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  A properly installed CCTV system is one of the most effective deterrents against
+                  break- ins — and when incidents do occur, high-quality footage makes all the
+                  difference. We design and install security camera systems for homes and businesses
+                  across Brisbane and the Gold Coast, with HD and 4K options to suit every budget.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Every system includes night vision cameras, a network video recorder (NVR) or
+                  digital video recorder (DVR) for continuous recording, and remote viewing via a
+                  free smartphone app so you can check in from anywhere. Because we&apos;re licensed
+                  electricians, all cabling is installed to code — neatly run, weatherproofed, and
+                  built to last.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/security-camera.webp"
+                  alt="CCTV camera installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

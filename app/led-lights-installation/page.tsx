@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -66,36 +67,47 @@ export default function LedLightsInstallationPage() {
         <ServiceHero
           eyebrow="LED Lighting"
           title="LED Lights Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="LED lighting installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                LED Lighting
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Energy-Efficient LED Lighting for Every Space
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Upgrading to LED lighting is one of the smartest investments you can make for your
-                home or business. LEDs deliver brighter, cleaner light while using up to 80% less
-                energy than traditional halogen or incandescent globes. With strategic placement and
-                the right colour temperature, we can transform the look and feel of any room.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                LED globes last significantly longer than older technologies — up to 25 times longer
-                — which means fewer replacements and lower running costs over time. Whether
-                you&apos;re after recessed downlights, surface-mounted panels, or outdoor security
-                lighting, our electricians install a full range of styles with dimming capability
-                built in where needed.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  LED Lighting
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Energy-Efficient LED Lighting for Every Space
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Upgrading to LED lighting is one of the smartest investments you can make for your
+                  home or business. LEDs deliver brighter, cleaner light while using up to 80% less
+                  energy than traditional halogen or incandescent globes. With strategic placement
+                  and the right colour temperature, we can transform the look and feel of any room.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  LED globes last significantly longer than older technologies — up to 25 times
+                  longer — which means fewer replacements and lower running costs over time. Whether
+                  you&apos;re after recessed downlights, surface-mounted panels, or outdoor security
+                  lighting, our electricians install a full range of styles with dimming capability
+                  built in where needed.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/led-lights.webp"
+                  alt="LED lights installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

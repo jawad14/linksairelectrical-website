@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -66,35 +67,46 @@ export default function MeterBoxRelocationPage() {
         <ServiceHero
           eyebrow="Meter Boxes"
           title="Meter Box Relocation & Upgrade"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Meter box relocation and upgrade by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Meter Boxes
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Professional Meter Box Relocation and Upgrade
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Whether you&apos;re renovating, extending, or simply need your meter box moved to a
-                more practical location, our licensed electricians handle the entire process from
-                start to finish. We relocate meter boxes to meet current energy provider
-                requirements and upgrade older switchboards to modern safety standards.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Every meter box relocation involves coordination with your supply authority —
-                Energex or Ergon Energy — to arrange disconnection and reconnection. We take care of
-                all the paperwork and approvals so you don&apos;t have to. The result is a
-                compliant, neatly finished installation with room for future electrical growth.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Meter Boxes
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Professional Meter Box Relocation and Upgrade
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Whether you&apos;re renovating, extending, or simply need your meter box moved to
+                  a more practical location, our licensed electricians handle the entire process
+                  from start to finish. We relocate meter boxes to meet current energy provider
+                  requirements and upgrade older switchboards to modern safety standards.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Every meter box relocation involves coordination with your supply authority —
+                  Energex or Ergon Energy — to arrange disconnection and reconnection. We take care
+                  of all the paperwork and approvals so you don&apos;t have to. The result is a
+                  compliant, neatly finished installation with room for future electrical growth.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/meter-box.webp"
+                  alt="Meter box relocation and upgrade by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

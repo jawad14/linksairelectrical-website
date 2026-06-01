@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ShieldCheck, Link2, Sun, MapPin, Building2, BatteryFull } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,36 +67,47 @@ export default function SmokeDetectorInstallationPage() {
         <ServiceHero
           eyebrow="Fire Safety"
           title="Smoke Detector Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Smoke detector installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Fire Safety
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Compliant Smoke Detector Installation
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Queensland&apos;s smoke alarm legislation requires all homes to have interconnected
-                photoelectric smoke alarms installed in every bedroom, in hallways connecting
-                bedrooms, and on every level of the property. Whether you&apos;re a homeowner
-                upgrading, a landlord meeting compliance deadlines, or preparing a property for
-                sale, our licensed electricians handle the entire process.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We strategically position each alarm to maximise fire detection while reducing false
-                alarms caused by cooking or steam. All installations meet the current Australian
-                Standard and Queensland Fire and Emergency Services requirements, and we provide a
-                compliance certificate for your records.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Fire Safety
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Compliant Smoke Detector Installation
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Queensland&apos;s smoke alarm legislation requires all homes to have
+                  interconnected photoelectric smoke alarms installed in every bedroom, in hallways
+                  connecting bedrooms, and on every level of the property. Whether you&apos;re a
+                  homeowner upgrading, a landlord meeting compliance deadlines, or preparing a
+                  property for sale, our licensed electricians handle the entire process.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We strategically position each alarm to maximise fire detection while reducing
+                  false alarms caused by cooking or steam. All installations meet the current
+                  Australian Standard and Queensland Fire and Emergency Services requirements, and
+                  we provide a compliance certificate for your records.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/smoke-detector.webp"
+                  alt="Smoke detector installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

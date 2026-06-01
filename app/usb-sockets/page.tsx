@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Usb, Zap, PackageOpen, PlugZap, DoorOpen, PaintBucket } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,36 +67,47 @@ export default function UsbSocketsPage() {
         <ServiceHero
           eyebrow="USB Power"
           title="USB Socket Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="USB socket installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                USB Power
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Convenient USB Charging Built Into Your Walls
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                USB-integrated power points bring charging right to the wall — no more hunting for
-                adapters or fighting over the one charger in the house. Available with USB-A, USB-C,
-                or both, these outlets let you charge phones, tablets, earbuds, and other devices
-                directly from any room.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We install combination outlets that pair standard Australian power points with
-                built-in USB ports, so you don&apos;t lose any existing sockets. They&apos;re ideal
-                for bedrooms, kitchens, home offices, and commercial reception areas — anywhere
-                people reach for a charger. The result is a cleaner bench, a tidier desk, and fast
-                charging without the clutter.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  USB Power
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Convenient USB Charging Built Into Your Walls
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  USB-integrated power points bring charging right to the wall — no more hunting for
+                  adapters or fighting over the one charger in the house. Available with USB-A,
+                  USB-C, or both, these outlets let you charge phones, tablets, earbuds, and other
+                  devices directly from any room.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We install combination outlets that pair standard Australian power points with
+                  built-in USB ports, so you don&apos;t lose any existing sockets. They&apos;re
+                  ideal for bedrooms, kitchens, home offices, and commercial reception areas —
+                  anywhere people reach for a charger. The result is a cleaner bench, a tidier desk,
+                  and fast charging without the clutter.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/usb-sockets.webp"
+                  alt="USB socket installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

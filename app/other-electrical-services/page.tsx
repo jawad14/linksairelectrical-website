@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { SearchCheck, Cable, Lightbulb, Flame, CircuitBoard, Wrench } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,36 +67,47 @@ export default function OtherElectricalServicesPage() {
         <ServiceHero
           eyebrow="Electrical Services"
           title="Other Electrical Services"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Electrical services by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Electrical Services
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Custom Electrical Solutions for Every Need
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Not every electrical job fits neatly into a service category. From diagnosing a
-                mystery fault that keeps tripping your safety switch, to running a dedicated circuit
-                for a new oven or connecting a hot water system, our licensed electricians handle
-                the full spectrum of residential and light commercial electrical work.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We also take care of partial rewiring for older homes, garden and security lighting
-                design, exhaust fan and range hood connections, and any other custom wiring job you
-                need done right. If it&apos;s electrical and it&apos;s not listed on our other
-                service pages, chances are we still do it — give us a call and we&apos;ll sort it
-                out.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Electrical Services
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Custom Electrical Solutions for Every Need
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Not every electrical job fits neatly into a service category. From diagnosing a
+                  mystery fault that keeps tripping your safety switch, to running a dedicated
+                  circuit for a new oven or connecting a hot water system, our licensed electricians
+                  handle the full spectrum of residential and light commercial electrical work.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We also take care of partial rewiring for older homes, garden and security
+                  lighting design, exhaust fan and range hood connections, and any other custom
+                  wiring job you need done right. If it&apos;s electrical and it&apos;s not listed
+                  on our other service pages, chances are we still do it — give us a call and
+                  we&apos;ll sort it out.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/other-electrical.webp"
+                  alt="Other electrical services by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

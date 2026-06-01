@@ -13,6 +13,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -73,36 +74,47 @@ export default function PendantLightInstallerPage() {
         <ServiceHero
           eyebrow="Feature Lighting"
           title="Pendant Light Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Pendant light installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Feature Lighting
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Expert Pendant Light Installation
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Pendant lights are more than just a light source — they&apos;re a feature element
-                that defines the character of a space. Whether hung over a kitchen island, dining
-                table, or used as a statement piece in a commercial fit-out, getting the
-                installation right matters. Height, spacing, weight support, and wiring all need to
-                be considered.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Our electricians handle every aspect of pendant light installation, from mounting
-                heavy fixtures with proper ceiling reinforcement to wiring multi-pendant layouts
-                with dimming capability. The result is a clean, professional finish with no exposed
-                wiring and every pendant perfectly positioned.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Feature Lighting
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Expert Pendant Light Installation
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Pendant lights are more than just a light source — they&apos;re a feature element
+                  that defines the character of a space. Whether hung over a kitchen island, dining
+                  table, or used as a statement piece in a commercial fit-out, getting the
+                  installation right matters. Height, spacing, weight support, and wiring all need
+                  to be considered.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Our electricians handle every aspect of pendant light installation, from mounting
+                  heavy fixtures with proper ceiling reinforcement to wiring multi-pendant layouts
+                  with dimming capability. The result is a clean, professional finish with no
+                  exposed wiring and every pendant perfectly positioned.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/pendant-light.webp"
+                  alt="Pendant light installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

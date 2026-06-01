@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -66,35 +67,46 @@ export default function PowerPointInstallationPage() {
         <ServiceHero
           eyebrow="Power Points"
           title="Power Point Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Power point installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Power Points
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Professional Power Point Installation
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Whether you need new power points added, old ones relocated, or outdated outlets
-                upgraded to modern safety-rated fittings, our electricians get the job done cleanly
-                and to code. We also install dedicated circuits for heavy appliances like air
-                conditioners, ovens, and workshop equipment.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Outdoor power points are available with weatherproof covers for patios, sheds, and
-                garden areas. We can also fit USB combo power points throughout your home — a simple
-                upgrade that eliminates the need for bulky phone and tablet chargers. Every
-                installation is tested and certified before we leave.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Power Points
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Professional Power Point Installation
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Whether you need new power points added, old ones relocated, or outdated outlets
+                  upgraded to modern safety-rated fittings, our electricians get the job done
+                  cleanly and to code. We also install dedicated circuits for heavy appliances like
+                  air conditioners, ovens, and workshop equipment.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Outdoor power points are available with weatherproof covers for patios, sheds, and
+                  garden areas. We can also fit USB combo power points throughout your home — a
+                  simple upgrade that eliminates the need for bulky phone and tablet chargers. Every
+                  installation is tested and certified before we leave.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/power-point.webp"
+                  alt="Power point installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
