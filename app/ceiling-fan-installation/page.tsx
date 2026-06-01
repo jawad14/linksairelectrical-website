@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Anchor, Palette, Lightbulb, Smartphone, Leaf, BadgeCheck } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -73,29 +74,40 @@ export default function CeilingFanInstallationPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Ceiling Fans
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Professional Ceiling Fan Installation
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                A ceiling fan is one of the most cost-effective ways to keep your home comfortable
-                year-round. In summer it creates a cooling breeze, and in winter you can reverse the
-                blade direction to push warm air back down from the ceiling. The key is getting it
-                installed properly — with the right bracing, wiring, and balance.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We install all brands and styles of ceiling fans, from classic designs to modern DC
-                motor models with remote control and smart-home integration. Every installation
-                includes a rated ceiling brace for safety, proper wiring to a dedicated circuit
-                where needed, and a check that the fan runs smooth and wobble-free. Light kits and
-                controller upgrades are available on any job.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Ceiling Fans
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Professional Ceiling Fan Installation
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  A ceiling fan is one of the most cost-effective ways to keep your home comfortable
+                  year-round. In summer it creates a cooling breeze, and in winter you can reverse
+                  the blade direction to push warm air back down from the ceiling. The key is
+                  getting it installed properly — with the right bracing, wiring, and balance.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We install all brands and styles of ceiling fans, from classic designs to modern
+                  DC motor models with remote control and smart-home integration. Every installation
+                  includes a rated ceiling brace for safety, proper wiring to a dedicated circuit
+                  where needed, and a check that the fan runs smooth and wobble-free. Light kits and
+                  controller upgrades are available on any job.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/ceiling-fan.webp"
+                  alt="Ceiling fan installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

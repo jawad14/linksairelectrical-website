@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -73,30 +74,41 @@ export default function SwitchboardUpgradePage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Electrical Safety
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Modern Switchboard Protection for Your Home
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                If your home still has ceramic fuses or a switchboard without safety switches,
-                it&apos;s time for an upgrade. Older switchboards weren&apos;t designed for the
-                electrical loads we place on them today — air conditioning, EV chargers, solar
-                systems and dozens of appliances running at once. A modern switchboard with RCD
-                protection keeps your family safe and your home compliant with current Australian
-                Standards.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We remove the old board, install a new enclosure with circuit breakers and safety
-                switches, neatly label every circuit and provide a full compliance certificate on
-                completion. The result is a switchboard that&apos;s safer, easier to manage and
-                ready for whatever you add to your home next.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Electrical Safety
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Modern Switchboard Protection for Your Home
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  If your home still has ceramic fuses or a switchboard without safety switches,
+                  it&apos;s time for an upgrade. Older switchboards weren&apos;t designed for the
+                  electrical loads we place on them today — air conditioning, EV chargers, solar
+                  systems and dozens of appliances running at once. A modern switchboard with RCD
+                  protection keeps your family safe and your home compliant with current Australian
+                  Standards.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We remove the old board, install a new enclosure with circuit breakers and safety
+                  switches, neatly label every circuit and provide a full compliance certificate on
+                  completion. The result is a switchboard that&apos;s safer, easier to manage and
+                  ready for whatever you add to your home next.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/switchboard-hero.webp"
+                  alt="Switchboard upgrade by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

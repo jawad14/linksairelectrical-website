@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -73,27 +74,39 @@ export default function DataPointsNetworkCablingPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Structured Cabling
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Reliable Network Cabling for Home and Office
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Whether you&apos;re setting up a home office, upgrading a commercial fit-out or
-                wiring a new build, structured data cabling gives you the fast, stable connections
-                that Wi-Fi alone can&apos;t always guarantee. We install Cat6 and fibre-optic
-                cabling to suit your speed and distance requirements.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Every installation is designed with future-proofing in mind — neat cable management
-                through wall cavities and ceiling spaces, clearly labelled patch panels, and full
-                testing and certification so you know every point performs to specification.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Structured Cabling
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Reliable Network Cabling for Home and Office
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Whether you&apos;re setting up a home office, upgrading a commercial fit-out or
+                  wiring a new build, structured data cabling gives you the fast, stable connections
+                  that Wi-Fi alone can&apos;t always guarantee. We install Cat6 and fibre-optic
+                  cabling to suit your speed and distance requirements.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Every installation is designed with future-proofing in mind — neat cable
+                  management through wall cavities and ceiling spaces, clearly labelled patch
+                  panels, and full testing and certification so you know every point performs to
+                  specification.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/data-points.webp"
+                  alt="Data points and network cabling by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

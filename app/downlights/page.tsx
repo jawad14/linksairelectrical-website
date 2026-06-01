@@ -6,6 +6,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -73,27 +74,39 @@ export default function DownlightsPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Modern Lighting
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                LED Downlights Designed for Your Space
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                LED downlights are the go-to choice for clean, modern lighting that saves energy and
-                looks great. Whether you&apos;re building a new home, renovating or simply upgrading
-                from halogen, we design and install downlight layouts that suit the way each room is
-                used — from kitchens and living areas to bathrooms and outdoor entertaining spaces.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                With dimming options, a full range of colour temperatures and energy savings of up
-                to 80% compared to halogen, LEDs deliver better light for less. We handle everything
-                from layout design to wiring, cutouts and final testing.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Modern Lighting
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  LED Downlights Designed for Your Space
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  LED downlights are the go-to choice for clean, modern lighting that saves energy
+                  and looks great. Whether you&apos;re building a new home, renovating or simply
+                  upgrading from halogen, we design and install downlight layouts that suit the way
+                  each room is used — from kitchens and living areas to bathrooms and outdoor
+                  entertaining spaces.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  With dimming options, a full range of colour temperatures and energy savings of up
+                  to 80% compared to halogen, LEDs deliver better light for less. We handle
+                  everything from layout design to wiring, cutouts and final testing.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/downlights-hero.webp"
+                  alt="Downlight installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

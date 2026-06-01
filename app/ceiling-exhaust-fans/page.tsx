@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Scaling, Wind, CookingPot, Timer, VolumeOff, ShieldCheck } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -73,28 +74,39 @@ export default function CeilingExhaustFansPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Ventilation
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Effective Ventilation for Every Room
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Ceiling exhaust fans are essential for removing moisture, steam, and cooking odours
-                from bathrooms, kitchens, and laundries. Without proper ventilation, humidity builds
-                up and leads to mould, peeling paint, and damage to your home&apos;s structure over
-                time.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We size every fan to match the room&apos;s volume so you get effective extraction
-                without excessive noise or energy use. Every installation is ducted directly to the
-                exterior of your home and wired to meet building code requirements — whether
-                it&apos;s a new fit-out or a replacement of an old, underperforming unit.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Ventilation
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Effective Ventilation for Every Room
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Ceiling exhaust fans are essential for removing moisture, steam, and cooking
+                  odours from bathrooms, kitchens, and laundries. Without proper ventilation,
+                  humidity builds up and leads to mould, peeling paint, and damage to your
+                  home&apos;s structure over time.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We size every fan to match the room&apos;s volume so you get effective extraction
+                  without excessive noise or energy use. Every installation is ducted directly to
+                  the exterior of your home and wired to meet building code requirements — whether
+                  it&apos;s a new fit-out or a replacement of an old, underperforming unit.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/ceiling-exhaust-fan.webp"
+                  alt="Ceiling exhaust fan installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

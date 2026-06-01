@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ShieldCheck, Cable, Ruler, LayoutGrid, Handshake, Lightbulb } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -73,28 +74,39 @@ export default function NewHouseWiringPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                New Homes & Extensions
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Complete Electrical Wiring for New Homes
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Building a new home or adding an extension is a major investment, and the electrical
-                wiring needs to be done right from the start. We handle everything from the rough-in
-                stage through to final fit-off, using quality materials and neat cable runs that
-                your builder and inspector will be happy with.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Every job is completed to Australian wiring standards and issued with a full
-                compliance certificate. We work closely with your builder to stay on schedule, and
-                we&apos;ll design the layout with future needs in mind — so you&apos;re not paying
-                to retrofit later.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  New Homes & Extensions
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Complete Electrical Wiring for New Homes
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Building a new home or adding an extension is a major investment, and the
+                  electrical wiring needs to be done right from the start. We handle everything from
+                  the rough-in stage through to final fit-off, using quality materials and neat
+                  cable runs that your builder and inspector will be happy with.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Every job is completed to Australian wiring standards and issued with a full
+                  compliance certificate. We work closely with your builder to stay on schedule, and
+                  we&apos;ll design the layout with future needs in mind — so you&apos;re not paying
+                  to retrofit later.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/new-house-wiring.webp"
+                  alt="New house wiring services by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

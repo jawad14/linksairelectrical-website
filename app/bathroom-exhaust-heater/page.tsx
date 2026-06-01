@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Droplets, Sun, Wind, VolumeOff, Leaf, ShieldCheck } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -73,28 +74,39 @@ export default function BathroomExhaustHeaterPage() {
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Ventilation
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Keep Your Bathroom Dry and Mould-Free
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                A bathroom without proper ventilation is a recipe for peeling paint, damaged
-                ceilings, and mould that keeps coming back. A quality exhaust heater removes steam
-                and moisture at the source, keeping your bathroom dry and your home healthy.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We install a range of exhaust heater, light, and fan combination units — ducted
-                directly to the exterior of your home so moisture is expelled outside, not into your
-                roof cavity. Whether you&apos;re replacing an old unit or fitting one for the first
-                time, we&apos;ll handle the wiring, ducting, and ceiling cut-out for a clean,
-                code-compliant result.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Ventilation
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Keep Your Bathroom Dry and Mould-Free
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  A bathroom without proper ventilation is a recipe for peeling paint, damaged
+                  ceilings, and mould that keeps coming back. A quality exhaust heater removes steam
+                  and moisture at the source, keeping your bathroom dry and your home healthy.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We install a range of exhaust heater, light, and fan combination units — ducted
+                  directly to the exterior of your home so moisture is expelled outside, not into
+                  your roof cavity. Whether you&apos;re replacing an old unit or fitting one for the
+                  first time, we&apos;ll handle the wiring, ducting, and ceiling cut-out for a
+                  clean, code-compliant result.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/bathroom-exhaust.webp"
+                  alt="Bathroom exhaust heater installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
