@@ -10,16 +10,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Air Conditioning Installation Brisbane & Gold Coast',
+  title: 'Air conditioning installation in Coorparoo Brisbane near me',
   description:
-    'Professional air conditioning installation in Brisbane & Gold Coast. We supply and install Daikin, Mitsubishi, Fujitsu, Panasonic & ActronAir. Free quotes available.',
+    'Air conditioning installation in Coorparoo Brisbane - LinksAirElectrical. Split system installs, air conditioning service, air conditioning installers near me.',
   alternates: {
     canonical: `${siteConfig.url}/air-conditioning-installation`,
   },
   openGraph: {
-    title: 'Air Conditioning Installation Brisbane & Gold Coast',
+    title: 'Air conditioning installation in Coorparoo Brisbane near me',
     description:
-      'Professional air conditioning installation in Brisbane & Gold Coast. We supply and install all major brands.',
+      'Air conditioning installation in Coorparoo Brisbane - LinksAirElectrical. Split system installs, air conditioning service, air conditioning installers near me.',
     url: `${siteConfig.url}/air-conditioning-installation`,
   },
 };

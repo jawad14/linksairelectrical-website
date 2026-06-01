@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Switchboard Surge Protector Brisbane \u2014 Links Air & Electrical',
+  title: 'Switchboard Surge Protector Installation | LinksAirElectrical',
   description:
-    'Surge protection devices for your switchboard. Protect electronics and appliances from power spikes. Call 1300 010 393.',
+    'Links Air Electrical offers professional switchboard surge protector installation, ensuring enhanced safety and protection for your electrical system.',
   alternates: {
     canonical: `${siteConfig.url}/switchboard-surge-protector`,
   },
   openGraph: {
-    title: 'Switchboard Surge Protector Brisbane \u2014 Links Air & Electrical',
+    title: 'Switchboard Surge Protector Installation | LinksAirElectrical',
     description:
-      'Surge protection devices for your switchboard. Protect electronics and appliances from power spikes.',
+      'Links Air Electrical offers professional switchboard surge protector installation, ensuring enhanced safety and protection for your electrical system.',
     url: `${siteConfig.url}/switchboard-surge-protector`,
   },
 };

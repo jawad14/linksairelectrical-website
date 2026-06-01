@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'USB Socket Installation Brisbane \u2014 Links Air & Electrical',
+  title: 'USB Socket Installation in Brisbane by LinksAir & Electrical',
   description:
-    'Modern USB power outlets for your home or office. Charge devices conveniently without adapters. Call 1300 010 393.',
+    'USB socket installation in Brisbane by Links Air & Electrical. Upgrade to modern power points with built-in USB ports for safe, fast charging at home or office.',
   alternates: {
     canonical: `${siteConfig.url}/usb-sockets`,
   },
   openGraph: {
-    title: 'USB Socket Installation Brisbane \u2014 Links Air & Electrical',
+    title: 'USB Socket Installation in Brisbane by LinksAir & Electrical',
     description:
-      'Modern USB power outlets for your home or office. Charge devices conveniently without adapters.',
+      'USB socket installation in Brisbane by Links Air & Electrical. Upgrade to modern power points with built-in USB ports for safe, fast charging at home or office.',
     url: `${siteConfig.url}/usb-sockets`,
   },
 };

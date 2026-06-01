@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Downlight Installation Brisbane & Gold Coast — Links Air & Electrical',
+  title: 'Downlight Installation Cost in Australia — Simple Guide',
   description:
-    'LED downlight installation, halogen-to-LED upgrades, and custom lighting layouts. Energy-efficient lighting for every room. Call 1300 010 393.',
+    'Downlight Installation in Australia: real costs, key factors, smart LED tips & ways to save. Learn pricing and plan your lighting upgrade wisely today.',
   alternates: {
     canonical: `${siteConfig.url}/downlights`,
   },
   openGraph: {
-    title: 'Downlight Installation Brisbane & Gold Coast — Links Air & Electrical',
+    title: 'Downlight Installation Cost in Australia — Simple Guide',
     description:
-      'LED downlight installation, halogen-to-LED upgrades, and custom lighting layouts for every room.',
+      'Downlight Installation in Australia: real costs, key factors, smart LED tips & ways to save. Learn pricing and plan your lighting upgrade wisely today.',
     url: `${siteConfig.url}/downlights`,
   },
 };

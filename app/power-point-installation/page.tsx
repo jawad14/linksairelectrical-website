@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Power Point Installation Brisbane — Links Air & Electrical',
+  title: 'Power Point Installation & Cost | Links Air & Electrical',
   description:
-    'Professional power point installation and upgrades. Modern safety-rated outlets positioned where you need them. Call 1300 010 393.',
+    'Links Air & Electrical offers safe and reliable power point installation at a fair cost. Get expert service to upgrade your home or workspace with no hassle.',
   alternates: {
     canonical: `${siteConfig.url}/power-point-installation`,
   },
   openGraph: {
-    title: 'Power Point Installation Brisbane — Links Air & Electrical',
+    title: 'Power Point Installation & Cost | Links Air & Electrical',
     description:
-      'Professional power point installation and upgrades. Modern safety-rated outlets positioned where you need them.',
+      'Links Air & Electrical offers safe and reliable power point installation at a fair cost. Get expert service to upgrade your home or workspace with no hassle.',
     url: `${siteConfig.url}/power-point-installation`,
   },
 };

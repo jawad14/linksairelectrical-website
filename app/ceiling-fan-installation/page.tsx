@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Ceiling Fan Installation Brisbane & Gold Coast — Links Air & Electrical',
+  title: 'Ceiling Fan Installation Brisbane, Cleveland, Coorparoo',
   description:
-    'Certified ceiling fan installation with proper bracing and wiring. Safe, balanced, and building-code compliant. Call 1300 010 393.',
+    'Ceiling fan installation Brisbane, Cleveland, Coorparoo & Capalaba by Links Air & Electrical. Expert service & great prices to keep your home cool, comfortable.',
   alternates: {
     canonical: `${siteConfig.url}/ceiling-fan-installation`,
   },
   openGraph: {
-    title: 'Ceiling Fan Installation Brisbane & Gold Coast — Links Air & Electrical',
+    title: 'Ceiling Fan Installation Brisbane, Cleveland, Coorparoo',
     description:
-      'Certified ceiling fan installation with proper bracing and wiring across Brisbane & Gold Coast.',
+      'Ceiling fan installation Brisbane, Cleveland, Coorparoo & Capalaba by Links Air & Electrical. Expert service & great prices to keep your home cool, comfortable.',
     url: `${siteConfig.url}/ceiling-fan-installation`,
   },
 };

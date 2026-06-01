@@ -8,16 +8,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Contact Us — Links Air & Electrical',
+  title: 'Contact Us Links Air Electrical Call us: 0447 440 050',
   description:
-    'Get in touch with Links Air & Electrical for a free quote. Air conditioning, electrical, and builder services across Brisbane & Gold Coast. Call 1300 010 393.',
+    'Contact us Links Air Electrical at 0447 440 050 for expert air conditioning solutions, AC services, and electrical services. Reliable and professional support.',
   alternates: {
     canonical: `${siteConfig.url}/contact-us`,
   },
   openGraph: {
-    title: 'Contact Us — Links Air & Electrical',
+    title: 'Contact Us Links Air Electrical Call us: 0447 440 050',
     description:
-      'Get a free, no-obligation quote for air conditioning, electrical, and builder services in Brisbane & Gold Coast.',
+      'Contact us Links Air Electrical at 0447 440 050 for expert air conditioning solutions, AC services, and electrical services. Reliable and professional support.',
     url: `${siteConfig.url}/contact-us`,
   },
 };

@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
   shortName: 'Links Air',
   tagline: 'Trusted Local Sparkies · A/C Specialists',
   description:
-    'Professional air conditioning and electrical services in Brisbane & Gold Coast. Installation, repairs, and maintenance. Call 0468 432 538 for a free quote.',
+    'Links Air & Electrical offers air conditioning service in Brisbane, specializing in installation, repairs, and maintenance. Reliable AC, electrical solutions.',
   url: 'https://linksairelectrical.com.au',
   ogImage: '/opengraph-image',
   locale: 'en_AU',

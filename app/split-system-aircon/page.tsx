@@ -24,15 +24,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Split System Air Conditioning Brisbane — Links Air & Electrical',
+  title: 'Split System Aircons in Cleveland | aircon service Brisbane',
   description:
-    'Expert split system air conditioning installation, supply, and servicing in Brisbane & Gold Coast. Back-to-back, side entry, and up & over options. Get a free quote today.',
+    'Aircon service East Brisbane, aircon installation Springfield Brisbane, split system air conditioning Redland Bay, Cleveland & ducted aircon servicing New Farm.',
   alternates: {
     canonical: `${siteConfig.url}/split-system-aircon`,
   },
   openGraph: {
-    title: 'Split System Air Conditioning Brisbane — Links Air & Electrical',
-    description: 'Expert split system installation and servicing across Brisbane & Gold Coast.',
+    title: 'Split System Aircons in Cleveland | aircon service Brisbane',
+    description:
+      'Aircon service East Brisbane, aircon installation Springfield Brisbane, split system air conditioning Redland Bay, Cleveland & ducted aircon servicing New Farm.',
     url: `${siteConfig.url}/split-system-aircon`,
   },
 };

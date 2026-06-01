@@ -25,16 +25,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'About Us — Links Air & Electrical | Brisbane & Gold Coast',
+  title: 'About Us | Links Air Electrical - Air Conditioning Solutions',
   description:
-    'Learn about Links Air & Electrical — your trusted local team for air conditioning and electrical services across Brisbane & Gold Coast since 2014. 200+ 5-star Google reviews.',
+    "About Links Air Electrical — 7+ years' expertise in Brisbane air conditioning installation, repairs & maintenance. Reliable cooling and electrical solutions.",
   alternates: {
     canonical: `${siteConfig.url}/about-us`,
   },
   openGraph: {
-    title: 'About Us — Links Air & Electrical',
+    title: 'About Us | Links Air Electrical - Air Conditioning Solutions',
     description:
-      'Trusted local electricians and AC specialists serving Brisbane & Gold Coast since 2014.',
+      "About Links Air Electrical — 7+ years' expertise in Brisbane air conditioning installation, repairs & maintenance. Reliable cooling and electrical solutions.",
     url: `${siteConfig.url}/about-us`,
   },
 };

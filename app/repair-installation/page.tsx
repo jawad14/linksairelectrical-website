@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Air Conditioning Repair & Installation Brisbane',
+  title: 'Air conditioning repair & installation in Balmoral Brisbane',
   description:
-    'Fast, reliable air conditioning repair and professional installation across Brisbane & Gold Coast. All brands serviced. Call for same-day support.',
+    'Links Air & Electrical - reliable air conditioning repair in Balmoral Brisbane, Air conditioning installation, and ducted air conditioning system services.',
   alternates: {
     canonical: `${siteConfig.url}/repair-installation`,
   },
   openGraph: {
-    title: 'Air Conditioning Repair & Installation Brisbane',
+    title: 'Air conditioning repair & installation in Balmoral Brisbane',
     description:
-      'Fast, reliable air conditioning repair and professional installation across Brisbane & Gold Coast.',
+      'Links Air & Electrical - reliable air conditioning repair in Balmoral Brisbane, Air conditioning installation, and ducted air conditioning system services.',
     url: `${siteConfig.url}/repair-installation`,
   },
 };

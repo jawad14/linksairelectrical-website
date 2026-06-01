@@ -25,11 +25,17 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Air Conditioning & Electrical Services Brisbane - Links Air & Electrical',
+  title: 'Air Conditioning Service in Brisbane - LinksAir & Electrical',
   description:
-    'Professional air conditioning and electrical services in Brisbane & Gold Coast. Split systems, ducted AC, repairs, EV chargers, and more. 200+ 5-star Google reviews. Call 1300 010 393.',
+    'Links Air & Electrical offers air conditioning service in Brisbane, specializing in installation, repairs, and maintenance. Reliable AC, electrical solutions.',
   alternates: {
     canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: 'Air Conditioning Service in Brisbane - LinksAir & Electrical',
+    description:
+      'Links Air & Electrical offers air conditioning service in Brisbane, specializing in installation, repairs, and maintenance. Reliable AC, electrical solutions.',
+    url: siteConfig.url,
   },
 };
 

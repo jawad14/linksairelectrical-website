@@ -13,16 +13,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Electrical Services Brisbane & Gold Coast — Links Air & Electrical',
+  title: 'Electrical Repair Services in Brisbane & Hawthorne Experts',
   description:
-    'Professional electrical services across Brisbane & Gold Coast. Residential, commercial, CCTV, EV chargers and more. Licensed electricians — call 1300 010 393.',
+    'Links Air Electrical - expert Electrical Repair Services in Brisbane, Electrical Services in Hawthorne Brisbane. Trusted electricians in Brisbane & Gold Coast.',
   alternates: {
     canonical: `${siteConfig.url}/electricals`,
   },
   openGraph: {
-    title: 'Electrical Services Brisbane & Gold Coast — Links Air & Electrical',
+    title: 'Electrical Repair Services in Brisbane & Hawthorne Experts',
     description:
-      'Professional electrical services across Brisbane & Gold Coast. Residential, commercial, CCTV, EV chargers and more.',
+      'Links Air Electrical - expert Electrical Repair Services in Brisbane, Electrical Services in Hawthorne Brisbane. Trusted electricians in Brisbane & Gold Coast.',
     url: `${siteConfig.url}/electricals`,
   },
 };

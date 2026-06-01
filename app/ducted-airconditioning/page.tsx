@@ -23,16 +23,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Ducted Air Conditioning Brisbane & Gold Coast',
+  title: 'Ducted Air Conditioning Cost: A Complete Guide',
   description:
-    'Professional ducted air conditioning installation, repair & servicing across Brisbane & Gold Coast. Whole-home comfort with hidden ductwork. Get a free quote today.',
+    'From setup to running costs, find out everything you need to know about ducted air conditioning expenses in this complete, easy-to-understand guide.',
   alternates: {
     canonical: `${siteConfig.url}/ducted-airconditioning`,
   },
   openGraph: {
-    title: 'Ducted Air Conditioning Brisbane & Gold Coast',
+    title: 'Ducted Air Conditioning Cost: A Complete Guide',
     description:
-      'Professional ducted air conditioning installation, repair & servicing across Brisbane & Gold Coast.',
+      'From setup to running costs, find out everything you need to know about ducted air conditioning expenses in this complete, easy-to-understand guide.',
     url: `${siteConfig.url}/ducted-airconditioning`,
   },
 };

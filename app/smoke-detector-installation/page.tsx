@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Smoke Detector Installation Brisbane \u2014 Links Air & Electrical',
+  title: 'Smoke Detector Installation Brisbane - Links Air Electrical',
   description:
-    'Compliant smoke detector installation meeting Queensland regulations. Interconnected photoelectric alarms. Call 1300 010 393.',
+    'Smoke Detector Installation in Brisbane by Links Air & Electrical. Expert residential smoke alarm installation, testing & compliance services.',
   alternates: {
     canonical: `${siteConfig.url}/smoke-detector-installation`,
   },
   openGraph: {
-    title: 'Smoke Detector Installation Brisbane \u2014 Links Air & Electrical',
+    title: 'Smoke Detector Installation Brisbane - Links Air Electrical',
     description:
-      'Compliant smoke detector installation meeting Queensland regulations. Interconnected photoelectric alarms.',
+      'Smoke Detector Installation in Brisbane by Links Air & Electrical. Expert residential smoke alarm installation, testing & compliance services.',
     url: `${siteConfig.url}/smoke-detector-installation`,
   },
 };

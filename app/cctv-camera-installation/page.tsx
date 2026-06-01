@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'CCTV Camera Installation Brisbane & Gold Coast — Links Air & Electrical',
+  title: 'CCTV Camera Installation Greenbank CCTV installation near me',
   description:
-    'Professional CCTV and security camera installation for homes and businesses. Full setup with remote viewing. Call 1300 010 393.',
+    'Links Air & Electrical offers expert CCTV Camera Installation in Greenbank and trusted CCTV installation near me. Secure your property with our pro service.',
   alternates: {
     canonical: `${siteConfig.url}/cctv-camera-installation`,
   },
   openGraph: {
-    title: 'CCTV Camera Installation Brisbane & Gold Coast — Links Air & Electrical',
+    title: 'CCTV Camera Installation Greenbank CCTV installation near me',
     description:
-      'Professional CCTV and security camera installation for homes and businesses. Full setup with remote viewing.',
+      'Links Air & Electrical offers expert CCTV Camera Installation in Greenbank and trusted CCTV installation near me. Secure your property with our pro service.',
     url: `${siteConfig.url}/cctv-camera-installation`,
   },
 };

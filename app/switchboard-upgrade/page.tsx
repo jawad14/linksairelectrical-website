@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Switchboard Upgrade Brisbane & Gold Coast — Links Air & Electrical',
+  title: 'Switchboard Upgrade Explained: What It Is and When to Get One',
   description:
-    'Replace old ceramic fuses with modern RCD-protected switchboards. Safer, compliant, and ready for today\u2019s electrical loads. Call 1300 010 393.',
+    'Electrical Switchboard Upgrade in Woolloongabba by Links Air & Electrical. Safe, compliant upgrades, fuse box replacement & expert electrical services.',
   alternates: {
     canonical: `${siteConfig.url}/switchboard-upgrade`,
   },
   openGraph: {
-    title: 'Switchboard Upgrade Brisbane & Gold Coast — Links Air & Electrical',
+    title: 'Switchboard Upgrade Explained: What It Is and When to Get One',
     description:
-      'Replace old ceramic fuses with modern RCD-protected switchboards. Safer, compliant, and ready for today\u2019s electrical loads.',
+      'Electrical Switchboard Upgrade in Woolloongabba by Links Air & Electrical. Safe, compliant upgrades, fuse box replacement & expert electrical services.',
     url: `${siteConfig.url}/switchboard-upgrade`,
   },
 };

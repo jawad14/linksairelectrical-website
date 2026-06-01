@@ -21,16 +21,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'EV Charger Installation Brisbane — Links Air & Electrical',
+  title: 'Best EV Charger Installation in Oxley Brisbane and Gold Coast',
   description:
-    'Professional EV charger installation for homes and businesses across Brisbane. All major brands including Tesla, Ocular, and Fronius. Call 1300 010 393.',
+    'Links Air Electrical offers the best EV Charger Installation in Oxley, Brisbane and Gold Coast. Trusted EV Charger Installation Services across the region.',
   alternates: {
     canonical: `${siteConfig.url}/ev-charger-installation`,
   },
   openGraph: {
-    title: 'EV Charger Installation Brisbane — Links Air & Electrical',
+    title: 'Best EV Charger Installation in Oxley Brisbane and Gold Coast',
     description:
-      'Professional EV charger installation for homes and businesses across Brisbane. All major brands including Tesla, Ocular, and Fronius.',
+      'Links Air Electrical offers the best EV Charger Installation in Oxley, Brisbane and Gold Coast. Trusted EV Charger Installation Services across the region.',
     url: `${siteConfig.url}/ev-charger-installation`,
   },
 };

@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'LED Lights Installation Brisbane — Links Air & Electrical',
+  title: 'LED Lights Installation in Brisbane | LED light installers',
   description:
-    'Energy-efficient LED lighting installed throughout your property. Lower power bills and better illumination. Call 1300 010 393.',
+    'Links Air Electrical, expert LED light installers, offers LED lights installation services in Brisbane with energy-efficient solutions for homes and businesses.',
   alternates: {
     canonical: `${siteConfig.url}/led-lights-installation`,
   },
   openGraph: {
-    title: 'LED Lights Installation Brisbane — Links Air & Electrical',
+    title: 'LED Lights Installation in Brisbane | LED light installers',
     description:
-      'Energy-efficient LED lighting installed throughout your property. Lower power bills and better illumination.',
+      'Links Air Electrical, expert LED light installers, offers LED lights installation services in Brisbane with energy-efficient solutions for homes and businesses.',
     url: `${siteConfig.url}/led-lights-installation`,
   },
 };

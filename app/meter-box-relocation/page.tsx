@@ -11,16 +11,16 @@ import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Meter Box Relocation & Upgrade Brisbane — Links Air & Electrical',
+  title: 'Meter Box Relocation and Upgrades in Brisbane',
   description:
-    'Professional meter box relocation and switchboard upgrades. Fully compliant, neatly finished work. Call 1300 010 393.',
+    'Meter Box Relocation and Upgrades in Brisbane by Links Air & Electrical. Safe, reliable relocation and upgrade services for homes and renovations.',
   alternates: {
     canonical: `${siteConfig.url}/meter-box-relocation`,
   },
   openGraph: {
-    title: 'Meter Box Relocation & Upgrade Brisbane — Links Air & Electrical',
+    title: 'Meter Box Relocation and Upgrades in Brisbane',
     description:
-      'Professional meter box relocation and switchboard upgrades. Fully compliant, neatly finished work.',
+      'Meter Box Relocation and Upgrades in Brisbane by Links Air & Electrical. Safe, reliable relocation and upgrade services for homes and renovations.',
     url: `${siteConfig.url}/meter-box-relocation`,
   },
 };
