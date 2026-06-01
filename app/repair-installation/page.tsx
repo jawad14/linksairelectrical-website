@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Thermometer, Droplets, Volume2, Zap, Wind, Wrench, Clock, Shield } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -79,35 +80,46 @@ export default function RepairInstallationPage() {
         <ServiceHero
           eyebrow="Repairs"
           title="Air Conditioning Repair & Installation"
-          image="/images/services/pages/repair-ref.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Air conditioning repair and installation by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Repairs & installs
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Get Your Air Conditioning Working Properly Again
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                When your air conditioner stops performing, you need someone who can turn up
-                quickly, diagnose the problem accurately and get it sorted without dragging things
-                out. Our fully licensed technicians carry common parts on board and can resolve most
-                faults on the first visit.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Need a brand-new installation? We handle that too — from recommending the right
-                system for your space and budget, through to running the pipework, wiring and final
-                commissioning. Every job is backed by manufacturer warranties plus our own
-                workmanship guarantee.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Repairs & installs
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Get Your Air Conditioning Working Properly Again
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  When your air conditioner stops performing, you need someone who can turn up
+                  quickly, diagnose the problem accurately and get it sorted without dragging things
+                  out. Our fully licensed technicians carry common parts on board and can resolve
+                  most faults on the first visit.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Need a brand-new installation? We handle that too — from recommending the right
+                  system for your space and budget, through to running the pipework, wiring and
+                  final commissioning. Every job is backed by manufacturer warranties plus our own
+                  workmanship guarantee.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/repair-ref.webp"
+                  alt="Air conditioning repair and installation by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

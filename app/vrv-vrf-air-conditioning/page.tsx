@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Building2, Gauge, Zap, Thermometer, Settings, TrendingUp } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,37 +67,48 @@ export default function VrvVrfPage() {
         <ServiceHero
           eyebrow="Commercial AC"
           title="VRV/VRF Air Conditioning Systems"
-          image="/images/services/pages/vrv-vrf.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="VRV VRF air conditioning systems by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Commercial solutions
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Advanced Climate Control for Larger Spaces
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Variable Refrigerant Volume (VRV) and Variable Refrigerant Flow (VRF) systems are
-                the go-to solution for commercial and large-scale projects. A single outdoor
-                condensing unit connects to dozens of indoor units — cassettes, ducted, wall-mounted
-                or floor-standing — giving every zone independent temperature control through one
-                intelligent system.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Whether you&apos;re fitting out a new office building, upgrading an existing retail
-                space, or climate-controlling a multi-level car park, our team designs, supplies and
-                installs VRV/VRF systems tailored to your exact requirements. We work with leading
-                brands including Daikin, Mitsubishi Electric and Fujitsu to deliver reliable,
-                energy-efficient outcomes.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Commercial solutions
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Advanced Climate Control for Larger Spaces
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Variable Refrigerant Volume (VRV) and Variable Refrigerant Flow (VRF) systems are
+                  the go-to solution for commercial and large-scale projects. A single outdoor
+                  condensing unit connects to dozens of indoor units — cassettes, ducted,
+                  wall-mounted or floor-standing — giving every zone independent temperature control
+                  through one intelligent system.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Whether you&apos;re fitting out a new office building, upgrading an existing
+                  retail space, or climate-controlling a multi-level car park, our team designs,
+                  supplies and installs VRV/VRF systems tailored to your exact requirements. We work
+                  with leading brands including Daikin, Mitsubishi Electric and Fujitsu to deliver
+                  reliable, energy-efficient outcomes.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/vrv-vrf.webp"
+                  alt="VRV VRF air conditioning systems by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

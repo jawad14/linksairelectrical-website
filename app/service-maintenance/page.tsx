@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Filter, Snowflake, Gauge, Zap, CheckCircle } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -64,34 +65,45 @@ export default function ServiceMaintenancePage() {
         <ServiceHero
           eyebrow="Servicing"
           title="Air Conditioning Service & Maintenance"
-          image="/images/services/pages/service-maintenance.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Air conditioning service and maintenance by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                Preventive care
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Keep Your AC Running at Its Best Year-Round
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Your air conditioning system works hard in the Queensland heat, and like any
-                mechanical equipment it needs regular attention to perform reliably. Our maintenance
-                service is thorough, affordable and designed to catch small issues before they turn
-                into expensive problems.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                We recommend servicing at least once a year — or every six months if your system
-                runs daily. A well-maintained unit cools better, uses less energy and lasts
-                significantly longer than one that&apos;s left untouched.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Preventive care
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Keep Your AC Running at Its Best Year-Round
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Your air conditioning system works hard in the Queensland heat, and like any
+                  mechanical equipment it needs regular attention to perform reliably. Our
+                  maintenance service is thorough, affordable and designed to catch small issues
+                  before they turn into expensive problems.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  We recommend servicing at least once a year — or every six months if your system
+                  runs daily. A well-maintained unit cools better, uses less energy and lasts
+                  significantly longer than one that&apos;s left untouched.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/service-maintenance.webp"
+                  alt="Air conditioning service and maintenance by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

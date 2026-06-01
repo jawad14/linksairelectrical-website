@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Ruler, HardHat, Home, Building2, RefreshCw, FileCheck } from 'lucide-react';
 import { UtilityBar } from '@/components/blocks/UtilityBar';
 import { Header } from '@/components/blocks/Header';
@@ -66,35 +67,46 @@ export default function DesignAndConstructionPage() {
         <ServiceHero
           eyebrow="Design & Build"
           title="Air Conditioning Design & Construction"
-          image="/images/services/pages/design-construction.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Air conditioning design and construction by Links Air & Electrical"
         />
 
         {/* ── Intro ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[760px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                End-to-end service
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Tailored Air Conditioning From the Ground Up
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                Getting the air conditioning right starts long before the first unit goes on the
-                wall. Our design-and-build service covers every stage — from initial site assessment
-                and cooling load calculations through to equipment selection, installation and
-                commissioning. The result is a system that&apos;s properly sized, energy efficient
-                and built to last.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Whether you&apos;re building a new home, extending an existing property or fitting
-                out a commercial premises, our licensed team works with your builder and architect
-                to deliver an integrated solution with no nasty surprises at handover.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  End-to-end service
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Tailored Air Conditioning From the Ground Up
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  Getting the air conditioning right starts long before the first unit goes on the
+                  wall. Our design-and-build service covers every stage — from initial site
+                  assessment and cooling load calculations through to equipment selection,
+                  installation and commissioning. The result is a system that&apos;s properly sized,
+                  energy efficient and built to last.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Whether you&apos;re building a new home, extending an existing property or fitting
+                  out a commercial premises, our licensed team works with your builder and architect
+                  to deliver an integrated solution with no nasty surprises at handover.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/design-construction.webp"
+                  alt="Air conditioning design and construction by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
