@@ -112,35 +112,46 @@ export default function SplitSystemPage() {
         <ServiceHero
           eyebrow="Split Systems"
           title="Split System Air Conditioning"
-          image="/images/services/pages/split-system.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Split system air conditioning by Links Air & Electrical"
         />
 
         {/* ── How Split Systems Work ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                How It Works
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                What Is a Split System and How Does It Work?
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                A split system air conditioner is made up of two connected units. The indoor unit
-                houses the evaporator coil and blower fan, and is typically wall-mounted inside your
-                room. The outdoor unit contains the compressor and condenser, and sits outside on a
-                concrete pad or wall bracket.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Refrigerant circulates between the two units through copper piping, absorbing heat
-                from inside and releasing it outside (or vice versa in heating mode). Because there
-                is no ductwork involved, split systems are faster to install, more affordable, and
-                perfect for cooling individual rooms or open-plan living areas.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  How It Works
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  What Is a Split System and How Does It Work?
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  A split system air conditioner is made up of two connected units. The indoor unit
+                  houses the evaporator coil and blower fan, and is typically wall-mounted inside
+                  your room. The outdoor unit contains the compressor and condenser, and sits
+                  outside on a concrete pad or wall bracket.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Refrigerant circulates between the two units through copper piping, absorbing heat
+                  from inside and releasing it outside (or vice versa in heating mode). Because
+                  there is no ductwork involved, split systems are faster to install, more
+                  affordable, and perfect for cooling individual rooms or open-plan living areas.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/split-system.webp"
+                  alt="Split system air conditioning by Links Air & Electrical"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

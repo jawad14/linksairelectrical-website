@@ -5,6 +5,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { ServiceHero } from '@/components/blocks/ServiceHero';
 import { ServiceCTA } from '@/components/blocks/ServiceCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import Image from 'next/image';
 import { Heading, P } from '@/components/ui/typography';
 import { siteConfig } from '@/config/site.config';
 
@@ -32,40 +33,51 @@ export default function SideEntryPage() {
         <ServiceHero
           eyebrow="Split System"
           title="Side Entry Installation"
-          image="/images/services/pages/side-entry.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Side entry air conditioning installation by Links Air & Electrical"
         />
 
         {/* ── Content Section ── */}
         <section className="bg-white py-[clamp(72px,9vw,120px)]">
           <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
-            <div className="mx-auto max-w-[820px]">
-              <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
-                When Back-to-Back Is Not an Option
-              </span>
-              <Heading
-                level={2}
-                className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
-              >
-                Side Entry — A Flexible Alternative
-              </Heading>
-              <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
-                A side entry installation is the go-to choice when a direct back-to-back setup is
-                not practical. Instead of running the pipework straight through the wall behind the
-                indoor unit, it travels along the wall to the side before exiting to reach the
-                outdoor unit.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                This is commonly needed on solid brick or double-brick walls where drilling straight
-                through is difficult, or when the outdoor unit needs to be positioned a few metres
-                away from the indoor head. The pipe run is a little longer than a standard
-                back-to-back, but still well within normal range for most homes.
-              </P>
-              <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
-                Our installers use PVC capping to keep external pipework neat and protected from the
-                elements. The finished result looks clean, professional, and lasts the life of the
-                system.
-              </P>
+            <div className="grid grid-cols-[1.1fr_1fr] items-center gap-[clamp(32px,6vw,80px)] max-[900px]:grid-cols-1">
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  When Back-to-Back Is Not an Option
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Side Entry — A Flexible Alternative
+                </Heading>
+                <P className="mt-5 text-[17px] leading-[1.7] text-[#4F6172]">
+                  A side entry installation is the go-to choice when a direct back-to-back setup is
+                  not practical. Instead of running the pipework straight through the wall behind
+                  the indoor unit, it travels along the wall to the side before exiting to reach the
+                  outdoor unit.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  This is commonly needed on solid brick or double-brick walls where drilling
+                  straight through is difficult, or when the outdoor unit needs to be positioned a
+                  few metres away from the indoor head. The pipe run is a little longer than a
+                  standard back-to-back, but still well within normal range for most homes.
+                </P>
+                <P className="mt-4 text-[16px] leading-[1.7] text-[#4F6172]">
+                  Our installers use PVC capping to keep external pipework neat and protected from
+                  the elements. The finished result looks clean, professional, and lasts the life of
+                  the system.
+                </P>
+              </div>
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/side-entry.webp"
+                  alt="Side entry air conditioning installation"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>

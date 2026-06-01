@@ -99,7 +99,7 @@ export default function AirConditioningPage() {
         <ServiceHero
           eyebrow="Air Conditioning"
           title="Air Conditioning Services Brisbane & Gold Coast"
-          image="/images/services/airconditioning.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Professional air conditioning installation by Links Air & Electrical"
         />
 
