@@ -2,9 +2,12 @@ import Link from 'next/link';
 import { Phone, Smartphone, Mail, MapPin } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 
+const HIDDEN = true;
+
 export function UtilityBar() {
+  if (HIDDEN) return null;
   return (
-    <div className="hidden bg-[#0E1B2C] text-[13px] text-white/[0.78] sm:block">
+    <div className="hidden bg-[#183964] text-[13px] text-white/[0.78] sm:block">
       <div className="mx-auto max-w-[1240px] px-[clamp(16px,3vw,56px)]">
         {/* Desktop: single row, left/right */}
         <div className="hidden h-[44px] items-center justify-between sm:flex">

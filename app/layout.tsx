@@ -1,21 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Open_Sans, Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { FloatingMobileCTA } from '@/components/blocks/FloatingMobileCTA';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
-const fontSans = Inter({
+const fontSans = Open_Sans({
   variable: '--font-sans',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const fontHeading = Poppins({
+const fontHeading = Lato({
   variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '700', '900'],
   display: 'swap',
 });
 

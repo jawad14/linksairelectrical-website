@@ -36,9 +36,39 @@ export function Contact() {
     },
   });
 
-  function onSubmit(data: ContactFormData) {
-    console.log('Form submitted:', data);
-    setSubmitted(true);
+  async function onSubmit(data: ContactFormData) {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_ALEESA_API_URL}/api/v1/integrations/website-form/submit`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': process.env.NEXT_PUBLIC_ALEESA_FORM_API_KEY!,
+          },
+          body: JSON.stringify({
+            formId: 'contact-us',
+            originUrl: window.location.href,
+            fields: {
+              name: data.name,
+              phone: data.phone,
+              email: data.email,
+              postcode: data.postcode || '',
+              service: data.service,
+              message: data.message || '',
+            },
+          }),
+        },
+      );
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.message || 'Submission failed');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Form submission error:', err);
+      alert('Something went wrong. Please try again or call us directly.');
+    }
   }
 
   return (

@@ -76,8 +76,8 @@ export const siteConfig: SiteConfig = {
       label: 'Air Con',
       href: '/air-conditioning',
       promo: {
-        image: '/images/services/airconditioning.webp',
-        alt: 'Air conditioning installation by Links Air & Electrical',
+        image: '/images/services/menu-aircon.webp',
+        alt: 'Split system air conditioner installed by Links Air & Electrical',
         heading: 'Unbeatable Air Con Deals',
         subtitle: 'Quality systems at great prices!',
         cta: 'View our specials!',
@@ -107,8 +107,8 @@ export const siteConfig: SiteConfig = {
       label: 'Electricals',
       href: '/electricals',
       promo: {
-        image: '/images/services/electrical.webp',
-        alt: 'Electrical services by Links Air & Electrical',
+        image: '/images/services/menu-electrical.webp',
+        alt: 'Modern home lighting installed by Links Air & Electrical',
         heading: 'Expert Electrical Services',
         subtitle: 'Licensed electricians you can trust!',
         cta: 'Get a free quote',
