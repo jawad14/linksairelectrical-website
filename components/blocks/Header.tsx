@@ -57,10 +57,10 @@ export function Header() {
               <Image
                 src="/logo-cropped.webp"
                 alt="Links Air & Electrical"
-                width={200}
-                height={60}
+                width={280}
+                height={86}
                 priority
-                className="h-[44px] w-auto object-contain sm:h-[50px] lg:h-[60px]"
+                className="h-[56px] w-auto object-contain sm:h-[68px] lg:h-[84px]"
               />
             </Link>
 
@@ -116,16 +116,6 @@ export function Header() {
             </ul>
           </nav>
         </div>
-
-        {/* Mobile phone strip (red, always visible) */}
-        <Link
-          href={telHref}
-          className="flex items-center justify-center gap-2 py-2 text-[16px] font-bold text-white lg:hidden"
-          style={{ background: RED }}
-        >
-          <Phone className="h-5 w-5" strokeWidth={2.25} />
-          {siteConfig.phone}
-        </Link>
       </header>
 
       {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} topOffset={headerHeight} />}

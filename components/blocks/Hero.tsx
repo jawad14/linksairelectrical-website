@@ -47,30 +47,30 @@ export function Hero() {
     <section className="w-full overflow-hidden bg-[#183964] text-white">
       <div className="flex flex-col lg:flex-row">
         {/* ── Main panel: headline + CTA + trust signals ── */}
-        <div className="flex flex-1 flex-col items-center justify-center px-5 py-14 text-center lg:items-start lg:px-[6%] lg:py-20 lg:text-left">
+        <div className="flex flex-1 flex-col items-center justify-center px-5 py-12 text-center sm:px-8 sm:py-16 lg:items-start lg:px-[6%] lg:py-20 lg:text-left">
           <Heading
             level={1}
-            className="font-heading max-w-[325px] text-[32px] leading-[1.15] font-light tracking-tight text-balance text-white lg:max-w-none lg:text-[46px] lg:leading-[1.1] xl:text-[60px]"
+            className="font-heading w-full text-[28px] leading-[1.15] font-light tracking-tight text-balance text-white sm:text-[34px] lg:text-[46px] lg:leading-[1.1] xl:text-[60px]"
           >
             Brisbane&apos;s experts in <strong className="font-bold">Air Conditioning</strong> and{' '}
             <strong className="font-bold">Electrical</strong>
           </Heading>
 
-          <Text className="mt-5 max-w-[520px] text-[15px] leading-[1.55] text-white/85 lg:text-[16px]">
+          <Text className="mt-4 max-w-[520px] text-[14px] leading-[1.55] text-white/85 sm:mt-5 sm:text-[15px] lg:text-[16px]">
             Links Air &amp; Electrical is a leading name for 360° air conditioning and electrical
             solutions across Brisbane and the Gold Coast — at an unbeatable price.
           </Text>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:mt-8 lg:justify-start">
+          <div className="mt-6 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:mt-8 lg:justify-start">
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 rounded-full bg-[#D2212F] px-8 py-[14px] text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-[#D2212F] lg:text-[16px]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D2212F] px-8 py-[14px] text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-[#D2212F] lg:text-[16px]"
             >
               Get a free quote
             </Link>
             <Link
               href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-[14px] text-[15px] font-bold text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-[14px] text-[15px] font-bold text-white transition-colors hover:bg-white/10"
             >
               Call {siteConfig.phone}
             </Link>
@@ -81,20 +81,20 @@ export function Hero() {
             {trustSignals.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="flex items-center gap-2 text-[13px] leading-snug text-white/90"
+                className="flex items-start gap-2 text-[13px] leading-snug text-white/90"
               >
-                <Icon className="h-4 w-4 shrink-0 text-[#9FD3F4]" strokeWidth={2.25} />
+                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#9FD3F4]" strokeWidth={2.25} />
                 <span>{label}</span>
               </li>
             ))}
           </ul>
 
           {/* Social media */}
-          <div className="mt-6 flex items-center gap-3 lg:mt-7">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3 lg:mt-7 lg:justify-start">
             <span className="text-[11px] font-semibold tracking-[0.15em] text-white/60 uppercase">
               Follow us
             </span>
-            <span className="h-px w-6 bg-white/20" aria-hidden="true" />
+            <span className="hidden h-px w-6 bg-white/20 sm:inline-block" aria-hidden="true" />
             {siteConfig.social.map((s) => (
               <Link
                 key={s.label}
@@ -102,7 +102,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/30 text-white transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/30 text-white transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white/10 lg:h-10 lg:w-10"
               >
                 <SocialIcon name={s.label} />
               </Link>
