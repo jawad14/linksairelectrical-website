@@ -66,7 +66,7 @@ export default function DataPointsNetworkCablingPage() {
         <ServiceHero
           eyebrow="Data & Networking"
           title="Data Points & Network Cabling"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Structured network cabling installed by Links Air & Electrical"
         />
 

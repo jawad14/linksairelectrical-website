@@ -66,7 +66,7 @@ export default function SwitchboardUpgradePage() {
         <ServiceHero
           eyebrow="Switchboards"
           title="Switchboard Upgrade"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Modern RCD-protected switchboard installed by Links Air & Electrical"
         />
 

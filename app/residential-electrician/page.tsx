@@ -97,7 +97,7 @@ export default function ResidentialElectricianPage() {
         <ServiceHero
           eyebrow="Residential Electrician"
           title="Residential Electrical Services Brisbane & Gold Coast"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Residential electrical work by Links Air & Electrical"
         />
 
@@ -148,8 +148,8 @@ export default function ResidentialElectricianPage() {
               <div className="relative hidden aspect-[4/3] max-[900px]:max-w-[560px] md:block">
                 <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
                   <Image
-                    src="/images/about/about-inner.webp"
-                    alt="Links Air & Electrical electrician performing residential electrical work"
+                    src="/images/services/pages/residential-hero.webp"
+                    alt="Residential electrical services in Brisbane by Links Air & Electrical"
                     fill
                     className="object-cover"
                     sizes="(max-width: 900px) 560px, 50vw"
@@ -195,6 +195,49 @@ export default function ResidentialElectricianPage() {
                   </span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Why Choose Us ── */}
+        <section className="bg-white py-[clamp(72px,9vw,120px)]">
+          <div className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,56px)]">
+            <div className="grid items-center gap-14 max-[900px]:grid-cols-1 min-[900px]:grid-cols-[1fr_1fr]">
+              <div className="hidden overflow-hidden rounded-[14px] md:block">
+                <Image
+                  src="/images/services/pages/residential-whychoose.webp"
+                  alt="Why choose Links Air & Electrical for residential electrical work"
+                  width={600}
+                  height={500}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <div>
+                <span className="mb-[18px] inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-[#1779B8] uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
+                  Why Us
+                </span>
+                <Heading
+                  level={2}
+                  className="font-heading text-[clamp(28px,3.4vw,44px)] leading-[1.12] font-bold tracking-[-0.02em] text-[#0E1B2C]"
+                >
+                  Why Choose Us?
+                </Heading>
+                <div className="mt-6 flex flex-col gap-4">
+                  {[
+                    'Wide range of electrical services offered under one roof',
+                    'All electricians are trained and hold the necessary certification',
+                    'Prompt and professional — we turn up on time, every time',
+                    'Equipped with the best and latest tools and equipment',
+                    'Over 8 years of hands-on experience in the industry',
+                    'Affordable pricing without cutting corners on quality',
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#1779B8]" />
+                      <P className="text-[16px] leading-[1.6] text-[#4F6172]">{item}</P>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -66,7 +66,7 @@ export default function CeilingFanInstallationPage() {
         <ServiceHero
           eyebrow="Ceiling Fans"
           title="Ceiling Fan Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Ceiling fan installation by Links Air & Electrical"
         />
 

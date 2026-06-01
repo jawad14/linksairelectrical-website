@@ -66,7 +66,7 @@ export default function DownlightsPage() {
         <ServiceHero
           eyebrow="Lighting"
           title="Downlight Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="LED downlights installed in a modern ceiling by Links Air & Electrical"
         />
 

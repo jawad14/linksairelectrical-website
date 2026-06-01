@@ -66,7 +66,7 @@ export default function NewHouseWiringPage() {
         <ServiceHero
           eyebrow="New Builds"
           title="New House Wiring"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="New house electrical wiring installation by Links Air & Electrical"
         />
 

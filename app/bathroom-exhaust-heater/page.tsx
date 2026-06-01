@@ -66,7 +66,7 @@ export default function BathroomExhaustHeaterPage() {
         <ServiceHero
           eyebrow="Ventilation"
           title="Bathroom Exhaust Heater Installation"
-          image="/images/services/electrical.webp"
+          image="/images/services/banner-hero.webp"
           imageAlt="Bathroom exhaust heater installation by Links Air & Electrical"
         />
 
