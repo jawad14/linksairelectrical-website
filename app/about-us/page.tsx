@@ -76,14 +76,13 @@ export default function AboutPage() {
         {/* ── Hero Banner ── */}
         <section className="relative h-[320px] overflow-hidden sm:h-[400px]">
           <Image
-            src="/images/about/banner.webp"
-            alt="Links Air & Electrical technician installing a split system"
+            src="/images/about/banner-v3.webp"
+            alt="HVAC technician checking refrigerant gauges on an outdoor air conditioning unit"
             fill
             className="object-cover"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E1B2C]/85 to-[#0E1B2C]/40" />
           <div className="relative mx-auto flex h-full max-w-[1240px] items-center px-[clamp(20px,4vw,56px)]">
             <div>
               <span className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-white/80 uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
@@ -147,7 +146,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3] max-[900px]:max-w-[560px]">
                 <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
                   <Image
-                    src="/images/about/about-inner.webp"
+                    src="/images/about/about-inner-v2.webp"
                     alt="Technician servicing an air conditioning unit"
                     fill
                     className="object-cover"

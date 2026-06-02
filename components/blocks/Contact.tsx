@@ -24,11 +24,13 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -37,37 +39,41 @@ export function Contact() {
   });
 
   async function onSubmit(data: ContactFormData) {
+    setSubmitError(null);
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_ALEESA_API_URL}/api/v1/integrations/website-form/submit`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': process.env.NEXT_PUBLIC_ALEESA_FORM_API_KEY!,
-          },
-          body: JSON.stringify({
-            formId: 'contact-us',
-            originUrl: window.location.href,
-            fields: {
-              name: data.name,
-              phone: data.phone,
-              email: data.email,
-              postcode: data.postcode || '',
-              service: data.service,
-              message: data.message || '',
-            },
-          }),
+      const baseUrl = process.env.NEXT_PUBLIC_ALEESA_API_URL || 'http://localhost:8000';
+      const res = await fetch(`${baseUrl}/api/v1/integrations/website-form/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': process.env.NEXT_PUBLIC_ALEESA_FORM_API_KEY!,
         },
-      );
+        body: JSON.stringify({
+          formId: 'contact-us',
+          originUrl: window.location.href,
+          fields: {
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            postcode: data.postcode || '',
+            service: data.service,
+            message: data.message || '',
+          },
+        }),
+      });
       if (!res.ok) {
         const body = await res.json().catch(() => null);
         throw new Error(body?.message || 'Submission failed');
       }
       setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        reset();
+      }, 5000);
     } catch (err) {
       console.error('Form submission error:', err);
-      alert('Something went wrong. Please try again or call us directly.');
+      const message = err instanceof Error ? err.message : 'Something went wrong';
+      setSubmitError(message);
     }
   }
 
@@ -225,6 +231,15 @@ export function Contact() {
                   {isSubmitting ? 'Sending...' : 'Send Enquiry'}
                   {!isSubmitting && <ChevronRight className="h-4 w-4" strokeWidth={2.5} />}
                 </button>
+
+                {submitError && (
+                  <div className="mt-3 flex items-start gap-2 rounded-[10px] border border-[#E73438]/20 bg-[#FEF2F2] px-4 py-3 text-[13px] text-[#E73438]">
+                    <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>
+                      {submitError}. Please try again or call us at {siteConfig.mobile}.
+                    </span>
+                  </div>
+                )}
 
                 <div className="mt-3 flex items-start gap-2 text-[12px] leading-[1.4] text-[#4F6172]">
                   <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#6BA432]" strokeWidth={2.5} />
