@@ -7,7 +7,7 @@ const services = [
   {
     title: 'Air Conditioning Services',
     desc: 'Is your air conditioner not cooling well? From split systems and ducted installs to repairs, servicing and maintenance — we handle it all with ARC-licensed precision.',
-    image: '/images/services/airconditioning.webp',
+    image: '/images/services/airconditioning-v2.webp',
     href: '/air-conditioning',
     accent: 'bg-[#2196D6]',
   },
