@@ -19,10 +19,10 @@ export function About() {
           <div className="relative aspect-[4/5] max-[900px]:aspect-[4/3] max-[900px]:max-w-[560px]">
             <div className="absolute inset-0 overflow-hidden rounded-[22px] shadow-[0_24px_60px_-20px_rgba(14,27,44,0.25)]">
               <Image
-                src="/images/hero/slide-5.webp"
-                alt="Modern home with professional lighting and electrical work"
+                src="/images/about/why-choose-v2.webp"
+                alt="Friendly Links Air tradesman on a phone call with a customer"
                 fill
-                className="object-cover object-top"
+                className="object-cover"
                 sizes="(max-width: 900px) 560px, 45vw"
               />
             </div>
