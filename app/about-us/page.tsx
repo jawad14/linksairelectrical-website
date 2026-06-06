@@ -83,7 +83,7 @@ export default function AboutPage() {
             priority
             sizes="100vw"
           />
-          <div className="h-funpmrll relative mx-auto flex max-w-[1240px] items-center px-[clamp(20px,4vw,56px)]">
+          <div className="relative mx-auto flex h-full max-w-[1240px] items-center px-[clamp(20px,4vw,56px)]">
             <div>
               <span className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] text-white/80 uppercase before:inline-block before:h-0.5 before:w-6 before:bg-[#2196D6]">
                 About us
