@@ -73,7 +73,7 @@ export const siteConfig: SiteConfig = {
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about-us' },
     {
-      label: 'Air Con',
+      label: 'Air Conditioning',
       href: '/air-conditioning',
       promo: {
         image: '/images/services/menu-aircon.webp',

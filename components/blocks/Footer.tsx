@@ -109,7 +109,7 @@ export function Footer() {
               </li>
               <li className="inline-flex min-h-[44px] items-center gap-3 text-[14px]">
                 <MapPin className="h-4 w-4 shrink-0 text-[#2196D6]" />
-                brisbane and gold coast
+                Brisbane and Gold Coast
               </li>
             </ul>
           </div>

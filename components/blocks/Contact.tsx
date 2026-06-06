@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Phone, Mail, MapPin, Check, ChevronRight, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Check, ChevronRight, ChevronDown, AlertCircle } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Heading, P } from '@/components/ui/typography';
 
@@ -167,14 +167,14 @@ export function Contact() {
                   <Field
                     label="Full name"
                     type="text"
-                    placeholder="Jane Smith"
+                    placeholder="Enter your full name"
                     error={errors.name?.message}
                     {...register('name')}
                   />
                   <Field
                     label="Phone"
                     type="tel"
-                    placeholder="0400 000 000"
+                    placeholder="Enter your phone number"
                     error={errors.phone?.message}
                     {...register('phone')}
                   />
@@ -183,7 +183,7 @@ export function Contact() {
                 <Field
                   label="Email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="Enter your email address"
                   error={errors.email?.message}
                   {...register('email')}
                 />
@@ -192,22 +192,25 @@ export function Contact() {
                   <Field
                     label="Postcode"
                     type="text"
-                    placeholder="e.g. 4000"
+                    placeholder="Enter your postcode"
                     {...register('postcode')}
                   />
                   <div className="mb-[18px] flex flex-col">
                     <label className="mb-2 text-[13px] font-semibold text-[#0E1B2C]">
                       Select Service
                     </label>
-                    <select
-                      className={`rounded-[10px] border bg-white px-3.5 py-3.5 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${errors.service ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
-                      {...register('service')}
-                    >
-                      <option value="">Select Service</option>
-                      <option>Air Conditioning Services</option>
-                      <option>Electrical Services</option>
-                      <option>Builder Services</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        className={`w-full appearance-none rounded-[10px] border bg-white px-3.5 py-3.5 pr-10 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none ${errors.service ? 'border-[#E73438]' : 'border-[#E3E9F0]'}`}
+                        {...register('service')}
+                      >
+                        <option value="">Select a service</option>
+                        <option>Air Conditioning Services</option>
+                        <option>Electrical Services</option>
+                        <option>Builder Services</option>
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute top-1/2 right-3.5 h-4 w-4 -translate-y-1/2 text-[#4F6172]" />
+                    </div>
                     {errors.service && <FieldError message={errors.service.message} />}
                   </div>
                 </div>
@@ -218,7 +221,7 @@ export function Contact() {
                   </label>
                   <textarea
                     className="min-h-[120px] resize-y rounded-[10px] border border-[#E3E9F0] bg-white px-3.5 py-3.5 text-[15px] text-[#0E1B2C] transition-all focus:border-[#2196D6] focus:shadow-[0_0_0_3px_rgba(33,150,214,0.15)] focus:outline-none"
-                    placeholder="Describe what you need — feel free to mention timeframe."
+                    placeholder="Enter details about the job — feel free to mention timeframe."
                     {...register('message')}
                   />
                 </div>
