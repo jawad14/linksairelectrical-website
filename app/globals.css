@@ -270,55 +270,28 @@ header.site.scrolled {
   align-items: center;
   gap: 12px;
   color: #fff;
-}
-.brand .logo {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
   flex: 0 0 auto;
-  background: linear-gradient(135deg, var(--blue), #0067a8);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 8px 20px -8px rgba(0, 159, 227, 0.7);
-  position: relative;
-  overflow: hidden;
 }
-.brand .logo svg {
-  width: 24px;
-  height: 24px;
-}
-.brand .name {
-  font-family: var(--font-heading), 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 1.12rem;
-  color: #fff;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-.brand .name span {
-  color: var(--blue-soft);
-}
-.brand .name small {
+.brand .brand-logo {
   display: block;
-  font-family: var(--font-sans), 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #7f96aa;
-  margin-top: 1px;
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 168, 240, 0.25));
 }
 
 .menu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
 }
 .menu a {
   color: #d4e1ee;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  padding: 9px 11px;
+  padding: 9px 10px;
   border-radius: 10px;
   transition:
     color 0.2s,
@@ -348,20 +321,27 @@ header.site.scrolled {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex: 0 0 auto;
 }
 .nav-phone {
   color: #fff;
   font-family: var(--font-heading), 'Sora', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
-  display: flex;
+  font-size: 0.98rem;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 .nav-phone svg {
   width: 16px;
   height: 16px;
   color: var(--blue-soft);
+  flex: 0 0 auto;
+}
+.nav-quote {
+  padding: 12px 22px;
+  font-size: 0.9rem;
 }
 
 .burger {
@@ -1926,7 +1906,7 @@ footer.site {
 }
 
 /* ============================ RESPONSIVE ============================ */
-@media (max-width: 1320px) {
+@media (max-width: 1500px) {
   .nav-phone {
     display: none;
   }

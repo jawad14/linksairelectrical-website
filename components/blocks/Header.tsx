@@ -1,17 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { siteConfig } from '@/config/site.config';
 
 const PhoneIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
-  </svg>
-);
-
-const BoltLogo = () => (
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M13 2L4.5 13.5H11L10 22L19.5 9.5H12.5L13 2Z" fill="#fff" />
   </svg>
 );
 
@@ -51,13 +46,14 @@ export function Header() {
         <div className="wrap">
           <nav className="nav">
             <a className="brand" href="#top" aria-label="Links Air & Electrical home">
-              <span className="logo">
-                <BoltLogo />
-              </span>
-              <span className="name">
-                Links <span>Air</span> &amp; Electrical
-                <small>Power · Comfort · Trust</small>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Links Air & Electrical"
+                width={183}
+                height={68}
+                priority
+                className="brand-logo"
+              />
             </a>
 
             <div className="menu">
@@ -77,8 +73,8 @@ export function Header() {
                 <PhoneIcon />
                 {siteConfig.mobile}
               </a>
-              <a href="#contact" className="btn btn-primary">
-                Get a Free Quote
+              <a href="#contact" className="btn btn-primary nav-quote">
+                Free Quote
               </a>
             </div>
 
@@ -93,11 +89,13 @@ export function Header() {
 
       <div className={`drawer${drawerOpen ? 'open' : ''}`} aria-hidden={!drawerOpen}>
         <div className="dtop">
-          <span className="brand">
-            <span className="name" style={{ fontSize: '1rem' }}>
-              Links Air &amp; Electrical
-            </span>
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Links Air & Electrical"
+            width={183}
+            height={68}
+            className="brand-logo"
+          />
           <button className="close" aria-label="Close menu" onClick={closeDrawer}>
             &times;
           </button>
