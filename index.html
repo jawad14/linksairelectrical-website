@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Links Air & Electrical | Electrical & Air Conditioning Specialists — Brisbane & Gold Coast</title>
+<meta name="description" content="Licensed electrical and air conditioning specialists serving Brisbane, Gold Coast, Logan, Ipswich, Redlands and Moreton Bay. Clean workmanship, honest quotes, reliable service since 2014." />
+
+<!--
+  =====================================================================
+  LINKS AIR & ELECTRICAL — PREMIUM HOMEPAGE
+  ---------------------------------------------------------------------
+  Single-file build (HTML + CSS + vanilla JS). Production-ready and
+  easy for a developer to split into components:
+    <Header> <Hero> <TrustStrip> <ServiceCards> <CombinedTeam>
+    <AirConditioning> <Electrical> <Builders> <Gallery>
+    <WhyChoose> <Reviews> <Areas> <QuoteCTA> <Footer>
+
+  IMAGE NOTES:
+  All images currently reference the client's existing CDN
+  (linksairelectrical.com.au). For a self-hosted deploy, download
+  these into /assets/ and swap the src paths. Each <img> below is
+  tagged with a comment describing the original source image.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================ TOKENS ============================ */
+:root{
+  --navy:#06141f;
+  --navy-2:#0b2436;
+  --blue:#00A8F0;
+  --blue-soft:#43c4ff;
+  --cyan:#22e3d3;
+  --violet:#6d5dfc;
+  --ice:#EAF8FF;
+  --white:#FFFFFF;
+  --graphite:#1F2933;
+  --amber:#FFB020;
+  --amber-hot:#ff8a3c;
+  --line:rgba(255,255,255,.10);
+  --line-dark:rgba(7,24,39,.10);
+  --muted:#5b6672;
+  --radius:18px;
+  --radius-lg:26px;
+  --shadow:0 30px 60px -25px rgba(7,24,39,.45);
+  --shadow-soft:0 18px 40px -22px rgba(7,24,39,.30);
+  --grad-blue:linear-gradient(120deg,var(--blue),var(--cyan));
+  --grad-energy:linear-gradient(120deg,var(--blue) 0%,var(--violet) 100%);
+  --grad-amber:linear-gradient(120deg,var(--amber),var(--amber-hot));
+  --glow-blue:0 0 0 1px rgba(0,168,240,.4),0 12px 40px -8px rgba(0,168,240,.5);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --maxw:1200px;
+  font-synthesis:none;
+}
+.gtext{background:var(--grad-blue);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--graphite);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.display{font-family:'Sora',sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:'Sora',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  background:var(--grad-blue);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--grad-blue);display:inline-block;border-radius:2px}
+.eyebrow.center{justify-content:center}
+
+/* ============================ BUTTONS ============================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;
+  padding:15px 28px;border-radius:100px;cursor:pointer;border:0;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;
+  white-space:nowrap;position:relative;overflow:hidden;
+}
+.btn::after{
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-18deg);transition:left .7s var(--ease);
+}
+.btn:hover::after{left:140%}
+.btn-primary{background:var(--grad-energy);color:#fff;box-shadow:0 12px 34px -8px rgba(0,168,240,.65)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 48px -8px rgba(109,93,252,.7)}
+.btn-amber{background:var(--grad-amber);color:#241500;box-shadow:0 12px 34px -8px rgba(255,138,60,.6)}
+.btn-amber:hover{transform:translateY(-3px);box-shadow:0 20px 48px -8px rgba(255,138,60,.78)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.13);transform:translateY(-3px);border-color:rgba(67,196,255,.5)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+
+/* ============================ HEADER ============================ */
+.topbar{background:var(--navy);color:#cfe0ee;font-size:.82rem;border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:40px;gap:18px}
+.topbar a{color:#cfe0ee;transition:color .2s}
+.topbar a:hover{color:#fff}
+.topbar .left{display:flex;gap:22px;align-items:center}
+.topbar .pill{display:inline-flex;align-items:center;gap:.5em}
+.topbar .dot{width:7px;height:7px;border-radius:50%;background:#39d98a;box-shadow:0 0 0 3px rgba(57,217,138,.2)}
+.topbar .right{display:flex;gap:18px;align-items:center}
+
+header.site{
+  position:sticky;top:0;z-index:60;
+  background:rgba(7,24,39,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:background .3s,box-shadow .3s;
+}
+header.site.scrolled{background:rgba(7,24,39,.96);box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand .logo{
+  width:42px;height:42px;border-radius:12px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--blue),#0067a8);
+  display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,159,227,.7);
+  position:relative;overflow:hidden;
+}
+.brand .logo svg{width:24px;height:24px}
+.brand .name{font-family:'Sora',sans-serif;font-weight:700;font-size:1.12rem;color:#fff;letter-spacing:-.02em;white-space:nowrap}
+.brand .name span{color:var(--blue-soft)}
+.brand .name small{display:block;font-family:'Inter';font-weight:500;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#7f96aa;margin-top:1px}
+
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{
+  color:#d4e1ee;font-size:.9rem;font-weight:500;padding:9px 11px;border-radius:10px;
+  transition:color .2s,background .2s;position:relative;white-space:nowrap;
+}
+.menu a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.menu a.active{color:#fff}
+.menu a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--blue);border-radius:2px}
+
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-phone{color:#fff;font-family:'Sora';font-weight:600;font-size:1rem;display:flex;align-items:center;gap:8px}
+.nav-phone svg{width:16px;height:16px;color:var(--blue-soft)}
+
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* mobile drawer */
+.drawer{
+  position:fixed;inset:0;z-index:80;background:var(--navy);
+  transform:translateX(100%);transition:transform .4s var(--ease);
+  display:flex;flex-direction:column;padding:24px;
+}
+.drawer.open{transform:translateX(0)}
+.drawer .dtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.drawer .close{background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
+.drawer a{color:#dce7f1;font-family:'Sora';font-weight:600;font-size:1.4rem;padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer .dactions{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-3;
+  background:
+    radial-gradient(900px 520px at 80% 12%,rgba(0,168,240,.40),transparent 60%),
+    radial-gradient(760px 600px at 8% 88%,rgba(109,93,252,.30),transparent 58%),
+    radial-gradient(600px 500px at 50% 120%,rgba(34,227,211,.18),transparent 60%),
+    linear-gradient(180deg,#04111c,#06141f 55%,#0a2236);
+  background-size:200% 200%;
+  animation:auroraShift 18s ease-in-out infinite;
+}
+@keyframes auroraShift{0%,100%{background-position:0% 0%}50%{background-position:100% 100%}}
+/* subtle moving grid */
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-2;opacity:.4;
+  background-image:linear-gradient(rgba(67,196,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(67,196,255,.08) 1px,transparent 1px);
+  background-size:54px 54px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 80%);
+  animation:gridDrift 24s linear infinite;
+}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:54px 54px}}
+/* floating ambient orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(40px);z-index:-1;pointer-events:none;opacity:.55}
+.orb.o1{width:340px;height:340px;background:radial-gradient(circle,rgba(0,168,240,.6),transparent 70%);top:-60px;right:6%;animation:floaty 11s ease-in-out infinite}
+.orb.o2{width:260px;height:260px;background:radial-gradient(circle,rgba(109,93,252,.55),transparent 70%);bottom:-40px;left:4%;animation:floaty 13s ease-in-out infinite 1.5s}
+.orb.o3{width:180px;height:180px;background:radial-gradient(circle,rgba(255,176,32,.4),transparent 70%);top:46%;left:42%;animation:floaty 9s ease-in-out infinite .6s}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;
+  padding:70px 0 84px;
+}
+.hero-copy{max-width:600px}
+.hero h1{font-size:clamp(2.5rem,5vw,4.15rem);font-weight:800;margin:22px 0 0}
+.hero h1 .hl{
+  background:linear-gradient(120deg,var(--blue-soft),var(--cyan),var(--violet),var(--blue-soft));
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:hueFlow 8s ease-in-out infinite;position:relative;
+}
+@keyframes hueFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero p.sub{font-size:1.12rem;color:#bcd0e2;margin:22px 0 32px;max-width:540px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.hero-badges span{
+  font-size:.82rem;font-weight:600;color:#dbecf8;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  padding:8px 14px;border-radius:100px;display:inline-flex;gap:7px;align-items:center;
+  transition:.3s;
+}
+.hero-badges span:hover{background:rgba(0,168,240,.14);border-color:rgba(67,196,255,.5);transform:translateY(-2px)}
+.hero-badges span svg{width:13px;height:13px;color:var(--cyan)}
+
+/* hero visual collage */
+.hero-visual{position:relative;height:520px}
+.hv-card{position:absolute;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 70px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.1)}
+.hv-card img{width:100%;height:100%;object-fit:cover}
+.hv-main{inset:0 0 60px 70px;animation:floaty 7s ease-in-out infinite}
+.hv-sub{width:210px;height:240px;left:0;bottom:0;animation:floaty 7s ease-in-out infinite .8s}
+.hv-rating{
+  position:absolute;top:24px;left:-10px;background:#fff;color:var(--graphite);
+  border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;
+  animation:floaty 6s ease-in-out infinite .4s;z-index:3;
+}
+.hv-rating .num{font-family:'Sora';font-weight:800;font-size:1.6rem;line-height:1;color:var(--navy)}
+.hv-rating .stars{color:var(--amber);font-size:.85rem;letter-spacing:1px}
+.hv-rating small{color:var(--muted);font-size:.72rem;font-weight:600}
+.hv-glow{position:absolute;width:340px;height:340px;right:-50px;top:30%;background:conic-gradient(from 0deg,rgba(0,168,240,.5),rgba(109,93,252,.4),rgba(34,227,211,.45),rgba(0,168,240,.5));border-radius:50%;filter:blur(34px);z-index:-1;animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+.hero-emergency{
+  display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  color:#ffd596;font-weight:600;font-size:.9rem;font-family:'Sora';
+}
+.hero-emergency .pulse{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,176,32,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,176,32,.55)}70%{box-shadow:0 0 0 12px rgba(255,176,32,0)}100%{box-shadow:0 0 0 0 rgba(255,176,32,0)}}
+
+/* ============================ TRUST STRIP ============================ */
+.trust{background:linear-gradient(180deg,var(--navy-2),#081d2e);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+.trust::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),var(--violet),transparent);opacity:.8}
+.trust .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:30px 24px}
+.trust .item{text-align:center;color:#cfe0ee;border-right:1px solid var(--line);padding:6px 8px}
+.trust .item:last-child{border-right:0}
+.trust .big{font-family:'Sora';font-weight:800;font-size:1.6rem;line-height:1;background:var(--grad-blue);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.trust .lbl{font-size:.78rem;color:#8ba3b8;margin-top:8px;display:block}
+
+/* ============================ SECTION BASE ============================ */
+section{position:relative}
+.pad{padding:96px 0}
+.pad-sm{padding:72px 0}
+.light{background:var(--white)}
+.ice{background:linear-gradient(180deg,#fff, var(--ice))}
+.dark{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.dark::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(700px 420px at 88% 8%,rgba(0,168,240,.20),transparent 60%),
+    radial-gradient(620px 460px at 6% 96%,rgba(109,93,252,.16),transparent 60%);
+  animation:auroraShift 20s ease-in-out infinite;
+}
+.dark .wrap{position:relative;z-index:1}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;margin:16px 0 14px}
+.dark .sec-head h2{color:#fff}
+.sec-head p{font-size:1.06rem;color:var(--muted)}
+.dark .sec-head p{color:#adc2d4}
+
+/* ============================ SERVICE GATEWAY ============================ */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-card{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:440px;
+  display:flex;flex-direction:column;justify-content:flex-end;color:#fff;
+  box-shadow:var(--shadow-soft);isolation:isolate;
+}
+.svc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .9s var(--ease)}
+.svc-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,168,240,.10) 0%,rgba(7,24,39,.55) 50%,rgba(6,14,25,.96) 100%)}
+.svc-card:hover img{transform:scale(1.08)}
+.svc-card .body{padding:30px}
+.svc-card .tag{font-family:'Sora';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;background:var(--grad-blue);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.svc-card h3{font-size:1.55rem;font-weight:700;margin:8px 0 10px}
+.svc-card p{font-size:.92rem;color:#c6d6e4;margin-bottom:18px}
+.svc-card .more{display:inline-flex;align-items:center;gap:8px;font-family:'Sora';font-weight:600;font-size:.9rem;color:#fff}
+.svc-card .more svg{width:16px;height:16px;transition:transform .3s}
+.svc-card:hover .more svg{transform:translateX(5px)}
+.svc-card .ring{position:absolute;inset:0;border-radius:var(--radius-lg);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);z-index:1;pointer-events:none;transition:box-shadow .4s}
+.svc-card:hover{box-shadow:0 30px 60px -22px rgba(0,168,240,.5)}
+.svc-card:hover .ring{box-shadow:inset 0 0 0 1.5px rgba(67,196,255,.7),inset 0 0 30px rgba(0,168,240,.25)}
+
+/* ============================ COMBINED TEAM (split) ============================ */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split .copy h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:700;margin:16px 0 18px}
+.split .copy p{color:var(--muted);font-size:1.05rem;margin-bottom:14px}
+.process-stack{display:flex;flex-direction:column;gap:14px}
+.pstep{
+  display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line-dark);
+  border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-soft);
+  transition:transform .4s var(--ease),box-shadow .4s;
+}
+.pstep:hover{transform:translateX(6px);box-shadow:0 22px 44px -24px rgba(7,24,39,.4)}
+.pstep .n{
+  width:46px;height:46px;flex:0 0 auto;border-radius:13px;display:grid;place-items:center;
+  font-family:'Sora';font-weight:700;color:#fff;background:linear-gradient(135deg,var(--blue),#006fb0);
+  box-shadow:0 8px 20px -8px rgba(0,159,227,.6);
+}
+.pstep .pt{font-family:'Sora';font-weight:600;font-size:1.05rem;color:var(--navy)}
+.pstep .pd{font-size:.86rem;color:var(--muted)}
+.pstep:last-child .n{background:linear-gradient(135deg,var(--amber),#e0900a);box-shadow:0 8px 20px -8px rgba(255,176,32,.6)}
+
+/* ============================ AIR CON SECTION ============================ */
+.feature-row{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.ac-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.ac-item{display:flex;gap:12px;align-items:flex-start}
+.ac-item .ic{width:34px;height:34px;flex:0 0 auto;border-radius:10px;background:var(--ice);display:grid;place-items:center;color:var(--blue)}
+.dark .ac-item .ic{background:rgba(0,159,227,.14)}
+.ac-item .ic svg{width:18px;height:18px}
+.ac-item b{font-family:'Sora';font-weight:600;font-size:.98rem;display:block;color:inherit}
+.ac-item span{font-size:.85rem;color:var(--muted)}
+.dark .ac-item span{color:#9fb6c9}
+.ac-visual{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.ac-visual img{width:100%;height:520px;object-fit:cover}
+.ac-visual .float-badge{
+  position:absolute;left:20px;bottom:20px;right:20px;background:rgba(7,24,39,.72);
+  backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:16px;
+  padding:16px 20px;display:flex;align-items:center;gap:14px;color:#fff;
+}
+.ac-visual .float-badge .big{font-family:'Sora';font-weight:800;font-size:1.4rem}
+.ac-visual .float-badge small{color:#a9c2d6;font-size:.78rem}
+
+/* brand strip */
+.brands{margin-top:64px;text-align:center}
+.brands .lab{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#8ba3b8;font-weight:600;margin-bottom:26px}
+.dark .brands .lab{color:#7f97ab}
+.brand-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px}
+.brand-chip{
+  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;
+  padding:14px 26px;font-family:'Sora';font-weight:700;letter-spacing:.02em;color:#cdddea;
+  font-size:1.02rem;transition:.3s;
+}
+.brand-chip:hover{background:var(--grad-blue);border-color:transparent;color:#fff;transform:translateY(-4px);box-shadow:0 14px 30px -12px rgba(0,168,240,.6)}
+
+/* ============================ ELECTRICAL GRID ============================ */
+.elec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.elec-card{
+  background:#fff;border:1px solid var(--line-dark);border-radius:16px;padding:24px 22px;
+  transition:transform .4s var(--ease),box-shadow .4s,border-color .3s;position:relative;overflow:hidden;
+}
+.elec-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--grad-blue);transition:width .4s var(--ease)}
+.elec-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(0,168,240,.45);border-color:rgba(0,168,240,.35)}
+.elec-card:hover::before{width:100%}
+.elec-card .ic{width:44px;height:44px;border-radius:12px;background:var(--grad-blue);display:grid;place-items:center;color:#fff;margin-bottom:16px;box-shadow:0 10px 24px -10px rgba(0,168,240,.6);transition:transform .4s var(--ease)}
+.elec-card:hover .ic{transform:scale(1.08) rotate(-4deg)}
+.elec-card .ic svg{width:22px;height:22px}
+.elec-card h4{font-family:'Sora';font-weight:600;font-size:1.02rem;color:var(--navy);margin-bottom:6px}
+.elec-card p{font-size:.85rem;color:var(--muted);line-height:1.5}
+
+/* ============================ BUILDERS ============================ */
+.builders{background:linear-gradient(180deg,#071827,#0a2536);color:#fff;overflow:hidden}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.stage{
+  position:relative;background:rgba(255,255,255,.04);border:1px solid var(--line);
+  border-radius:var(--radius-lg);overflow:hidden;
+}
+.stage img{width:100%;height:200px;object-fit:cover;opacity:.92}
+.stage .sbody{padding:24px}
+.stage .snum{font-family:'Sora';font-weight:800;font-size:.85rem;color:var(--amber);letter-spacing:.1em}
+.stage h4{font-family:'Sora';font-weight:600;font-size:1.25rem;margin:6px 0 8px}
+.stage p{font-size:.9rem;color:#a9c2d6}
+.builders-extra{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.bx{display:flex;flex-direction:column;gap:8px;padding:18px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px}
+.bx svg{width:22px;height:22px;color:var(--blue-soft)}
+.bx span{font-size:.86rem;color:#cbddeb;font-weight:500;font-family:'Sora'}
+
+/* ============================ GALLERY ============================ */
+.gal-track{display:flex;gap:18px;overflow-x:auto;padding:6px 24px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.gal-track::-webkit-scrollbar{height:8px}
+.gal-track::-webkit-scrollbar-thumb{background:rgba(7,24,39,.2);border-radius:10px}
+.gal-item{
+  position:relative;flex:0 0 360px;height:420px;border-radius:var(--radius-lg);overflow:hidden;
+  scroll-snap-align:start;box-shadow:var(--shadow-soft);
+}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,24,39,.85))}
+.gal-item .lab{position:absolute;left:20px;bottom:20px;z-index:2;color:#fff}
+.gal-item .lab .t{font-family:'Sora';font-weight:600;font-size:1.05rem}
+.gal-item .lab .loc{font-size:.8rem;color:#bcd0e2;display:flex;align-items:center;gap:5px;margin-top:3px}
+.gal-hint{text-align:center;color:var(--muted);font-size:.85rem;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* ============================ WHY CHOOSE ============================ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+.why-card{
+  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:26px 24px;
+  transition:transform .4s var(--ease),background .3s;
+}
+.why-card:hover{transform:translateY(-5px);background:rgba(0,168,240,.10);box-shadow:0 24px 50px -28px rgba(0,168,240,.5);border-color:rgba(67,196,255,.35)}
+.why-card .ic{width:46px;height:46px;border-radius:12px;background:var(--grad-energy);display:grid;place-items:center;color:#fff;margin-bottom:16px;box-shadow:0 10px 26px -10px rgba(109,93,252,.6)}
+.why-card .ic svg{width:23px;height:23px}
+.why-card h4{font-family:'Sora';font-weight:600;font-size:1.08rem;margin-bottom:6px}
+.why-card p{font-size:.88rem;color:#a9c2d6}
+
+/* ============================ REVIEWS ============================ */
+.reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.gcard{
+  display:inline-flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line-dark);
+  border-radius:18px;padding:18px 24px;box-shadow:var(--shadow-soft);
+}
+.gcard .g{font-family:'Sora';font-weight:800;font-size:1.05rem;color:var(--navy)}
+.gcard .score{font-family:'Sora';font-weight:800;font-size:2.1rem;color:var(--navy);line-height:1}
+.gcard .stars{color:var(--amber);font-size:1rem;letter-spacing:2px}
+.gcard small{color:var(--muted);font-size:.78rem}
+.rev-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 20px}
+.rev-track::-webkit-scrollbar{height:8px}
+.rev-track::-webkit-scrollbar-thumb{background:rgba(7,24,39,.18);border-radius:10px}
+.rev{
+  flex:0 0 380px;scroll-snap-align:start;background:#fff;border:1px solid var(--line-dark);
+  border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;
+}
+.rev .stars{color:var(--amber);letter-spacing:2px;margin-bottom:14px}
+.rev p{color:var(--graphite);font-size:1rem;line-height:1.65;flex:1}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line-dark)}
+.rev .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#005e96);display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:700}
+.rev .who b{font-family:'Sora';font-size:.95rem;color:var(--navy);display:block}
+.rev .who small{color:var(--muted);font-size:.78rem}
+.rev .gicon{margin-left:auto;font-family:'Sora';font-weight:700;color:#4285F4;font-size:1.3rem}
+
+/* ============================ AREAS ============================ */
+.areas{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.areas::before{
+  content:"";position:absolute;inset:0;opacity:.5;z-index:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(0,159,227,.18) 1px,transparent 0);
+  background-size:34px 34px;
+  mask-image:radial-gradient(ellipse 70% 70% at 70% 40%,#000,transparent 75%);
+}
+.areas .wrap{position:relative;z-index:1}
+.area-layout{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.area-chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.area-chip{
+  display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.05);
+  border:1px solid var(--line);border-radius:100px;padding:12px 20px;font-weight:500;
+  font-size:.92rem;color:#d4e3ef;transition:.3s;font-family:'Sora'
+}
+.area-chip:hover{background:var(--grad-blue);border-color:transparent;transform:translateY(-3px);color:#fff;box-shadow:0 14px 30px -12px rgba(0,168,240,.55)}
+.area-chip:hover .d{background:#fff}
+.area-chip .d{width:7px;height:7px;border-radius:50%;background:var(--blue-soft)}
+.area-visual{position:relative;height:420px;display:grid;place-items:center}
+.area-ring{position:absolute;border-radius:50%;border:1px solid rgba(0,159,227,.25)}
+.area-ring.r1{width:120px;height:120px}
+.area-ring.r2{width:240px;height:240px;border-color:rgba(0,159,227,.18)}
+.area-ring.r3{width:370px;height:370px;border-color:rgba(0,159,227,.12)}
+.area-core{width:120px;height:120px;border-radius:50%;background:conic-gradient(from 0deg,var(--blue),var(--violet),var(--cyan),var(--blue));display:grid;place-items:center;color:#fff;box-shadow:0 0 70px rgba(0,168,240,.6);z-index:2;text-align:center;animation:corePulse 4s ease-in-out infinite}
+@keyframes corePulse{0%,100%{box-shadow:0 0 60px rgba(0,168,240,.5)}50%{box-shadow:0 0 90px rgba(109,93,252,.7)}}
+.area-core b{font-family:'Sora';font-weight:800;font-size:1.05rem;line-height:1.1}
+.area-pin{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(255,176,32,.18)}
+.area-pin.p1{top:24%;left:30%}.area-pin.p2{top:18%;right:26%}.area-pin.p3{bottom:24%;left:24%}.area-pin.p4{bottom:20%;right:30%}.area-pin.p5{top:50%;right:14%}
+
+/* ============================ QUOTE CTA ============================ */
+.cta-final{position:relative;background:linear-gradient(120deg,#062035,#0a3a5c 40%,#143a82 75%,#0b4b76);background-size:200% 200%;animation:auroraShift 16s ease-in-out infinite;color:#fff;overflow:hidden;isolation:isolate}
+.cta-final::before{content:"";position:absolute;width:560px;height:560px;right:-120px;top:-140px;background:radial-gradient(circle,rgba(0,168,240,.6),transparent 65%);filter:blur(34px);z-index:-1;animation:floaty 12s ease-in-out infinite}
+.cta-final::after{content:"";position:absolute;width:420px;height:420px;left:-90px;bottom:-140px;background:radial-gradient(circle,rgba(109,93,252,.45),transparent 65%);filter:blur(34px);z-index:-1;animation:floaty 14s ease-in-out infinite 1s}
+.cta-final .wrap{text-align:center;padding:90px 24px}
+.cta-final h2{font-size:clamp(2.1rem,4vw,3.2rem);font-weight:800;max-width:760px;margin:18px auto 18px}
+.cta-final p{font-size:1.12rem;color:#c9dcec;max-width:600px;margin:0 auto 36px}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ============================ FOOTER ============================ */
+footer.site{background:#04111d;color:#9fb6c9;padding:70px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid var(--line)}
+.foot-brand .brand{margin-bottom:18px}
+.foot-brand p{font-size:.92rem;line-height:1.7;max-width:330px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.05);border:1px solid var(--line);display:grid;place-items:center;color:#cdddea;transition:.3s}
+.foot-social a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-3px)}
+.foot-social svg{width:18px;height:18px}
+.foot-col h5{font-family:'Sora';font-weight:600;color:#fff;font-size:1rem;margin-bottom:18px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:#9fb6c9;padding:6px 0;transition:color .2s}
+.foot-col a:hover{color:var(--blue-soft)}
+.foot-contact a{display:flex;align-items:center;gap:10px;color:#cdddea;font-family:'Sora';font-weight:600;font-size:1.02rem;margin-bottom:10px}
+.foot-contact a svg{width:16px;height:16px;color:var(--blue-soft)}
+.foot-contact .em{font-family:'Inter';font-weight:500;font-size:.9rem;color:#9fb6c9}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:24px 0;font-size:.82rem;color:#6f879b}
+.foot-bottom a{color:#9fb6c9}
+.foot-bottom a:hover{color:#fff}
+
+/* floating call btn (mobile) */
+.fab{
+  position:fixed;right:18px;bottom:18px;z-index:70;display:none;
+  width:58px;height:58px;border-radius:50%;background:var(--amber);color:#1a1200;
+  box-shadow:0 14px 30px -8px rgba(255,176,32,.6);place-items:center;
+  animation:pulse 2.4s infinite;
+}
+.fab svg{width:24px;height:24px}
+
+/* ============================ REVEAL ============================ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width:1320px){.nav-phone{display:none}}
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{height:420px;max-width:520px}
+  .trust .wrap{grid-template-columns:repeat(3,1fr);gap:20px 8px}
+  .trust .item:nth-child(3){border-right:0}
+  .svc-grid{grid-template-columns:1fr}
+  .split,.feature-row,.area-layout{grid-template-columns:1fr;gap:38px}
+  .elec-grid{grid-template-columns:repeat(2,1fr)}
+  .builders-extra{grid-template-columns:repeat(2,1fr)}
+  .stages{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .menu,.nav-phone{display:none}
+  .burger{display:flex}
+  .ac-visual img{height:380px}
+}
+@media (max-width:640px){
+  .pad{padding:64px 0}
+  .topbar{display:none}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust .item{border-right:0}
+  .elec-grid,.why-grid,.builders-extra,.foot-grid{grid-template-columns:1fr}
+  .gal-item{flex-basis:280px;height:360px}
+  .rev{flex-basis:300px}
+  .fab{display:grid}
+  .hero-grid{padding:48px 0 60px}
+  .nav-cta .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- animated gradient accent line -->
+<div style="height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--violet),var(--amber),var(--blue));background-size:300% 100%;animation:hueFlow 6s linear infinite"></div>
+
+<!-- ============================ TOP BAR ============================ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="left">
+      <span class="pill"><span class="dot"></span> Available across Brisbane & Gold Coast</span>
+      <a href="mailto:info@linksairelectrical.com.au">info@linksairelectrical.com.au</a>
+    </div>
+    <div class="right">
+      <a href="tel:1300010393">1300 010 393</a>
+      <a href="tel:0447440050">0447 440 050</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site" id="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Links Air & Electrical home">
+        <span class="logo">
+          <!-- Replace with client logo: /assets/links-logo.png -->
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22L19.5 9.5H12.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span class="name">Links <span>Air</span> & Electrical<small>Power · Comfort · Trust</small></span>
+      </a>
+
+      <div class="menu">
+        <a href="#top" class="active">Home</a>
+        <a href="#aircon">Air Conditioning</a>
+        <a href="#electrical">Electrical</a>
+        <a href="#builders">Builders</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="nav-phone" href="tel:0447440050">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          0447 440 050
+        </a>
+        <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <div class="dtop">
+    <span class="brand"><span class="name" style="font-size:1rem">Links Air & Electrical</span></span>
+    <button class="close" id="closeDrawer" aria-label="Close menu">&times;</button>
+  </div>
+  <a href="#top" class="dlink">Home</a>
+  <a href="#aircon" class="dlink">Air Conditioning</a>
+  <a href="#electrical" class="dlink">Electrical</a>
+  <a href="#builders" class="dlink">Builders & Construction</a>
+  <a href="#projects" class="dlink">Projects</a>
+  <a href="#reviews" class="dlink">Reviews</a>
+  <a href="#areas" class="dlink">Areas</a>
+  <a href="#contact" class="dlink">Contact</a>
+  <div class="dactions">
+    <a href="tel:0447440050" class="btn btn-ghost">Call 0447 440 050</a>
+    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+  </div>
+</div>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal in">
+        <span class="eyebrow">Licensed Electrical & Air Conditioning</span>
+        <h1>Power, Comfort &<br><span class="hl">Air Conditioning</span><br>Done Right.</h1>
+        <p class="sub">Licensed electrical and air conditioning specialists serving Brisbane, the Gold Coast and surrounding suburbs — with clean workmanship, honest quotes and reliable service since 2014.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="17"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="tel:0447440050" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <div class="hero-badges">
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 .5-5.3 4.5L18.5 20 12 16.5 5.5 20l1.8-7L2 8.5 9 8z"/></svg> 5.0 Google Rating</span>
+          <span>200+ Reviews</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/></svg> Licensed & Insured</span>
+          <span>No Hidden Charges</span>
+        </div>
+        <div class="hero-emergency"><span class="pulse"></span> 24/7 Emergency Support across Brisbane & Gold Coast</div>
+      </div>
+
+      <div class="hero-visual reveal in" data-d="1">
+        <div class="hv-glow"></div>
+        <!-- Hero main image: ducted/split AC install from client gallery -->
+        <div class="hv-card hv-main">
+          <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/Tripple-installation.jpg" alt="Air conditioning installation by Links Air & Electrical" loading="eager" />
+        </div>
+        <!-- Hero secondary image: electrical/switchboard work -->
+        <div class="hv-card hv-sub">
+          <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/EV-Charger.png" alt="EV charger installation" loading="lazy" />
+        </div>
+        <div class="hv-rating">
+          <div>
+            <div class="num">5.0</div>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div><small>Rated on<br><b style="color:#4285F4;font-family:'Sora'">Google</b></small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TRUST STRIP ============================ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item reveal"><span class="big">200+</span><span class="lbl">Google Reviews</span></div>
+    <div class="item reveal" data-d="1"><span class="big">5.0★</span><span class="lbl">Average Rating</span></div>
+    <div class="item reveal" data-d="2"><span class="big">2014</span><span class="lbl">Serving Since</span></div>
+    <div class="item reveal" data-d="1"><span class="big">100%</span><span class="lbl">Licensed & Insured</span></div>
+    <div class="item reveal" data-d="2"><span class="big">2</span><span class="lbl">Regions Covered</span></div>
+    <div class="item reveal" data-d="3"><span class="big">✓</span><span class="lbl">Warranties & Guarantees</span></div>
+  </div>
+</div>
+
+<!-- ============================ SERVICE GATEWAY ============================ -->
+<section class="pad light">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">What we do</span>
+      <h2>Three trades, one trusted team</h2>
+      <p>From a single power point to a full new-build fit-out, Links Air & Electrical delivers clean, compliant work across every job — big or small.</p>
+    </div>
+    <div class="svc-grid">
+      <!-- Service card image: AC install -->
+      <a href="#aircon" class="svc-card reveal">
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/DaikinDuctedSystem_14kw.webp" alt="Air conditioning services" loading="lazy" />
+        <div class="ring"></div>
+        <div class="body">
+          <span class="tag">Climate Comfort</span>
+          <h3>Air Conditioning</h3>
+          <p>Split systems, ducted air conditioning, repairs, maintenance, Wi-Fi and zone control.</p>
+          <span class="more">Explore air conditioning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <!-- Service card image: electrical -->
+      <a href="#electrical" class="svc-card reveal" data-d="1">
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/6-outlets-900x442-1.jpg" alt="Electrical services" loading="lazy" />
+        <div class="ring"></div>
+        <div class="body">
+          <span class="tag">Safe & Compliant</span>
+          <h3>Electrical Services</h3>
+          <p>Power points, lighting, switchboards, safety switches, fans, appliances and emergency repairs.</p>
+          <span class="more">Explore electrical <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <!-- Service card image: builders -->
+      <a href="#builders" class="svc-card reveal" data-d="2">
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/builder_innerimg001.jpg" alt="Builders and construction" loading="lazy" />
+        <div class="ring"></div>
+        <div class="body">
+          <span class="tag">B2B Support</span>
+          <h3>Builders & Construction</h3>
+          <p>New builds, under-slab, rough-ins, fit-offs, shop fit-outs, renovations and full builder support.</p>
+          <span class="more">Explore construction <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMBINED TEAM ============================ -->
+<section class="pad ice">
+  <div class="wrap">
+    <div class="split">
+      <div class="copy reveal">
+        <span class="eyebrow">One team for comfort & power</span>
+        <h2>Both trades under one roof — so you only make <span class="gtext">one call</span></h2>
+        <p>Most homes and projects need electrical and air conditioning work at some point. Instead of juggling separate trades and chasing two quotes, Links Air & Electrical handles both — coordinated, compliant and finished to the same high standard.</p>
+        <p>The result is fewer trades to manage, tighter scheduling, and one accountable team from first inspection to clean handover.</p>
+        <a href="#contact" class="btn btn-dark" style="margin-top:10px">Book one team for the job</a>
+      </div>
+      <div class="process-stack reveal" data-d="1">
+        <div class="pstep"><span class="n">1</span><div><div class="pt">Inspect</div><div class="pd">On-site assessment and honest advice on the right system.</div></div></div>
+        <div class="pstep"><span class="n">2</span><div><div class="pt">Quote</div><div class="pd">A clear, upfront quote with no hidden charges.</div></div></div>
+        <div class="pstep"><span class="n">3</span><div><div class="pt">Install</div><div class="pd">Tidy, code-compliant workmanship by licensed technicians.</div></div></div>
+        <div class="pstep"><span class="n">4</span><div><div class="pt">Test</div><div class="pd">Every job tested and verified to Australian standards.</div></div></div>
+        <div class="pstep"><span class="n">5</span><div><div class="pt">Clean Handover</div><div class="pd">We leave your space as tidy as we found it.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AIR CONDITIONING ============================ -->
+<section class="pad dark" id="aircon">
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="copy reveal">
+        <span class="eyebrow">Air Conditioning</span>
+        <h2 style="font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;margin:16px 0 14px">Cool, quiet comfort installed and serviced properly</h2>
+        <p style="color:#aac1d4;font-size:1.05rem">We design, supply, install and maintain split system and ducted air conditioning across Brisbane and the Gold Coast — helping you choose the right size and system, then keeping it running smoothly for years.</p>
+        <div class="ac-list">
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13h14M5 9h14M9 5v14M15 5v14" stroke-linecap="round"/></svg></span><div><b>Split System Installation</b><span>Back-to-back, side entry & up-and-over</span></div></div>
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="6" rx="2"/><path d="M7 16v2M12 16v2M17 16v2" stroke-linecap="round"/></svg></span><div><b>Ducted Air Conditioning</b><span>Design, supply & whole-home install</span></div></div>
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2l-2 7h5l-7 13 2-9H7z"/></svg></span><div><b>Repairs & Maintenance</b><span>Fast diagnosis and lasting fixes</span></div></div>
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span><div><b>Cleaning & Servicing</b><span>Periodic servicing for healthy air</span></div></div>
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></span><div><b>Replacement & Upgrades</b><span>Modernise older, inefficient units</span></div></div>
+          <div class="ac-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a7 7 0 0 1 14 0M8 15.5a4 4 0 0 1 8 0M11 18.5a1 1 0 0 1 2 0"/></svg></span><div><b>Wi-Fi & Zone Control</b><span>Smart, room-by-room temperature</span></div></div>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="margin-top:30px">Get an air conditioning quote</a>
+      </div>
+      <div class="ac-visual reveal" data-d="1">
+        <!-- AC feature image: ducted zoning controller -->
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2025/04/Ducted-aircon-zoning.jpg" alt="Ducted air conditioning with zone control" loading="lazy" />
+        <div class="float-badge">
+          <div><div class="big">Wi-Fi</div><small>Zone control ready</small></div>
+          <div style="margin-left:auto;text-align:right"><div class="big">Supply<br>& Install</div><small>Trusted brands</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- brand strip -->
+    <div class="brands reveal">
+      <div class="lab">We supply & install trusted brands</div>
+      <div class="brand-row">
+        <span class="brand-chip">Daikin</span>
+        <span class="brand-chip">Mitsubishi</span>
+        <span class="brand-chip">Fujitsu</span>
+        <span class="brand-chip">Panasonic</span>
+        <span class="brand-chip">ActronAir</span>
+        <span class="brand-chip">TECO</span>
+        <span class="brand-chip">Hisense</span>
+        <span class="brand-chip">Samsung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ELECTRICAL ============================ -->
+<section class="pad light" id="electrical">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Electrical Services</span>
+      <h2>Residential & commercial electrical, done safely</h2>
+      <p>From a single power point to a full house rewire, we handle all types of electrical work across Brisbane and the Gold Coast — efficiently, neatly and to Australian standards.</p>
+    </div>
+    <div class="elec-grid">
+      <div class="elec-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="10" r="1.2"/><circle cx="15" cy="10" r="1.2"/></svg></span><h4>Power Points</h4><p>New outlets, upgrades and USB sockets in any room.</p></div>
+      <div class="elec-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="5"/><path d="M9 18h6M10 21h4" stroke-linecap="round"/></svg></span><h4>LED Lights & Downlights</h4><p>Indoor and outdoor lighting that lifts every space.</p></div>
+      <div class="elec-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke-linecap="round"/></svg></span><h4>Switchboard Upgrades</h4><p>Safe, modern switchboard replacements and surge protection.</p></div>
+      <div class="elec-card reveal" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Safety Switches / RCDs</h4><p>Protect your home and family from electrical faults.</p></div>
+      <div class="elec-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 4l1.5 6M12 4l-1.5 6M20 12l-6 1.5M20 12l-6-1.5M12 20l-1.5-6M12 20l1.5-6M4 12l6-1.5M4 12l6 1.5"/></svg></span><h4>Ceiling Fans</h4><p>Supply and installation of AC and DC ceiling fans.</p></div>
+      <div class="elec-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg></span><h4>Exhaust Fans</h4><p>Bathroom and ceiling exhaust fans, including heat units.</p></div>
+      <div class="elec-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/></svg></span><h4>Oven & Cooktop Installs</h4><p>Safe connection of ovens, cooktops and appliances.</p></div>
+      <div class="elec-card reveal" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="9" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><h4>Data & Network Cabling</h4><p>Reliable data points and structured cabling.</p></div>
+      <div class="elec-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M3 12a9 9 0 0 1 18 0M6 12a6 6 0 0 1 12 0"/></svg></span><h4>CCTV & Security</h4><p>Security camera supply and professional installation.</p></div>
+      <div class="elec-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 7l-2 4h3l-2 4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h4>EV Chargers</h4><p>Home and workplace electric vehicle charging.</p></div>
+      <div class="elec-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v3M12 15h.01" stroke-linecap="round"/></svg></span><h4>Smoke Detectors</h4><p>Compliant smoke alarm supply and installation.</p></div>
+      <div class="elec-card reveal" data-d="3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2l-2 7h5l-7 13 2-9H7z"/></svg></span><h4>Emergency Repairs</h4><p>Fast response for urgent electrical faults, day or night.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BUILDERS ============================ -->
+<section class="pad builders" id="builders">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Builders & Construction</span>
+      <h2>Electrical & air conditioning support for new builds, renovations and fit-outs</h2>
+      <p style="color:#aac1d4">We partner with builders and developers from slab to handover — coordinating with plans, communicating clearly and keeping every stage compliant and on schedule.</p>
+    </div>
+
+    <div class="stages">
+      <div class="stage reveal">
+        <!-- Builders stage 1 image -->
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/builder_innerimg001.jpg" alt="Under-slab electrical rough-in" loading="lazy" />
+        <div class="sbody"><div class="snum">STAGE 01</div><h4>Under-Slab</h4><p>Conduit and cabling set out and laid before the pour, coordinated to your plans.</p></div>
+      </div>
+      <div class="stage reveal" data-d="1">
+        <!-- Builders stage 2 image -->
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/20210804_185915-scaled.jpg" alt="Electrical rough-in stage" loading="lazy" />
+        <div class="sbody"><div class="snum">STAGE 02</div><h4>Rough-Ins</h4><p>Wiring, points and brackets installed through the frame ready for lining.</p></div>
+      </div>
+      <div class="stage reveal" data-d="2">
+        <!-- Builders stage 3 image -->
+        <img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/IMG_20191115_180842-scaled.jpg" alt="Electrical fit-off stage" loading="lazy" />
+        <div class="sbody"><div class="snum">STAGE 03</div><h4>Fit-Offs</h4><p>Final fixtures, switches, points and systems fitted, tested and handed over.</p></div>
+      </div>
+    </div>
+
+    <div class="builders-extra">
+      <div class="bx reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><span>Plan coordination</span></div>
+      <div class="bx reveal" data-d="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 10h8M8 14h5M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM3 21l2-4"/></svg><span>Builder communication</span></div>
+      <div class="bx reveal" data-d="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span>Safety & compliance</span></div>
+      <div class="bx reveal" data-d="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l4-6 3 4 3-5 4 7"/></svg><span>Residential & commercial</span></div>
+      <div class="bx reveal" data-d="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Clean handover</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROJECTS / GALLERY ============================ -->
+<section class="pad-sm light" id="projects">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Real work, real results</span>
+      <h2>Recent projects across Brisbane & the Gold Coast</h2>
+      <p>A sample of completed installations — every job photographed on site, never stock.</p>
+    </div>
+  </div>
+  <!-- Project gallery: all images sourced from client's existing work gallery -->
+  <div class="gal-track reveal">
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/DaikinDuctedSystem_14kw.webp" alt="Ducted AC installation" loading="lazy"/><figcaption class="lab"><span class="t">Ducted AC Installation</span><span class="loc">📍 Camp Hill, Brisbane</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/EV-Charger.png" alt="EV charger installation" loading="lazy"/><figcaption class="lab"><span class="t">EV Charger Installation</span><span class="loc">📍 Oxley</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/6-outlets-900x442-1.jpg" alt="Switchboard upgrade" loading="lazy"/><figcaption class="lab"><span class="t">Switchboard Upgrade</span><span class="loc">📍 Woolloongabba</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/LED_lights.jpeg" alt="Downlights installation" loading="lazy"/><figcaption class="lab"><span class="t">Downlights Installation</span><span class="loc">📍 Teneriffe</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/2001_Ceiling-Fan-Installation-Albany-Creek-974x487-1.jpg" alt="Ceiling fan installation" loading="lazy"/><figcaption class="lab"><span class="t">Ceiling Fan Installation</span><span class="loc">📍 Albany Creek</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/Multihead-8Kw-scaled.jpg" alt="Multi-head split system" loading="lazy"/><figcaption class="lab"><span class="t">Multi-Head Split System</span><span class="loc">📍 Gold Coast</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/builder_innerimg001.jpg" alt="New build electrical" loading="lazy"/><figcaption class="lab"><span class="t">New Build Electrical</span><span class="loc">📍 Springfield</span></figcaption></figure>
+    <figure class="gal-item"><img src="https://linksairelectrical.com.au/wp-content/uploads/2024/09/Cooktop.png" alt="Cooktop installation" loading="lazy"/><figcaption class="lab"><span class="t">Cooktop Installation</span><span class="loc">📍 Bulimba</span></figcaption></figure>
+  </div>
+  <div class="gal-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    Scroll to see more projects
+  </div>
+</section>
+
+<!-- ============================ WHY CHOOSE ============================ -->
+<section class="pad dark">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Why Links Air & Electrical</span>
+      <h2>Honest work, fair prices, finished properly</h2>
+      <p>We treat your home like our own — doing every job safely, cleanly and with care, the first time.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Licensed & insured</h4><p>Fully qualified technicians for both electrical and air conditioning work.</p></div>
+      <div class="why-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>On-time & tidy</h4><p>We arrive when we say we will and leave your space clean.</p></div>
+      <div class="why-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><h4>Clear quotes, no hidden fees</h4><p>Upfront pricing agreed before we begin — no surprises.</p></div>
+      <div class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><h4>Australian standard compliance</h4><p>Every job completed and tested to current regulations.</p></div>
+      <div class="why-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 .5-5.3 4.5L18.5 20 12 16.5 5.5 20l1.8-7L2 8.5 9 8z"/></svg></span><h4>Quality parts & trusted brands</h4><p>We install reliable equipment built to last.</p></div>
+      <div class="why-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2l-2 7h5l-7 13 2-9H7z"/></svg></span><h4>Fast response times</h4><p>Quick callouts and emergency support when it matters.</p></div>
+      <div class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></span><h4>Friendly, respectful team</h4><p>Polite, professional technicians who respect your home.</p></div>
+      <div class="why-card reveal" data-d="1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span><h4>Zero-damage approach</h4><p>Careful installation that protects your walls and finishes.</p></div>
+      <div class="why-card reveal" data-d="2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 .5-5.3 4.5L18.5 20 12 16.5 5.5 20l1.8-7L2 8.5 9 8z"/></svg></span><h4>100% satisfaction mindset</h4><p>We're not done until you're genuinely happy with the work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REVIEWS ============================ -->
+<section class="pad ice" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Reviews</span>
+        <h2>Trusted by over 200 local customers</h2>
+        <p>Real reviews from homeowners, landlords and builders across Brisbane and the Gold Coast.</p>
+      </div>
+      <div class="gcard reveal" data-d="1">
+        <div class="score">5.0</div>
+        <div><div class="stars">★★★★★</div><small><b style="color:#4285F4">Google</b> · 200+ reviews</small></div>
+      </div>
+    </div>
+
+    <!--
+      NOTE: Review snippets below are representative placeholders styled in the
+      client's voice. Before publishing, replace names + text with verified
+      Google reviews pulled from the client's Google Business Profile.
+    -->
+    <div class="rev-track reveal">
+      <article class="rev"><div class="stars">★★★★★</div><p>Booked a ducted system for our new home and the whole job was seamless. Clear quote, on time, and they left the place spotless. Couldn't fault the workmanship.</p><div class="who"><span class="av">SM</span><div><b>Sarah M.</b><small>Camp Hill, Brisbane</small></div><span class="gicon">G</span></div></article>
+      <article class="rev"><div class="stars">★★★★★</div><p>Upgraded our switchboard and added safety switches. Professional, tidy and explained everything clearly. Honest pricing with no surprises at the end.</p><div class="who"><span class="av">DT</span><div><b>David T.</b><small>Gold Coast</small></div><span class="gicon">G</span></div></article>
+      <article class="rev"><div class="stars">★★★★★</div><p>As a builder I've used Links Air across several projects. Reliable on site, great communication, and they always hit the program. Highly recommend.</p><div class="who"><span class="av">RK</span><div><b>Ryan K.</b><small>Logan</small></div><span class="gicon">G</span></div></article>
+      <article class="rev"><div class="stars">★★★★★</div><p>Quick response for an emergency electrical fault on a weekend. Sorted it fast and at a fair price. Will be using them for all our future work.</p><div class="who"><span class="av">EJ</span><div><b>Emma J.</b><small>Ipswich</small></div><span class="gicon">G</span></div></article>
+      <article class="rev"><div class="stars">★★★★★</div><p>Had multi-head splits installed across the house. The team was friendly, careful with our walls, and the Wi-Fi control setup is fantastic. Great value.</p><div class="who"><span class="av">MP</span><div><b>Michael P.</b><small>Redlands</small></div><span class="gicon">G</span></div></article>
+    </div>
+    <div style="text-align:center;margin-top:30px" class="reveal">
+      <a href="https://www.google.com/maps/place/Links+Air+%26+Electrical" target="_blank" rel="noopener" class="btn btn-dark">Read more Google reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AREAS ============================ -->
+<section class="pad areas" id="areas">
+  <div class="wrap">
+    <div class="area-layout">
+      <div class="reveal">
+        <span class="eyebrow">Service Areas</span>
+        <h2 style="font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;margin:16px 0 14px;color:#fff">Local across South-East Queensland</h2>
+        <p style="color:#aac1d4;font-size:1.05rem">We're a local, flexible team covering Brisbane and the Gold Coast and everywhere in between. Not sure if we reach you? Give us a call — we probably do.</p>
+        <div class="area-chips">
+          <span class="area-chip"><span class="d"></span>Brisbane North</span>
+          <span class="area-chip"><span class="d"></span>Brisbane South</span>
+          <span class="area-chip"><span class="d"></span>Brisbane East</span>
+          <span class="area-chip"><span class="d"></span>Brisbane West</span>
+          <span class="area-chip"><span class="d"></span>Gold Coast</span>
+          <span class="area-chip"><span class="d"></span>Logan</span>
+          <span class="area-chip"><span class="d"></span>Ipswich</span>
+          <span class="area-chip"><span class="d"></span>Redlands</span>
+          <span class="area-chip"><span class="d"></span>Moreton Bay</span>
+          <span class="area-chip"><span class="d"></span>Surrounding suburbs</span>
+        </div>
+      </div>
+      <div class="area-visual reveal" data-d="1">
+        <div class="area-ring r1"></div>
+        <div class="area-ring r2"></div>
+        <div class="area-ring r3"></div>
+        <div class="area-core"><b>Brisbane<br>& Gold Coast</b></div>
+        <span class="area-pin p1"></span><span class="area-pin p2"></span><span class="area-pin p3"></span><span class="area-pin p4"></span><span class="area-pin p5"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUOTE CTA ============================ -->
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <span class="eyebrow center reveal" style="color:#7fd0f4">Get started</span>
+    <h2 class="reveal" data-d="1">Need electrical or air conditioning work done properly?</h2>
+    <p class="reveal" data-d="1">Tell us what you need and our team will help you with a clear quote, fast response and professional workmanship.</p>
+    <div class="cta-actions reveal" data-d="2">
+      <a href="mailto:info@linksairelectrical.com.au?subject=Free%20Quote%20Request" class="btn btn-amber">Request a Free Quote</a>
+      <a href="tel:0447440050" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call 0447 440 050
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22L19.5 9.5H12.5L13 2Z" fill="#fff"/></svg></span>
+          <span class="name">Links <span>Air</span> & Electrical</span>
+        </a>
+        <p>Licensed electrical and air conditioning specialists serving Brisbane, the Gold Coast and surrounding suburbs since 2014 — delivering clean workmanship, honest quotes and reliable service.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/LinksAirAndElectrical" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/linksairaircons/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/+61447440050" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5 14c-.3.8-1.5 1.5-2.1 1.5-.6.1-1.3.2-3.7-.8s-3.8-3.5-3.9-3.7c-.1-.2-.9-1.2-.9-2.3s.6-1.6.8-1.8c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .5l-.3.5c-.1.2-.3.3-.1.6s.6 1 1.3 1.6c.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.6-.8c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.5.3 0 .2 0 .7-.2 1z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#aircon">Air Conditioning</a>
+        <a href="#electrical">Electrical Services</a>
+        <a href="#builders">Builders & Construction</a>
+        <a href="#electrical">Switchboard Upgrades</a>
+        <a href="#electrical">EV Chargers</a>
+        <a href="#electrical">CCTV & Security</a>
+      </div>
+
+      <div class="foot-col">
+        <h5>Service Areas</h5>
+        <a href="#areas">Brisbane</a>
+        <a href="#areas">Gold Coast</a>
+        <a href="#areas">Logan</a>
+        <a href="#areas">Ipswich</a>
+        <a href="#areas">Redlands</a>
+        <a href="#areas">Moreton Bay</a>
+      </div>
+
+      <div class="foot-col foot-contact">
+        <h5>Get in touch</h5>
+        <a href="tel:1300010393"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>1300 010 393</a>
+        <a href="tel:0447440050"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>0447 440 050</a>
+        <p class="em"><a href="mailto:info@linksairelectrical.com.au" style="display:inline">info@linksairelectrical.com.au</a></p>
+        <p class="em">Brisbane & Gold Coast · On call 24/7</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Links Air & Electrical. All rights reserved.</span>
+      <span><a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating mobile call button -->
+<a href="tel:0447440050" class="fab" aria-label="Call now">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+</a>
+
+<script>
+/* sticky header state */
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20));
+
+/* mobile drawer */
+const drawer=document.getElementById('drawer');
+document.getElementById('burger').onclick=()=>drawer.classList.add('open');
+document.getElementById('closeDrawer').onclick=()=>drawer.classList.remove('open');
+drawer.querySelectorAll('.dlink').forEach(a=>a.onclick=()=>drawer.classList.remove('open'));
+
+/* scroll reveal */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* active nav link on scroll */
+const sections=[...document.querySelectorAll('section[id]')];
+const links=[...document.querySelectorAll('.menu a')];
+addEventListener('scroll',()=>{
+  let cur='top';
+  for(const s of sections){if(scrollY>=s.offsetTop-120)cur=s.id;}
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));
+});
+</script>
+</body>
+</html>

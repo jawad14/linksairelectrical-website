@@ -88,7 +88,7 @@ export default function OgImage() {
             color: 'white',
           }}
         >
-          Call 0468 432 538
+          Call 0447 440 050
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '18px' }}>
           <span style={{ color: '#fbbf24' }}>★★★★★</span>

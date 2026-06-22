@@ -1,39 +1,34 @@
 import type { Metadata, Viewport } from 'next';
-import { Open_Sans, Lato } from 'next/font/google';
+import { Inter, Sora } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
-import { FloatingMobileCTA } from '@/components/blocks/FloatingMobileCTA';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
-const fontSans = Open_Sans({
+const fontSans = Inter({
   variable: '--font-sans',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const fontHeading = Lato({
+const fontHeading = Sora({
   variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
 export const metadata: Metadata = defaultMetadata;
 
 export const viewport: Viewport = {
-  themeColor: '#0F5E94',
+  themeColor: '#06141f',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="en-AU"
       suppressHydrationWarning
       className={`${fontSans.variable} ${fontHeading.variable} h-full antialiased`}
     >
@@ -45,7 +40,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <FloatingMobileCTA />
         </ThemeProvider>
         <Analytics />
       </body>

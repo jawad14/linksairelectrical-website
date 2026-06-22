@@ -38,9 +38,16 @@ const eslintConfig = defineConfig([
     ...restrictTypographyRule,
   },
   // Exceptions: global-error renders its own <html>/<body> outside the React tree,
-  // and the typography primitives themselves render the underlying h1-h6/p tags.
+  // the typography primitives themselves render the underlying h1-h6/p tags, and
+  // marketing blocks under components/blocks use the bespoke design CSS in globals.css
+  // (which targets raw .hero h1 / .sec-head h2 selectors).
   {
-    files: ['app/global-error.tsx', 'components/ui/typography.tsx', 'components/seo/**/*.{ts,tsx}'],
+    files: [
+      'app/global-error.tsx',
+      'components/ui/typography.tsx',
+      'components/seo/**/*.{ts,tsx}',
+      'components/blocks/**/*.{ts,tsx}',
+    ],
     rules: { 'no-restricted-syntax': 'off' },
   },
   globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),

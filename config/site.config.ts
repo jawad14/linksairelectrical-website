@@ -1,21 +1,6 @@
 import type { Metadata } from 'next';
 
-export type NavPromo = {
-  image: string;
-  alt: string;
-  heading: string;
-  subtitle: string;
-  cta: string;
-  href: string;
-};
-
-export type NavItem = {
-  label: string;
-  href: string;
-  children?: NavItem[];
-  promo?: NavPromo;
-};
-
+export type NavItem = { label: string; href: string };
 export type SocialLink = { label: string; href: string };
 
 export type SiteConfig = {
@@ -55,9 +40,9 @@ export type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: 'Links Air & Electrical',
   shortName: 'Links Air',
-  tagline: 'Trusted Local Sparkies · A/C Specialists',
+  tagline: 'Power · Comfort · Trust',
   description:
-    'Links Air & Electrical offers air conditioning service in Brisbane, specializing in installation, repairs, and maintenance. Reliable AC, electrical solutions.',
+    'Licensed electrical and air conditioning specialists serving Brisbane, Gold Coast, Logan, Ipswich, Redlands and Moreton Bay. Clean workmanship, honest quotes, reliable service since 2014.',
   url: 'https://linksairelectrical.com.au',
   ogImage: '/opengraph-image',
   locale: 'en_AU',
@@ -65,106 +50,37 @@ export const siteConfig: SiteConfig = {
   phone: '1300 010 393',
   mobile: '0447 440 050',
   email: 'info@linksairelectrical.com.au',
-  address: 'Brisbane and Gold Coast, Queensland, QLD 4000',
-  hours: 'Mon–Sun · 9am–7pm',
+  address: 'Brisbane and Gold Coast, Queensland, QLD',
+  hours: 'On call 24/7',
   license: '312045C',
   arc: 'AU45821',
   nav: [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about-us' },
-    {
-      label: 'Air Conditioning',
-      href: '/air-conditioning',
-      promo: {
-        image: '/images/services/menu-aircon.webp',
-        alt: 'Split system air conditioner installed by Links Air & Electrical',
-        heading: 'Unbeatable Air Con Deals',
-        subtitle: 'Quality systems at great prices!',
-        cta: 'View our specials!',
-        href: '/air-conditioning',
-      },
-      children: [
-        {
-          label: 'Split System Aircon',
-          href: '/split-system-aircon',
-          children: [
-            { label: 'Back To Back Installation', href: '/back-to-back-installation' },
-            { label: 'Side Entry Installation', href: '/side-entry-installation' },
-            { label: 'Up & Over Installation', href: '/up-over-installation' },
-          ],
-        },
-        { label: 'Ducted Airconditioning', href: '/ducted-airconditioning' },
-        { label: 'VRV/VRF Air Conditioning', href: '/vrv-vrf-air-conditioning' },
-        { label: 'Design and Construction', href: '/design-and-construction' },
-        { label: 'Repair & Installation', href: '/repair-installation' },
-        { label: 'Service & Maintenance', href: '/service-maintenance' },
-        { label: 'Air Conditioning Installation', href: '/air-conditioning-installation' },
-        { label: 'Security Camera Installation', href: '/security-camera-installation' },
-        { label: 'FAQ', href: '/faq' },
-      ],
-    },
-    {
-      label: 'Electricals',
-      href: '/electricals',
-      promo: {
-        image: '/images/services/menu-electrical.webp',
-        alt: 'Modern home lighting installed by Links Air & Electrical',
-        heading: 'Expert Electrical Services',
-        subtitle: 'Licensed electricians you can trust!',
-        cta: 'Get a free quote',
-        href: '/electricals',
-      },
-      children: [
-        {
-          label: 'Residential Electrician',
-          href: '/residential-electrician',
-          children: [
-            { label: 'New House Wiring', href: '/new-house-wiring' },
-            { label: 'Bathroom Exhaust Heater', href: '/bathroom-exhaust-heater' },
-            { label: 'Ceiling Exhaust Fans', href: '/ceiling-exhaust-fans' },
-            { label: 'Ceiling Fan Installation', href: '/ceiling-fan-installation' },
-            { label: 'Data Points & Network Cabling', href: '/data-points-network-cabling' },
-            { label: 'Downlights', href: '/downlights' },
-            { label: 'Switchboard Upgrade', href: '/switchboard-upgrade' },
-          ],
-        },
-        {
-          label: 'General Electrical Maintenance',
-          href: '/general-electrical-maintenance',
-          children: [
-            { label: 'LED Lights Installation', href: '/led-lights-installation' },
-            { label: 'Meter Box Relocation/Upgrade', href: '/meter-box-relocation' },
-            { label: 'Oven & Cooktop Installations', href: '/oven-cooktop-installations' },
-            { label: 'Pendant Light Installer', href: '/pendant-light-installer' },
-            { label: 'Power-Point Installation', href: '/power-point-installation' },
-            { label: 'Smoke Detector Installation', href: '/smoke-detector-installation' },
-            { label: 'Switchboard Surge Protector', href: '/switchboard-surge-protector' },
-            { label: 'USB Sockets', href: '/usb-sockets' },
-            { label: 'Other Electrical Services', href: '/other-electrical-services' },
-          ],
-        },
-        { label: 'CCTV Camera Installation', href: '/cctv-camera-installation' },
-        { label: 'EV Charger Installation', href: '/ev-charger-installation' },
-      ],
-    },
-    { label: 'Building & Construction', href: '/building-and-construction' },
-    {
-      label: 'Areas',
-      href: '/areas',
-      children: [
-        { label: 'Brisbane', href: '/areas/brisbane' },
-        { label: 'Gold Coast', href: '/areas/gold-coast' },
-        { label: 'Logan', href: '/areas/logan' },
-        { label: 'Ipswich', href: '/areas/ipswich' },
-      ],
-    },
+    { label: 'Home', href: '#top' },
+    { label: 'Air Conditioning', href: '#aircon' },
+    { label: 'Electrical', href: '#electrical' },
+    { label: 'Builders', href: '#builders' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Reviews', href: '#reviews' },
+    { label: 'Areas', href: '#areas' },
+    { label: 'Contact', href: '#contact' },
   ],
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/LinksAirAndElectrical' },
     { label: 'Instagram', href: 'https://www.instagram.com/linksairaircons/' },
     { label: 'WhatsApp', href: 'https://wa.me/+61447440050' },
   ],
-  serviceAreas: ['Brisbane', 'Gold Coast', 'Logan', 'Ipswich', 'Redlands', 'Moreton Bay'],
+  serviceAreas: [
+    'Brisbane North',
+    'Brisbane South',
+    'Brisbane East',
+    'Brisbane West',
+    'Gold Coast',
+    'Logan',
+    'Ipswich',
+    'Redlands',
+    'Moreton Bay',
+    'Surrounding suburbs',
+  ],
   providers: {
     logger: 'console',
     analytics: 'none',
@@ -183,7 +99,8 @@ export const siteConfig: SiteConfig = {
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
+    default:
+      'Links Air & Electrical | Electrical & Air Conditioning Specialists — Brisbane & Gold Coast',
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -200,17 +117,13 @@ export const defaultMetadata: Metadata = {
     'CCTV installation Brisbane',
     'air conditioning Gold Coast',
     'emergency electrician Brisbane',
-    'air conditioning installation',
-    'electrical maintenance',
-    'Links Air Electrical',
   ],
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  alternates: { canonical: siteConfig.url },
   openGraph: {
     type: 'website',
     siteName: siteConfig.name,
-    title: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
+    title:
+      'Links Air & Electrical | Electrical & Air Conditioning Specialists — Brisbane & Gold Coast',
     description: siteConfig.description,
     url: siteConfig.url,
     locale: siteConfig.locale,
@@ -225,7 +138,8 @@ export const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Air Conditioning Service in Brisbane - Links Air & Electrical',
+    title:
+      'Links Air & Electrical | Electrical & Air Conditioning Specialists — Brisbane & Gold Coast',
     description: siteConfig.description,
     images: [`${siteConfig.url}/opengraph-image`],
   },
