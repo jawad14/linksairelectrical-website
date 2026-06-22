@@ -66,7 +66,8 @@ export function Hero() {
               <span>No Hidden Charges</span>
             </div>
             <div className="hero-emergency">
-              <span className="pulse" /> 24/7 Emergency Support across Brisbane &amp; Gold Coast
+              <span className="pulse" /> <b>24/7 emergency support</b> across Brisbane &amp; Gold
+              Coast
             </div>
           </div>
 

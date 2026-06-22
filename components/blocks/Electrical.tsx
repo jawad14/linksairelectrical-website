@@ -127,7 +127,7 @@ export function Electrical() {
     <section className="pad light" id="electrical">
       <div className="wrap">
         <div className="sec-head reveal">
-          <span className="eyebrow">Electrical Services</span>
+          <span className="eyebrow red">Electrical Services</span>
           <h2>Residential &amp; commercial electrical, done safely</h2>
           <p>
             From a single power point to a full house rewire, we handle all types of electrical work

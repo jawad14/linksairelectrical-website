@@ -24,11 +24,11 @@ export function QuoteCTA() {
         <div className="cta-actions reveal" data-d="2">
           <a
             href={`mailto:${siteConfig.email}?subject=Free%20Quote%20Request`}
-            className="btn btn-amber"
+            className="btn btn-primary"
           >
             Request a Free Quote
           </a>
-          <a href={`tel:${telMobile}`} className="btn btn-ghost">
+          <a href={`tel:${telMobile}`} className="btn btn-red">
             <PhoneIcon />
             Call {siteConfig.mobile}
           </a>

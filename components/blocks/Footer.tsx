@@ -38,7 +38,7 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="Links Air & Electrical"
-                width={183}
+                width={213}
                 height={68}
                 className="brand-logo"
               />

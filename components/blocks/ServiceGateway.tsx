@@ -10,6 +10,7 @@ const cards = [
   {
     href: '#aircon',
     tag: 'Climate Comfort',
+    tagVariant: undefined as 'red' | undefined,
     title: 'Air Conditioning',
     body: 'Split systems, ducted air conditioning, repairs, maintenance, Wi-Fi and zone control.',
     cta: 'Explore air conditioning',
@@ -19,6 +20,7 @@ const cards = [
   {
     href: '#electrical',
     tag: 'Safe & Compliant',
+    tagVariant: 'red' as 'red' | undefined,
     title: 'Electrical Services',
     body: 'Power points, lighting, switchboards, safety switches, fans, appliances and emergency repairs.',
     cta: 'Explore electrical',
@@ -28,6 +30,7 @@ const cards = [
   {
     href: '#builders',
     tag: 'B2B Support',
+    tagVariant: undefined as 'red' | undefined,
     title: 'Builders & Construction',
     body: 'New builds, under-slab, rough-ins, fit-offs, shop fit-outs, renovations and full builder support.',
     cta: 'Explore construction',
@@ -67,7 +70,9 @@ export function ServiceGateway() {
               </div>
               <div className="ring" />
               <div className="body">
-                <span className="tag">{card.tag}</span>
+                <span className={`tag${card.tagVariant ? ' ' + card.tagVariant : ''}`}>
+                  {card.tag}
+                </span>
                 <h3>{card.title}</h3>
                 <p>{card.body}</p>
                 <span className="more">

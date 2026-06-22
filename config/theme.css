@@ -1,29 +1,37 @@
 :root {
   /* ============================================================
-   * Links Air & Electrical — Premium Brand Palette
-   * Sourced from the index.html reference (navy + electric blue +
-   * cyan accent + violet glow + amber emergency CTA).
+   * Links Air & Electrical — Logo-aligned palette (v3)
+   * Sourced from index_new.html. Two narratives in one system:
+   *  - "Air / Cool":     blue → cyan → green
+   *  - "Electrical":     red (logo subtext)
+   * No violet in this generation — the second hue is now red.
    * ============================================================ */
   --navy: #06141f;
   --navy-2: #0b2436;
-  --blue: #00a8f0;
-  --blue-soft: #43c4ff;
-  --cyan: #22e3d3;
-  --violet: #6d5dfc;
+  --blue: #1aa3e8;
+  --blue-soft: #5cc5ff;
+  --cyan: #19d3b0;
+  --green: #3ccb6e;
+  --red: #e8302b;
+  --red-soft: #ff5a52;
+  --red-deep: #c01f22;
   --ice: #eaf8ff;
   --white: #ffffff;
   --graphite: #1f2933;
   --amber: #ffb020;
-  --amber-hot: #ff8a3c;
+  --amber-hot: #ff8a2b;
   --line: rgba(255, 255, 255, 0.1);
   --line-dark: rgba(7, 24, 39, 0.1);
   --brand-muted: #5b6672;
   --shadow: 0 30px 60px -25px rgba(7, 24, 39, 0.45);
   --shadow-soft: 0 18px 40px -22px rgba(7, 24, 39, 0.3);
   --grad-blue: linear-gradient(120deg, var(--blue), var(--cyan));
-  --grad-energy: linear-gradient(120deg, var(--blue) 0%, var(--violet) 100%);
+  --grad-energy: linear-gradient(120deg, var(--blue) 0%, var(--cyan) 55%, var(--green) 100%);
   --grad-amber: linear-gradient(120deg, var(--amber), var(--amber-hot));
-  --glow-blue: 0 0 0 1px rgba(0, 168, 240, 0.4), 0 12px 40px -8px rgba(0, 168, 240, 0.5);
+  --grad-red: linear-gradient(120deg, var(--red-soft), var(--red) 55%, var(--red-deep));
+  --grad-power: linear-gradient(120deg, var(--blue), var(--cyan) 45%, var(--red) 100%);
+  --glow-blue: 0 0 0 1px rgba(26, 163, 232, 0.4), 0 12px 40px -8px rgba(26, 163, 232, 0.5);
+  --glow-red: 0 12px 40px -8px rgba(232, 48, 43, 0.55);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --maxw: 1200px;
 
@@ -35,8 +43,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.03 245);
 
-  /* Primary: brand blue #00A8F0 */
-  --primary: oklch(0.68 0.16 230);
+  /* Primary: brand blue #1AA3E8 */
+  --primary: oklch(0.66 0.16 230);
   --primary-foreground: oklch(0.99 0 0);
 
   /* Secondary: deep navy #0B2436 */
@@ -46,28 +54,28 @@
   --muted: oklch(0.97 0.003 245);
   --muted-foreground: oklch(0.48 0.03 245);
 
-  /* Accent: cyan #22E3D3 */
-  --accent: oklch(0.82 0.13 180);
+  /* Accent: cyan/teal #19D3B0 */
+  --accent: oklch(0.78 0.13 175);
   --accent-foreground: oklch(0.15 0.03 245);
 
-  /* Destructive / emergency amber #FFB020 */
-  --destructive: oklch(0.78 0.15 70);
+  /* Destructive: logo red #E8302B */
+  --destructive: oklch(0.58 0.21 28);
 
   --border: oklch(0.92 0.005 245);
   --input: oklch(0.92 0.005 245);
-  --ring: oklch(0.68 0.16 230);
-  --chart-1: oklch(0.43 0.1 240);
-  --chart-2: oklch(0.68 0.16 230);
-  --chart-3: oklch(0.82 0.13 180);
-  --chart-4: oklch(0.78 0.15 70);
+  --ring: oklch(0.66 0.16 230);
+  --chart-1: oklch(0.66 0.16 230);
+  --chart-2: oklch(0.78 0.13 175);
+  --chart-3: oklch(0.78 0.16 145);
+  --chart-4: oklch(0.58 0.21 28);
   --chart-5: oklch(0.2 0.03 245);
   --radius: 1.125rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.2 0.03 245);
-  --sidebar-primary: oklch(0.68 0.16 230);
+  --sidebar-primary: oklch(0.66 0.16 230);
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.97 0.003 245);
   --sidebar-accent-foreground: oklch(0.2 0.03 245);
   --sidebar-border: oklch(0.92 0.005 245);
-  --sidebar-ring: oklch(0.68 0.16 230);
+  --sidebar-ring: oklch(0.66 0.16 230);
 }

@@ -145,7 +145,7 @@ export function Header() {
               <Image
                 src="/logo.png"
                 alt="Links Air & Electrical"
-                width={183}
+                width={213}
                 height={68}
                 priority
                 className="brand-logo"
@@ -207,7 +207,7 @@ export function Header() {
           <Image
             src="/logo.png"
             alt="Links Air & Electrical"
-            width={183}
+            width={213}
             height={68}
             className="brand-logo"
           />
