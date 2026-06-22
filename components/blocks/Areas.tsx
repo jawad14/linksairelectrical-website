@@ -22,6 +22,9 @@ export function Areas() {
             </div>
           </div>
           <div className="area-visual reveal" data-d="1">
+            <span className="area-wave w1" aria-hidden="true" />
+            <span className="area-wave w2" aria-hidden="true" />
+            <span className="area-wave w3" aria-hidden="true" />
             <div className="area-ring r1" />
             <div className="area-ring r2" />
             <div className="area-ring r3" />

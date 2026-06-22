@@ -2026,11 +2026,44 @@ section {
   height: 420px;
   display: grid;
   place-items: center;
+  isolation: isolate;
+}
+/* radar sweep arm — a faint conic wedge rotating from the core */
+.area-visual::before {
+  content: '';
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(26, 163, 232, 0.32) 0deg,
+    rgba(25, 211, 176, 0.18) 22deg,
+    transparent 55deg,
+    transparent 360deg
+  );
+  mask-image: radial-gradient(circle, transparent 58px, #000 60px, #000 184px, transparent 186px);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent 58px,
+    #000 60px,
+    #000 184px,
+    transparent 186px
+  );
+  animation: radarSweep 5.5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes radarSweep {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .area-ring {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(26, 163, 232, 0.25);
+  animation: ringBreath 5s ease-in-out infinite;
 }
 .area-ring.r1 {
   width: 120px;
@@ -2040,11 +2073,57 @@ section {
   width: 240px;
   height: 240px;
   border-color: rgba(26, 163, 232, 0.18);
+  animation-delay: 0.5s;
 }
 .area-ring.r3 {
   width: 370px;
   height: 370px;
   border-color: rgba(26, 163, 232, 0.12);
+  animation-delay: 1s;
+}
+@keyframes ringBreath {
+  0%,
+  100% {
+    opacity: 1;
+    border-color: rgba(26, 163, 232, 0.28);
+  }
+  50% {
+    opacity: 0.55;
+    border-color: rgba(92, 197, 255, 0.18);
+  }
+}
+/* additional sonar waves emanating from the core */
+.area-wave {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26, 163, 232, 0.55);
+  pointer-events: none;
+  z-index: 1;
+  animation: sonarPulse 4.5s var(--ease) infinite;
+  opacity: 0;
+}
+.area-wave.w2 {
+  animation-delay: 1.5s;
+}
+.area-wave.w3 {
+  animation-delay: 3s;
+}
+@keyframes sonarPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    border-color: rgba(26, 163, 232, 0.55);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3.1);
+    opacity: 0;
+    border-color: rgba(92, 197, 255, 0.05);
+  }
 }
 .area-core {
   width: 120px;
@@ -2088,26 +2167,97 @@ section {
   border-radius: 50%;
   background: var(--red);
   box-shadow: 0 0 0 5px rgba(232, 48, 43, 0.18);
+  z-index: 3;
+}
+.area-pin::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+  opacity: 0;
+  animation: pinPing 2.6s ease-out infinite;
+}
+.area-pin::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.85;
+  animation: pinBlink 2.6s ease-in-out infinite;
+}
+@keyframes pinPing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+@keyframes pinBlink {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(0.55);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.75);
+  }
 }
 .area-pin.p1 {
   top: 24%;
   left: 30%;
+  animation-delay: 0s;
+}
+.area-pin.p1::before {
+  animation-delay: 0s;
 }
 .area-pin.p2 {
   top: 18%;
   right: 26%;
 }
+.area-pin.p2::before {
+  animation-delay: 0.5s;
+}
+.area-pin.p2::after {
+  animation-delay: 0.5s;
+}
 .area-pin.p3 {
   bottom: 24%;
   left: 24%;
+}
+.area-pin.p3::before {
+  animation-delay: 1s;
+}
+.area-pin.p3::after {
+  animation-delay: 1s;
 }
 .area-pin.p4 {
   bottom: 20%;
   right: 30%;
 }
+.area-pin.p4::before {
+  animation-delay: 1.5s;
+}
+.area-pin.p4::after {
+  animation-delay: 1.5s;
+}
 .area-pin.p5 {
   top: 50%;
   right: 14%;
+}
+.area-pin.p5::before {
+  animation-delay: 2s;
+}
+.area-pin.p5::after {
+  animation-delay: 2s;
 }
 
 /* ============================ QUOTE CTA ============================ */
@@ -2351,6 +2501,21 @@ footer.site {
     display: none;
   }
 }
+/* Header: collapse menu → burger before items overlap the logo.
+   At ~1180px the 8 nowrap nav items + 213px logo + CTA stop fitting
+   comfortably across the 1200px max-width wrap. */
+@media (max-width: 1180px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .nav-cta {
+    margin-left: auto;
+    gap: 10px;
+  }
+}
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2391,17 +2556,6 @@ footer.site {
   .foot-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .menu,
-  .nav-phone {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
-  .nav-cta {
-    margin-left: auto;
-    gap: 10px;
-  }
   .ac-visual .ac-img {
     height: 380px;
   }
@@ -2412,6 +2566,18 @@ footer.site {
   }
   .topbar {
     display: none;
+  }
+  .nav {
+    height: 64px;
+  }
+  .brand .brand-logo {
+    height: 38px;
+    padding: 5px 11px;
+    border-radius: 11px;
+  }
+  .burger {
+    width: 42px;
+    height: 42px;
   }
   .trust .wrap {
     grid-template-columns: 1fr 1fr;
