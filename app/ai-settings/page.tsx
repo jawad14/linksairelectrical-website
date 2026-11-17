@@ -23,7 +23,7 @@ export default function AiSettingsPage() {
         <div className="wrap">
           <Link className="brand" href="/" aria-label="Links Air & Electrical home">
             <Image src="/logo.png" alt="Links Air & Electrical" width={160} height={51} priority />
-          </a>
+          </Link>
           <span className="ai-top-label">Owner tools</span>
           <Link className="btn btn-ghost ai-top-back" href="/">
             Back to website
