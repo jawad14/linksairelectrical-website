@@ -24,7 +24,9 @@ export default function AiSettingsPage() {
             to the next email it answers; nothing is sent without someone checking the draft.
           </Muted>
           <Suspense fallback={<Muted>Loading…</Muted>}>
-            <AiSettingsEditor apiBase={env.NEXT_PUBLIC_AI_SETTINGS_API ?? ''} />
+            <AiSettingsEditor
+              apiBase={env.NEXT_PUBLIC_AI_SETTINGS_API ?? siteConfig.aiSettingsApi}
+            />
           </Suspense>
         </Stack>
       </Container>

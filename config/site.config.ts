@@ -9,6 +9,8 @@ export type SiteConfig = {
   tagline: string;
   description: string;
   url: string;
+  /** Base URL of the AI reply-assistant settings API (n8n webhooks) used by /ai-settings; env NEXT_PUBLIC_AI_SETTINGS_API overrides it. */
+  aiSettingsApi: string;
   ogImage: string;
   locale: string;
   author: { name: string; url?: string };
@@ -44,6 +46,7 @@ export const siteConfig: SiteConfig = {
   description:
     'Licensed electrical and air conditioning specialists serving Brisbane, Gold Coast, Logan, Ipswich, Redlands and Moreton Bay. Clean workmanship, honest quotes, reliable service since 2014.',
   url: 'https://linksairelectrical.com.au',
+  aiSettingsApi: 'https://automation.keyob.com/webhook',
   ogImage: '/opengraph-image',
   locale: 'en_AU',
   author: { name: 'Links Air & Electrical', url: 'https://linksairelectrical.com.au' },
