@@ -12,6 +12,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
     NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().optional(),
+    NEXT_PUBLIC_AI_SETTINGS_API: z.string().url().optional(),
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
@@ -21,6 +22,7 @@ export const env = createEnv({
     SENTRY_DSN: process.env.SENTRY_DSN,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
+    NEXT_PUBLIC_AI_SETTINGS_API: process.env.NEXT_PUBLIC_AI_SETTINGS_API,
   },
   emptyStringAsUndefined: true,
 });
